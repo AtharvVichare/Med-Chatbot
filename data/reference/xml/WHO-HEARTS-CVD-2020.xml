@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-HEARTS-CVD-2020" version="WHO-HEARTS-v2">
+  <title>HEARTS Technical Package for Cardiovascular Disease Management in Primary Health Care</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/publications/i/item/9789240001367</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>cardiovascular</domain>
+  <topic>cardiovascular</topic>
+  <publication-date>2020-10-01</publication-date>
+  <sections>
+    <section title="HEARTS Technical Package - Total Cardiovascular Risk Stratification">
+      The WHO HEARTS technical package emphasizes total cardiovascular risk assessment rather than treating single risk factors in isolation. Cardiovascular risk prediction charts (such as WHO/ISH regional charts for South Asia SEAR D) estimate 10-year risk of a fatal or non-fatal cardiovascular event (myocardial infarction or stroke) based on age, gender, systolic blood pressure, smoking status, and either diabetes status or total blood cholesterol. Risk categories are classified as low (&lt; 10%), moderate (10% to &lt; 20%), high (20% to &lt; 30%), and very high (&gt;= 30%). All patients with established CVD, severe hypertension (SBP &gt;= 160 mmHg), or diabetes with target-organ damage automatically enter the high-risk category without needing chart calculation.
+    </section>
+    <section title="HEARTS Technical Package - Standardized Evidence-Based Treatment Protocols">
+      The core components of the HEARTS technical package include: H (Healthy-lifestyle counseling on salt reduction, tobacco cessation, and physical activity); E (Evidence-based treatment protocols emphasizing protocol-driven step-up therapy); A (Access to essential medicines and diagnostics, ensuring continuous availability of core antihypertensive and statin medications); R (Risk-based CVD management focusing resources on high-risk individuals); T (Team-based care utilizing task-sharing with nurses and community health workers); S (Systems for monitoring and program evaluation). Statin therapy is indicated for all individuals with total 10-year CVD risk &gt;= 20% or established clinical atherosclerotic disease.
+    </section>
+  </sections>
+</medical-reference-document>

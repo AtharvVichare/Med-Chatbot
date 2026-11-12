@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-CORONARY-ARTERY-DISEASE" version="v2025.1">
+  <title>MedlinePlus: Coronary Artery Disease and Angina</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/coronaryarterydisease.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>cardiovascular</domain>
+  <topic>cardiovascular</topic>
+  <publication-date>2025-01-28</publication-date>
+  <sections>
+    <section title="Coronary Artery Disease - Angina Presentation and Pathophysiology">
+      Coronary Artery Disease (CAD) develops when the major arterial conduits supplying oxygenated blood to the myocardium become narrowed or occluded by atherosclerotic plaques consisting of cholesterol, calcium, and fibrous tissue. Stable angina presents typically as substernal chest discomfort described as heaviness, squeezing, pressure, or burning, provoked by physical exertion or emotional stress, and relieved within minutes by rest or sublingual nitroglycerin. Angina discomfort may radiate predictably to the left shoulder, left arm, neck, jaw, or epigastrium. When plaque erosion or rupture triggers acute intraluminal thrombosis, unstable angina or acute myocardial infarction ensues.
+    </section>
+    <section title="Coronary Artery Disease - Evaluation, Prevention, and Revascularization">
+      Diagnostic workup for suspected CAD includes resting electrocardiogram (ECG), exercise treadmill testing, coronary computed tomography angiography (CCTA), and invasive catheter coronary angiography. Secondary cardiovascular prevention requires lifelong low-dose aspirin (75-100 mg daily), high-intensity statin therapy (Atorvastatin 40-80 mg or Rosuvastatin 20-40 mg) to achieve LDL-C &lt; 55 mg/dL, beta-blockers for post-infarction myocardial protection, and ACE inhibitors in patients with left ventricular systolic dysfunction or diabetes. Invasive coronary revascularization via percutaneous coronary intervention (PCI with drug-eluting stents) or coronary artery bypass grafting (CABG) is indicated for refractory angina or high-risk coronary anatomy.
+    </section>
+  </sections>
+</medical-reference-document>

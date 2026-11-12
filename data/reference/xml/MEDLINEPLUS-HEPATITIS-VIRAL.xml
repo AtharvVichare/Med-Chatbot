@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-HEPATITIS-VIRAL" version="v2024.3">
+  <title>MedlinePlus: Viral Hepatitis (Hepatitis B and C)</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/hepatitis.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>gastroenterology</domain>
+  <topic>hepatitis</topic>
+  <publication-date>2024-12-10</publication-date>
+  <sections>
+    <section title="Viral Hepatitis - Hepatitis B and C Modes of Transmission and Screening">
+      Viral hepatitis refers to inflammatory liver necrosis induced by hepatotropic viruses, with Hepatitis B Virus (HBV) and Hepatitis C Virus (HCV) accounting for the vast majority of chronic liver cirrhosis and hepatocellular carcinoma globally. HBV is transmitted parenterally through infected blood, unprotected sexual intercourse, and vertical mother-to-child perinatal transmission. HCV is predominantly transmitted via percutaneous exposure to infectious blood, including unsafe injections, unsterilized healthcare equipment, and contaminated transfusions. Initial screening relies on serological assays: Hepatitis B surface antigen (HBsAg) for HBV, and Hepatitis C antibody (anti-HCV) followed by quantitative HCV RNA PCR confirmation.
+    </section>
+    <section title="Viral Hepatitis - Antiviral Protocols and Vaccination">
+      Hepatitis B is preventable through universal infant vaccination with a 3-dose recombinant HBV vaccine series, including a birth dose within 24 hours. Chronic active HBV is treated with oral nucleos(t)ide analogues with high genetic barriers to resistance (Tenofovir disoproxil fumarate, Tenofovir alafenamide, or Entecavir) which suppress viral replication long-term. Chronic Hepatitis C is now curable in &gt; 95% of patients with a 8 to 12-week course of oral Direct-Acting Antiviral (DAA) pangenotypic regimens (e.g., Sofosbuvir/Velpatasvir or Glecaprevir/Pibrentasvir), eliminating viral RNA without requiring interferon.
+    </section>
+  </sections>
+</medical-reference-document>

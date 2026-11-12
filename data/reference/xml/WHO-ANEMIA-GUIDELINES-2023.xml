@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-ANEMIA-GUIDELINES-2023" version="WHO-NUTR-2023">
+  <title>WHO Guideline on Use of Ferritin Concentrations and Hemoglobin Cutoffs to Assess Iron Status</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/publications/i/item/9789240000124</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>hematology</domain>
+  <topic>anemia</topic>
+  <publication-date>2023-05-19</publication-date>
+  <sections>
+    <section title="WHO Diagnostic Thresholds - Hemoglobin Cutoffs by Age and Physiological State">
+      The World Health Organization defines anemia based on epidemiological venous blood hemoglobin concentrations: Children 6-59 months of age: Hb &lt; 11.0 g/dL; Children 5-11 years of age: Hb &lt; 11.5 g/dL; Children 12-14 years of age and non-pregnant adult women: Hb &lt; 12.0 g/dL; Pregnant women: Hb &lt; 11.0 g/dL (Hb &lt; 10.5 g/dL in second trimester); Adult men: Hb &lt; 13.0 g/dL. Severity of anemia in non-pregnant adult females is categorized as mild (Hb 11.0-11.9 g/dL), moderate (Hb 8.0-10.9 g/dL), and severe (Hb &lt; 8.0 g/dL). Serum ferritin below 15 ug/L in adults indicates depleted iron stores.
+    </section>
+  </sections>
+</medical-reference-document>

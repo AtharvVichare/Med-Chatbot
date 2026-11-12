@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-HYPERTENSION-XML" version="v2025.1">
+  <title>MedlinePlus Health Topic: High Blood Pressure</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/highbloodpressure.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>hypertension</domain>
+  <topic>hypertension</topic>
+  <publication-date>2025-02-10</publication-date>
+  <sections>
+    <section title="High Blood Pressure - Definition and Diagnostic Thresholds">
+      Hypertension (high blood pressure) is defined as a persistent elevation of systemic arterial pressure. It is often referred to as a silent killer because patients frequently remain asymptomatic until target-organ damage has occurred. Standard clinical thresholds define normal blood pressure as systolic blood pressure (SBP) less than 120 mmHg and diastolic blood pressure (DBP) less than 80 mmHg. Stage 1 hypertension is diagnosed at SBP 130-139 mmHg or DBP 80-89 mmHg. Stage 2 hypertension corresponds to SBP 140 mmHg or greater, or DBP 90 mmHg or greater. Diagnosis requires standardized seated resting blood pressure measurements on two or more separate clinical occasions, or confirmation via 24-hour ambulatory blood pressure monitoring (ABPM).
+    </section>
+    <section title="High Blood Pressure - Risk Factors and Complications">
+      Modifiable risk factors for essential hypertension include excessive dietary sodium consumption (&gt; 2 grams sodium or &gt; 5 grams salt per day), low dietary potassium intake, physical inactivity, obesity (BMI &gt;= 25 kg/m2), chronic alcohol abuse, tobacco smoking, and obstructive sleep apnea. Uncontrolled sustained arterial hypertension causes left ventricular hypertrophy, congestive heart failure, coronary heart disease, ischemic and hemorrhagic stroke, hypertensive nephrosclerosis, aortic dissection, and hypertensive retinopathy.
+    </section>
+  </sections>
+</medical-reference-document>

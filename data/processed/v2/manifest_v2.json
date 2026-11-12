@@ -1,0 +1,20 @@
+{
+  "version": "v2",
+  "generated_at": "2026-11-05T00:35:00Z",
+  "total_documents": 31,
+  "total_chunks": 57,
+  "domain_distribution": {
+    "diabetes": 7,
+    "hypertension": 4,
+    "cardiovascular": 6,
+    "respiratory": 5,
+    "nephrology": 3,
+    "hematology": 3,
+    "endocrinology": 4,
+    "infectious_diseases": 6,
+    "gastroenterology": 6,
+    "neurology": 6,
+    "maternal_health": 5,
+    "emergency": 2
+  }
+}

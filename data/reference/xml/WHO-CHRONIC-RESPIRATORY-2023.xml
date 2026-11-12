@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-CHRONIC-RESPIRATORY-2023" version="WHO-NCD-2023">
+  <title>WHO Fact Sheet: Chronic Obstructive Pulmonary Disease and Asthma</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/news-room/fact-sheets/detail/chronic-obstructive-pulmonary-disease-(copd)</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>respiratory</domain>
+  <topic>respiratory</topic>
+  <publication-date>2023-03-16</publication-date>
+  <sections>
+    <section title="WHO Technical Guidance - Environmental Risk Reduction and Oxygen Protocols">
+      The World Health Organization identifies chronic respiratory diseases among the leading causes of non-communicable morbidity and premature mortality globally. Essential public health control strategies mandate reductions in ambient particulate matter (PM2.5 and PM10), rigorous enforcement of clean indoor air regulations, and replacement of solid cooking biomass with clean electricity or LPG. Long-Term Oxygen Therapy (LTOT) for at least 15 hours per day improves survival in patients with severe resting chronic hypoxemia (PaO2 &lt;= 55 mmHg or SpO2 &lt;= 88%, or PaO2 56-59 mmHg in the presence of cor pulmonale or secondary polycythemia).
+    </section>
+  </sections>
+</medical-reference-document>

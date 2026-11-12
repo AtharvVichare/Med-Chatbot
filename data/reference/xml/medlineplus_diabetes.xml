@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<health-topics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date-generated="2025-01-15">
+  <health-topic id="2001" title="Diabetes Mellitus" url="https://medlineplus.gov/diabetes.html">
+    <full-summary><![CDATA[<p>Diabetes is a disease in which your blood glucose, or blood sugar, levels are too high. Glucose comes from the foods you eat. Insulin is a hormone that helps the glucose get into your cells to give them energy.</p><p>With <strong>Type 1 diabetes</strong>, your body does not make insulin. With <strong>Type 2 diabetes</strong>, the more common type, your body does not make or use insulin well. Without enough insulin, the glucose stays in your blood. You can also have prediabetes. This means that your blood sugar is higher than normal but not high enough to be called diabetes.</p><p>Over time, having too much glucose in your blood can cause serious health problems. It can damage your eyes, kidneys, and nerves. Diabetes can also cause heart disease, stroke, and the need to amputate a limb.</p>]]></full-summary>
+    <section title="Symptoms and Diagnosis">
+      Symptoms of type 2 diabetes include increased thirst, frequent urination, increased hunger, fatigue, blurred vision, and slow-healing sores. Diagnostic criteria include:
+      - Fasting Plasma Glucose (FPG) >= 126 mg/dL (7.0 mmol/L)
+      - Hemoglobin A1c (HbA1c) >= 6.5% (48 mmol/mol)
+      - 2-hour Oral Glucose Tolerance Test (OGTT) >= 200 mg/dL (11.1 mmol/L)
+      - Random plasma glucose >= 200 mg/dL in a patient with classic symptoms of hyperglycemia.
+    </section>
+    <section title="Treatment and Management">
+      Treatment involves blood sugar monitoring, lifestyle changes (healthful diet, weight control, and regular physical activity), oral medications such as Metformin, SGLT2 inhibitors, and insulin therapy when indicated.
+    </section>
+  </health-topic>
+</health-topics>
+

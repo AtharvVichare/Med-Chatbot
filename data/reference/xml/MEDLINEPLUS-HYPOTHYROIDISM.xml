@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-HYPOTHYROIDISM" version="v2025.1">
+  <title>MedlinePlus: Hypothyroidism Symptoms and TSH Diagnostics</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/hypothyroidism.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>endocrinology</domain>
+  <topic>hypothyroidism</topic>
+  <publication-date>2025-02-05</publication-date>
+  <sections>
+    <section title="Hypothyroidism - Clinical Presentation and Hashimoto's Thyroiditis">
+      Hypothyroidism is an endocrine disorder characterized by systemic deficiency of thyroid hormones (triiodothyronine [T3] and thyroxine [T4]), leading to generalized slowing of metabolic processes. The most frequent cause in iodine-sufficient regions is Hashimoto's thyroiditis (chronic autoimmune thyroiditis), characterized by circulating anti-thyroperoxidase (anti-TPO) and anti-thyroglobulin antibodies. Common symptoms include persistent fatigue, cold intolerance, unexplained weight gain, constipation, dry skin, coarse brittle hair, periorbital puffiness, hoarseness, bradycardia, muscle weakness, menstrual irregularities (menorrhagia), and cognitive slowing (brain fog).
+    </section>
+    <section title="Hypothyroidism - Laboratory Diagnosis and Levothyroxine Dosing">
+      Laboratory diagnosis of primary hypothyroidism is established by an elevated serum Thyroid-Stimulating Hormone (TSH) level accompanied by a subnormal free thyroxine (free T4) level. Subclinical hypothyroidism is defined by an elevated serum TSH with normal free T4 levels. First-line replacement therapy is synthetic oral Levothyroxine (L-T4). The standard replacement dose in young, healthy adults is approximately 1.6 mcg/kg/day, whereas in elderly individuals or patients with underlying coronary artery disease, treatment initiates conservatively at 25 to 50 mcg daily to prevent precipitating cardiac ischemia. Levothyroxine must be ingested on an empty stomach with a full glass of water, at least 30 to 60 minutes before breakfast.
+    </section>
+  </sections>
+</medical-reference-document>

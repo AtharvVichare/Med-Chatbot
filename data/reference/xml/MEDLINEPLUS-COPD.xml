@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-COPD" version="v2025.1">
+  <title>MedlinePlus: Chronic Obstructive Pulmonary Disease (COPD)</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/copd.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>respiratory</domain>
+  <topic>copd</topic>
+  <publication-date>2025-01-18</publication-date>
+  <sections>
+    <section title="COPD - Etiology and Spirometric Diagnostic Criteria">
+      Chronic Obstructive Pulmonary Disease (COPD) is a common, preventable, and treatable chronic lung disease characterized by persistent respiratory symptoms and progressive, non-fully reversible airflow limitation. Cigarette smoking is the predominant etiology worldwide, followed by occupational dust exposure, chemical fumes, and indoor biomass fuel combustion in poorly ventilated dwellings. Symptoms include chronic progressive dyspnea, chronic cough, and regular sputum production. Diagnosis requires post-bronchodilator spirometry demonstrating a fixed FEV1/FVC ratio less than 0.70. Severity of airflow limitation is categorized by GOLD grades 1 through 4 based on post-bronchodilator FEV1 percentage predicted.
+    </section>
+    <section title="COPD - Comprehensive Inhalation Therapy and Exacerbation Management">
+      Primary non-pharmacological interventions in COPD include absolute smoking cessation, pulmonary rehabilitation, influenza and pneumococcal vaccinations, and nutritional support. Maintenance pharmacological treatment is anchored by long-acting bronchodilators: Long-Acting Muscarinic Antagonists (LAMA, e.g., Tiotropium) and Long-Acting Beta2-Agonists (LABA, e.g., Formoterol, Indacaterol). Inhaled corticosteroids (ICS) are reserved as add-on therapy for patients with frequent exacerbations or blood eosinophil counts &gt;= 300 cells/uL. Acute COPD exacerbations characterized by worsening dyspnea, increased sputum volume, and sputum purulence are managed with short-acting bronchodilators, oral corticosteroids (prednisone 40 mg daily for 5 days), and targeted antibiotics.
+    </section>
+  </sections>
+</medical-reference-document>

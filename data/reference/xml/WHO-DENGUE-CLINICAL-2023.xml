@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-DENGUE-CLINICAL-2023" version="WHO-DENGUE-2023">
+  <title>WHO Dengue and Severe Dengue: Warning Signs and Fluid Management Protocols</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>infectious_diseases</domain>
+  <topic>dengue</topic>
+  <publication-date>2023-08-11</publication-date>
+  <sections>
+    <section title="WHO Dengue Guidelines - Phases of Disease and Critical Leakage Period">
+      Dengue is an acute arboviral infection caused by four distinct serotypes of dengue virus (DENV 1-4) transmitted by Aedes mosquitoes (primarily Aedes aegypti). The illness follows three clinical phases: the febrile phase (high fever, severe retro-orbital headache, body aches, arthralgias, maculopapular rash); the critical phase (occurring around day 3 to 7 of illness during defervescence, marked by systemic capillary hyperpermeability and plasma leakage lasting 24-48 hours); and the convalescent recovery phase. Patients with severe dengue develop dengue shock syndrome, respiratory distress from pleural effusions and ascites, severe bleeding, or organ failure.
+    </section>
+    <section title="WHO Dengue Guidelines - Warning Signs and Judicious Fluid Protocols">
+      WHO guidelines classify dengue cases into Dengue without warning signs, Dengue with warning signs, and Severe dengue. Clinical warning signs herald progression to plasma leakage and require immediate hospital admission: abdominal pain or tenderness, persistent vomiting, clinical fluid accumulation (pleural effusion, ascites), mucosal bleeding (epistaxis, gingival bleed), lethargy or restlessness, hepatomegaly &gt; 2 cm, and concurrent progressive hematocrit elevation with rapid platelet count decline. Management relies on meticulous isotonic fluid resuscitation (normal saline or Ringer's lactate) titrated to clinical vital signs and hematocrit. Aspirin, NSAIDs, and intramuscular injections are strictly contraindicated due to bleeding hemorrhage risks.
+    </section>
+  </sections>
+</medical-reference-document>

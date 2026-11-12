@@ -1,0 +1,1445 @@
+condition_id,patient_id,diagnosis_code,diagnosis_name,onset_date,clinical_status,is_synthetic
+COND-B4F518F8,PAT-00001,E11.9,Type 2 diabetes mellitus without complications,2024-05-28,active,TRUE
+COND-CB3518ED,PAT-00002,I10,Essential (primary) hypertension,2024-06-10,active,TRUE
+COND-1A8F4FEF,PAT-00002,E78.5,"Hyperlipidemia, unspecified",2020-08-05,active,TRUE
+COND-1D663726,PAT-00003,A90,Dengue fever,2022-10-21,active,TRUE
+COND-37CDDCBD,PAT-00003,I25.10,Atherosclerotic heart disease,2022-09-25,active,TRUE
+COND-9BC6C96B,PAT-00003,E78.5,"Hyperlipidemia, unspecified",2023-11-02,active,TRUE
+COND-87C83C71,PAT-00005,I10,Essential (primary) hypertension,2024-04-24,active,TRUE
+COND-BFA60003,PAT-00005,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-21,resolved,TRUE
+COND-042D2DF5,PAT-00006,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-02-24,active,TRUE
+COND-30794AA3,PAT-00006,I25.10,Atherosclerotic heart disease,2022-03-26,active,TRUE
+COND-5185F6D6,PAT-00006,E78.5,"Hyperlipidemia, unspecified",2016-12-30,active,TRUE
+COND-C85507D5,PAT-00007,E11.9,Type 2 diabetes mellitus without complications,2016-06-11,active,TRUE
+COND-8B2B267B,PAT-00007,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-02-23,resolved,TRUE
+COND-43080B67,PAT-00008,I10,Essential (primary) hypertension,2022-07-06,active,TRUE
+COND-F2043B45,PAT-00009,I10,Essential (primary) hypertension,2023-03-10,active,TRUE
+COND-AEAAA91F,PAT-00010,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-27,resolved,TRUE
+COND-B033FA5A,PAT-00010,N18.3,"Chronic kidney disease, stage 3",2024-05-20,active,TRUE
+COND-B95249B4,PAT-00011,I25.10,Atherosclerotic heart disease,2021-03-14,active,TRUE
+COND-03BEE4D1,PAT-00013,E11.9,Type 2 diabetes mellitus without complications,2020-11-12,active,TRUE
+COND-596BA905,PAT-00013,I10,Essential (primary) hypertension,2023-11-15,active,TRUE
+COND-81F7A583,PAT-00013,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-11-26,active,TRUE
+COND-600F8AE6,PAT-00013,I25.10,Atherosclerotic heart disease,2024-01-21,active,TRUE
+COND-0215DDCE,PAT-00013,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-21,resolved,TRUE
+COND-4EA68231,PAT-00014,I10,Essential (primary) hypertension,2018-06-19,active,TRUE
+COND-99211406,PAT-00014,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-15,resolved,TRUE
+COND-C7F923D4,PAT-00015,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-08-01,active,TRUE
+COND-3B3AF8E6,PAT-00015,E78.5,"Hyperlipidemia, unspecified",2017-01-14,active,TRUE
+COND-87B5FCF0,PAT-00016,E11.9,Type 2 diabetes mellitus without complications,2021-04-15,active,TRUE
+COND-699AAE40,PAT-00017,E11.9,Type 2 diabetes mellitus without complications,2023-05-07,active,TRUE
+COND-0C40177E,PAT-00017,E78.5,"Hyperlipidemia, unspecified",2017-11-22,active,TRUE
+COND-473401B5,PAT-00018,E11.9,Type 2 diabetes mellitus without complications,2024-03-06,active,TRUE
+COND-7CA8BD5D,PAT-00018,I10,Essential (primary) hypertension,2018-01-29,active,TRUE
+COND-463297D1,PAT-00018,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-10-12,active,TRUE
+COND-486D7447,PAT-00018,I25.10,Atherosclerotic heart disease,2020-01-02,active,TRUE
+COND-057C9771,PAT-00018,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-16,active,TRUE
+COND-DBD5DC70,PAT-00019,I10,Essential (primary) hypertension,2020-12-21,active,TRUE
+COND-1FF9A2ED,PAT-00019,E78.5,"Hyperlipidemia, unspecified",2018-02-28,active,TRUE
+COND-C35B62B4,PAT-00019,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-29,active,TRUE
+COND-DC800399,PAT-00020,E78.5,"Hyperlipidemia, unspecified",2018-01-11,active,TRUE
+COND-9E2E26DB,PAT-00020,N18.3,"Chronic kidney disease, stage 3",2021-05-11,active,TRUE
+COND-45C01335,PAT-00021,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-11-26,active,TRUE
+COND-44C8AE46,PAT-00021,A90,Dengue fever,2023-03-20,active,TRUE
+COND-E2A75E5D,PAT-00021,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-25,resolved,TRUE
+COND-C8FCC67C,PAT-00022,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-06-06,active,TRUE
+COND-44171D84,PAT-00022,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-01-04,active,TRUE
+COND-33B45DB0,PAT-00023,E11.9,Type 2 diabetes mellitus without complications,2018-08-27,active,TRUE
+COND-4C72972E,PAT-00024,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-06,resolved,TRUE
+COND-F92E3136,PAT-00025,E11.9,Type 2 diabetes mellitus without complications,2021-11-30,active,TRUE
+COND-5B7EA71F,PAT-00026,E11.9,Type 2 diabetes mellitus without complications,2018-08-25,active,TRUE
+COND-6F06A208,PAT-00026,I10,Essential (primary) hypertension,2020-04-13,active,TRUE
+COND-152BAF8D,PAT-00027,E78.5,"Hyperlipidemia, unspecified",2022-06-12,active,TRUE
+COND-52840F6C,PAT-00028,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-12-28,active,TRUE
+COND-81069816,PAT-00031,I10,Essential (primary) hypertension,2021-11-10,active,TRUE
+COND-48DEAA69,PAT-00031,I25.10,Atherosclerotic heart disease,2020-11-27,active,TRUE
+COND-5E02B132,PAT-00033,E11.9,Type 2 diabetes mellitus without complications,2023-04-08,active,TRUE
+COND-E85531C1,PAT-00033,E78.5,"Hyperlipidemia, unspecified",2021-08-25,active,TRUE
+COND-8ACEBEC0,PAT-00034,I25.10,Atherosclerotic heart disease,2018-01-04,active,TRUE
+COND-F444FB89,PAT-00035,E11.9,Type 2 diabetes mellitus without complications,2020-09-09,active,TRUE
+COND-B4CD47C1,PAT-00036,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-10-19,active,TRUE
+COND-E85719AF,PAT-00038,I10,Essential (primary) hypertension,2024-01-11,active,TRUE
+COND-1FB6BAB4,PAT-00039,E11.9,Type 2 diabetes mellitus without complications,2024-01-21,active,TRUE
+COND-69BE62EC,PAT-00039,A90,Dengue fever,2023-05-19,resolved,TRUE
+COND-8C3421EE,PAT-00039,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-08-28,active,TRUE
+COND-4216C990,PAT-00040,E78.5,"Hyperlipidemia, unspecified",2018-06-22,active,TRUE
+COND-0AA449C0,PAT-00040,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-04-25,active,TRUE
+COND-FCFC5327,PAT-00042,E11.9,Type 2 diabetes mellitus without complications,2024-01-27,active,TRUE
+COND-AE0A46CC,PAT-00042,I10,Essential (primary) hypertension,2023-10-19,active,TRUE
+COND-4E206D1E,PAT-00042,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-04-19,active,TRUE
+COND-80FBA22F,PAT-00043,E11.9,Type 2 diabetes mellitus without complications,2023-04-14,active,TRUE
+COND-FA160261,PAT-00043,A90,Dengue fever,2023-04-28,active,TRUE
+COND-CED90DE8,PAT-00044,E11.9,Type 2 diabetes mellitus without complications,2023-07-29,active,TRUE
+COND-2B290E87,PAT-00045,E11.9,Type 2 diabetes mellitus without complications,2020-08-11,active,TRUE
+COND-118D0605,PAT-00045,I10,Essential (primary) hypertension,2019-08-25,active,TRUE
+COND-31A3EC51,PAT-00046,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-07-03,active,TRUE
+COND-01F1DF6C,PAT-00046,A15.0,Tuberculosis of lung,2023-06-22,active,TRUE
+COND-506A9CA2,PAT-00047,E11.9,Type 2 diabetes mellitus without complications,2023-07-22,active,TRUE
+COND-B739E2A8,PAT-00047,I10,Essential (primary) hypertension,2022-11-09,active,TRUE
+COND-AC4A3B05,PAT-00048,E11.9,Type 2 diabetes mellitus without complications,2017-05-22,active,TRUE
+COND-9981E772,PAT-00049,E11.9,Type 2 diabetes mellitus without complications,2024-05-29,active,TRUE
+COND-101DA9CE,PAT-00049,I10,Essential (primary) hypertension,2024-03-22,active,TRUE
+COND-5E84BB96,PAT-00049,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-09-22,active,TRUE
+COND-E22F2348,PAT-00050,E11.9,Type 2 diabetes mellitus without complications,2022-07-24,active,TRUE
+COND-69E17BD4,PAT-00050,I10,Essential (primary) hypertension,2023-11-04,active,TRUE
+COND-2769B50F,PAT-00050,A15.0,Tuberculosis of lung,2023-02-15,active,TRUE
+COND-CD7202AE,PAT-00050,E78.5,"Hyperlipidemia, unspecified",2023-03-18,active,TRUE
+COND-2AD4229D,PAT-00050,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-02-10,resolved,TRUE
+COND-283EA95B,PAT-00052,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-12-25,active,TRUE
+COND-84300166,PAT-00052,A90,Dengue fever,2022-09-07,active,TRUE
+COND-FDA7C23B,PAT-00053,E11.9,Type 2 diabetes mellitus without complications,2024-03-02,active,TRUE
+COND-36A1637C,PAT-00053,A90,Dengue fever,2024-02-15,resolved,TRUE
+COND-CB9A2286,PAT-00053,I25.10,Atherosclerotic heart disease,2018-06-01,active,TRUE
+COND-34E92671,PAT-00053,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-11-17,resolved,TRUE
+COND-C6D28B6A,PAT-00054,N18.3,"Chronic kidney disease, stage 3",2021-03-09,active,TRUE
+COND-44FEA54A,PAT-00056,E78.5,"Hyperlipidemia, unspecified",2024-03-03,active,TRUE
+COND-C96847E0,PAT-00057,I10,Essential (primary) hypertension,2023-08-30,active,TRUE
+COND-5CA34C7D,PAT-00058,E11.9,Type 2 diabetes mellitus without complications,2024-03-20,active,TRUE
+COND-5EB9108F,PAT-00058,I10,Essential (primary) hypertension,2021-07-29,active,TRUE
+COND-7B19863D,PAT-00059,A15.0,Tuberculosis of lung,2023-10-11,resolved,TRUE
+COND-5257FFCB,PAT-00059,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-07-20,resolved,TRUE
+COND-9FD5ADAB,PAT-00060,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-10-27,active,TRUE
+COND-C241ACA9,PAT-00061,E11.9,Type 2 diabetes mellitus without complications,2021-12-07,active,TRUE
+COND-1E926FB7,PAT-00061,I10,Essential (primary) hypertension,2023-07-10,active,TRUE
+COND-E66E2612,PAT-00063,E11.9,Type 2 diabetes mellitus without complications,2023-04-22,active,TRUE
+COND-6956097B,PAT-00063,E78.5,"Hyperlipidemia, unspecified",2021-10-02,active,TRUE
+COND-15DE2DAC,PAT-00064,E11.9,Type 2 diabetes mellitus without complications,2017-02-25,active,TRUE
+COND-0896BDD3,PAT-00064,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-08-24,active,TRUE
+COND-B6E4997B,PAT-00065,I10,Essential (primary) hypertension,2024-04-19,active,TRUE
+COND-DDB6AA6D,PAT-00066,E11.9,Type 2 diabetes mellitus without complications,2018-12-31,active,TRUE
+COND-1E900F27,PAT-00066,I10,Essential (primary) hypertension,2023-02-25,active,TRUE
+COND-E6824BEC,PAT-00067,I25.10,Atherosclerotic heart disease,2020-03-06,active,TRUE
+COND-C7090DD5,PAT-00068,I10,Essential (primary) hypertension,2018-03-09,active,TRUE
+COND-B83D5448,PAT-00068,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-04-09,active,TRUE
+COND-6B58AEA9,PAT-00069,E11.9,Type 2 diabetes mellitus without complications,2021-12-08,active,TRUE
+COND-253C866F,PAT-00070,I10,Essential (primary) hypertension,2023-12-09,active,TRUE
+COND-2918DCD1,PAT-00070,E78.5,"Hyperlipidemia, unspecified",2021-11-03,active,TRUE
+COND-34070CD2,PAT-00071,I10,Essential (primary) hypertension,2018-10-15,active,TRUE
+COND-5B3622D3,PAT-00074,I10,Essential (primary) hypertension,2018-02-01,active,TRUE
+COND-12A0ADAB,PAT-00075,E11.9,Type 2 diabetes mellitus without complications,2017-09-19,active,TRUE
+COND-248DBCE2,PAT-00075,I10,Essential (primary) hypertension,2017-05-15,active,TRUE
+COND-B6AFC0C7,PAT-00077,E11.9,Type 2 diabetes mellitus without complications,2022-08-01,active,TRUE
+COND-C8357CF3,PAT-00077,I10,Essential (primary) hypertension,2020-06-08,active,TRUE
+COND-E4903226,PAT-00077,E78.5,"Hyperlipidemia, unspecified",2023-05-29,active,TRUE
+COND-88D58561,PAT-00078,E11.9,Type 2 diabetes mellitus without complications,2019-05-24,active,TRUE
+COND-8A5A1AFB,PAT-00078,I10,Essential (primary) hypertension,2021-02-26,active,TRUE
+COND-05953279,PAT-00078,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-11-02,active,TRUE
+COND-545C1AA2,PAT-00080,I10,Essential (primary) hypertension,2017-05-24,active,TRUE
+COND-ACFD1AF5,PAT-00080,I25.10,Atherosclerotic heart disease,2019-11-30,active,TRUE
+COND-AE43D145,PAT-00081,E11.9,Type 2 diabetes mellitus without complications,2021-05-08,active,TRUE
+COND-C13EBE45,PAT-00081,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-24,active,TRUE
+COND-B5E8C4EE,PAT-00082,I10,Essential (primary) hypertension,2020-11-30,active,TRUE
+COND-F635ECF4,PAT-00082,E78.5,"Hyperlipidemia, unspecified",2023-08-16,active,TRUE
+COND-3C6296FD,PAT-00082,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-13,active,TRUE
+COND-8995463E,PAT-00083,E11.9,Type 2 diabetes mellitus without complications,2022-10-06,active,TRUE
+COND-5C945BA8,PAT-00083,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-03-02,active,TRUE
+COND-D5CD029A,PAT-00083,A90,Dengue fever,2022-11-30,resolved,TRUE
+COND-45926BFF,PAT-00083,I25.10,Atherosclerotic heart disease,2023-02-14,active,TRUE
+COND-0703F67D,PAT-00083,E78.5,"Hyperlipidemia, unspecified",2023-03-02,active,TRUE
+COND-950CCF4F,PAT-00084,E11.9,Type 2 diabetes mellitus without complications,2020-07-04,active,TRUE
+COND-0690CB1C,PAT-00084,E78.5,"Hyperlipidemia, unspecified",2021-08-23,active,TRUE
+COND-07AD309B,PAT-00085,I10,Essential (primary) hypertension,2021-12-22,active,TRUE
+COND-C5597C78,PAT-00085,I25.10,Atherosclerotic heart disease,2018-07-08,active,TRUE
+COND-A165C9F1,PAT-00085,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-08-27,active,TRUE
+COND-2CD2DFD9,PAT-00086,E11.9,Type 2 diabetes mellitus without complications,2023-06-30,active,TRUE
+COND-508CA01C,PAT-00086,I10,Essential (primary) hypertension,2020-03-01,active,TRUE
+COND-ED8129C1,PAT-00087,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-16,resolved,TRUE
+COND-58A195C4,PAT-00089,I10,Essential (primary) hypertension,2018-01-10,active,TRUE
+COND-2A6F1BC8,PAT-00089,E78.5,"Hyperlipidemia, unspecified",2021-12-12,active,TRUE
+COND-FBB9B261,PAT-00089,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-24,resolved,TRUE
+COND-5753D03A,PAT-00090,I10,Essential (primary) hypertension,2018-02-08,active,TRUE
+COND-72CF9421,PAT-00091,E11.9,Type 2 diabetes mellitus without complications,2023-03-01,active,TRUE
+COND-FA6F7C14,PAT-00091,E78.5,"Hyperlipidemia, unspecified",2021-10-01,active,TRUE
+COND-7E3F4348,PAT-00092,E11.9,Type 2 diabetes mellitus without complications,2022-05-17,active,TRUE
+COND-BDE8E173,PAT-00092,I10,Essential (primary) hypertension,2018-01-07,active,TRUE
+COND-837CA4E7,PAT-00092,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-05-23,active,TRUE
+COND-9C620FEE,PAT-00093,A90,Dengue fever,2024-01-19,active,TRUE
+COND-DE974A51,PAT-00094,E11.9,Type 2 diabetes mellitus without complications,2024-05-05,active,TRUE
+COND-D6002325,PAT-00094,I10,Essential (primary) hypertension,2024-01-12,active,TRUE
+COND-3ECF03D2,PAT-00094,A90,Dengue fever,2024-05-02,resolved,TRUE
+COND-D345E49B,PAT-00094,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-07-31,resolved,TRUE
+COND-028F57D3,PAT-00095,I10,Essential (primary) hypertension,2021-04-15,active,TRUE
+COND-1C3C1BD5,PAT-00096,N18.3,"Chronic kidney disease, stage 3",2018-11-07,active,TRUE
+COND-CCBA6063,PAT-00098,I10,Essential (primary) hypertension,2017-07-28,active,TRUE
+COND-663DDDA1,PAT-00098,I25.10,Atherosclerotic heart disease,2022-02-25,active,TRUE
+COND-340EE030,PAT-00098,E78.5,"Hyperlipidemia, unspecified",2024-03-16,active,TRUE
+COND-FFB9672A,PAT-00099,E11.9,Type 2 diabetes mellitus without complications,2023-01-21,active,TRUE
+COND-57E5A983,PAT-00099,I10,Essential (primary) hypertension,2018-02-08,active,TRUE
+COND-DF175951,PAT-00100,E11.9,Type 2 diabetes mellitus without complications,2021-08-14,active,TRUE
+COND-952E5808,PAT-00100,A90,Dengue fever,2023-07-07,active,TRUE
+COND-33CA46A7,PAT-00101,E11.9,Type 2 diabetes mellitus without complications,2020-03-29,active,TRUE
+COND-794C3BBD,PAT-00101,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-06-09,active,TRUE
+COND-7AC28571,PAT-00102,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-21,active,TRUE
+COND-3BDB1E51,PAT-00103,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-05-26,resolved,TRUE
+COND-1C361007,PAT-00103,N18.3,"Chronic kidney disease, stage 3",2023-12-08,active,TRUE
+COND-F8899EE0,PAT-00104,A90,Dengue fever,2024-04-12,active,TRUE
+COND-AEA32053,PAT-00105,E78.5,"Hyperlipidemia, unspecified",2018-03-09,active,TRUE
+COND-FDAAE786,PAT-00106,E11.9,Type 2 diabetes mellitus without complications,2019-04-20,active,TRUE
+COND-59F01A53,PAT-00109,I25.10,Atherosclerotic heart disease,2022-07-28,active,TRUE
+COND-95D41DC6,PAT-00109,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-08-21,resolved,TRUE
+COND-89DAF7CD,PAT-00110,I25.10,Atherosclerotic heart disease,2021-06-20,active,TRUE
+COND-149F6DCF,PAT-00112,E11.9,Type 2 diabetes mellitus without complications,2019-10-12,active,TRUE
+COND-E25DFAB1,PAT-00112,I10,Essential (primary) hypertension,2018-10-12,active,TRUE
+COND-3CDF748B,PAT-00114,E11.9,Type 2 diabetes mellitus without complications,2018-01-31,active,TRUE
+COND-1E37E8C7,PAT-00117,I10,Essential (primary) hypertension,2021-08-13,active,TRUE
+COND-A6C8CC50,PAT-00117,E78.5,"Hyperlipidemia, unspecified",2020-03-18,active,TRUE
+COND-1A4B2CFE,PAT-00118,I10,Essential (primary) hypertension,2023-03-03,active,TRUE
+COND-45CA8AE1,PAT-00119,I10,Essential (primary) hypertension,2018-04-14,active,TRUE
+COND-82AE91CF,PAT-00120,E11.9,Type 2 diabetes mellitus without complications,2021-04-19,active,TRUE
+COND-A90F20D9,PAT-00120,E78.5,"Hyperlipidemia, unspecified",2021-08-22,active,TRUE
+COND-4AD8DC3B,PAT-00120,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-05,active,TRUE
+COND-3C2DB5FC,PAT-00122,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-07-08,active,TRUE
+COND-7B2C7463,PAT-00122,E78.5,"Hyperlipidemia, unspecified",2022-07-05,active,TRUE
+COND-3AAACDBC,PAT-00123,I25.10,Atherosclerotic heart disease,2023-09-11,active,TRUE
+COND-7DD3CD4B,PAT-00124,E78.5,"Hyperlipidemia, unspecified",2024-01-27,active,TRUE
+COND-8A48A1C0,PAT-00124,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-07-16,active,TRUE
+COND-737F5733,PAT-00126,I10,Essential (primary) hypertension,2022-03-24,active,TRUE
+COND-9FFB3413,PAT-00126,E78.5,"Hyperlipidemia, unspecified",2018-07-10,active,TRUE
+COND-A2BF3D95,PAT-00127,I10,Essential (primary) hypertension,2017-04-28,active,TRUE
+COND-8086026D,PAT-00127,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-02-11,active,TRUE
+COND-CDD71D63,PAT-00132,E11.9,Type 2 diabetes mellitus without complications,2021-02-24,active,TRUE
+COND-57922698,PAT-00132,I10,Essential (primary) hypertension,2024-05-12,active,TRUE
+COND-85BB6239,PAT-00132,A90,Dengue fever,2022-10-05,resolved,TRUE
+COND-70B322E2,PAT-00133,I10,Essential (primary) hypertension,2019-08-17,active,TRUE
+COND-0166F135,PAT-00135,E11.9,Type 2 diabetes mellitus without complications,2018-08-10,active,TRUE
+COND-204D770B,PAT-00136,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-04-07,active,TRUE
+COND-02B72C38,PAT-00137,A90,Dengue fever,2023-11-29,resolved,TRUE
+COND-4BA8C2BB,PAT-00139,E11.9,Type 2 diabetes mellitus without complications,2020-12-11,active,TRUE
+COND-FBF9143A,PAT-00139,E78.5,"Hyperlipidemia, unspecified",2022-08-29,active,TRUE
+COND-CEE693DD,PAT-00140,I25.10,Atherosclerotic heart disease,2019-01-16,active,TRUE
+COND-BC95C873,PAT-00141,I10,Essential (primary) hypertension,2021-04-12,active,TRUE
+COND-15A73B36,PAT-00141,A90,Dengue fever,2023-06-05,resolved,TRUE
+COND-D4C66D4A,PAT-00141,E78.5,"Hyperlipidemia, unspecified",2021-11-23,active,TRUE
+COND-924A8937,PAT-00142,E11.9,Type 2 diabetes mellitus without complications,2024-03-04,active,TRUE
+COND-0D3935AC,PAT-00142,I10,Essential (primary) hypertension,2019-06-16,active,TRUE
+COND-0F01831F,PAT-00142,A90,Dengue fever,2024-03-05,active,TRUE
+COND-850101C5,PAT-00142,E78.5,"Hyperlipidemia, unspecified",2017-05-03,active,TRUE
+COND-8BB08838,PAT-00142,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-03-27,active,TRUE
+COND-28F9E8F0,PAT-00143,I10,Essential (primary) hypertension,2022-09-01,active,TRUE
+COND-B05C5159,PAT-00143,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-01-13,resolved,TRUE
+COND-325AC0BE,PAT-00145,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-04,active,TRUE
+COND-266E376B,PAT-00146,E11.9,Type 2 diabetes mellitus without complications,2019-09-28,active,TRUE
+COND-B5E37E6E,PAT-00146,E78.5,"Hyperlipidemia, unspecified",2023-06-05,active,TRUE
+COND-095305D5,PAT-00147,E11.9,Type 2 diabetes mellitus without complications,2021-10-23,active,TRUE
+COND-21C6F6D9,PAT-00147,I10,Essential (primary) hypertension,2019-03-05,active,TRUE
+COND-D1A7DC38,PAT-00148,I25.10,Atherosclerotic heart disease,2020-10-02,active,TRUE
+COND-0FD1C24E,PAT-00149,N18.3,"Chronic kidney disease, stage 3",2023-06-24,active,TRUE
+COND-ECAB437A,PAT-00150,N18.3,"Chronic kidney disease, stage 3",2023-10-07,active,TRUE
+COND-18609CB9,PAT-00151,I25.10,Atherosclerotic heart disease,2022-12-10,active,TRUE
+COND-75896878,PAT-00152,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-08-01,active,TRUE
+COND-ED42D4B6,PAT-00154,E11.9,Type 2 diabetes mellitus without complications,2021-02-08,active,TRUE
+COND-F4A88080,PAT-00154,I10,Essential (primary) hypertension,2022-06-25,active,TRUE
+COND-5618A50C,PAT-00154,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-09-02,active,TRUE
+COND-1ACC18E1,PAT-00155,I10,Essential (primary) hypertension,2019-04-13,active,TRUE
+COND-B3281301,PAT-00156,E78.5,"Hyperlipidemia, unspecified",2016-07-07,active,TRUE
+COND-7A3582CA,PAT-00157,E78.5,"Hyperlipidemia, unspecified",2023-10-31,active,TRUE
+COND-23D1972B,PAT-00157,N18.3,"Chronic kidney disease, stage 3",2023-09-08,active,TRUE
+COND-94747125,PAT-00160,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-04-16,active,TRUE
+COND-53F27E60,PAT-00160,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-11,active,TRUE
+COND-AAECF932,PAT-00161,E11.9,Type 2 diabetes mellitus without complications,2020-12-12,active,TRUE
+COND-805A0D71,PAT-00162,I25.10,Atherosclerotic heart disease,2022-08-30,active,TRUE
+COND-9E9E5A05,PAT-00164,E11.9,Type 2 diabetes mellitus without complications,2023-11-11,active,TRUE
+COND-26756053,PAT-00165,E78.5,"Hyperlipidemia, unspecified",2024-01-31,active,TRUE
+COND-37841C38,PAT-00166,I10,Essential (primary) hypertension,2017-12-07,active,TRUE
+COND-0BD2B70B,PAT-00166,A90,Dengue fever,2022-11-12,active,TRUE
+COND-62CBAAE7,PAT-00167,A90,Dengue fever,2024-04-01,resolved,TRUE
+COND-E122CAE3,PAT-00167,E78.5,"Hyperlipidemia, unspecified",2024-05-25,active,TRUE
+COND-73E6DFE6,PAT-00167,N18.3,"Chronic kidney disease, stage 3",2018-06-19,active,TRUE
+COND-13A29047,PAT-00168,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-02-04,active,TRUE
+COND-612FD457,PAT-00168,A15.0,Tuberculosis of lung,2022-03-16,active,TRUE
+COND-F0812EE2,PAT-00168,E78.5,"Hyperlipidemia, unspecified",2023-02-13,active,TRUE
+COND-4D2C2A51,PAT-00169,I10,Essential (primary) hypertension,2024-06-22,active,TRUE
+COND-2B271654,PAT-00171,E78.5,"Hyperlipidemia, unspecified",2022-03-29,active,TRUE
+COND-E7A819F4,PAT-00173,E11.9,Type 2 diabetes mellitus without complications,2016-11-07,active,TRUE
+COND-FC70BD61,PAT-00174,E78.5,"Hyperlipidemia, unspecified",2022-04-16,active,TRUE
+COND-0E8A9084,PAT-00176,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-04,resolved,TRUE
+COND-678AC167,PAT-00177,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-07-12,active,TRUE
+COND-D32F03FF,PAT-00177,I25.10,Atherosclerotic heart disease,2020-02-03,active,TRUE
+COND-10690075,PAT-00177,N18.3,"Chronic kidney disease, stage 3",2023-08-25,active,TRUE
+COND-59704D07,PAT-00178,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-01-21,active,TRUE
+COND-E63AC7F1,PAT-00178,E78.5,"Hyperlipidemia, unspecified",2018-05-15,active,TRUE
+COND-7ADE9E96,PAT-00179,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-09-16,active,TRUE
+COND-5308E59E,PAT-00180,E78.5,"Hyperlipidemia, unspecified",2023-11-08,active,TRUE
+COND-39C011CB,PAT-00181,N18.3,"Chronic kidney disease, stage 3",2017-12-30,active,TRUE
+COND-C76469A0,PAT-00182,I10,Essential (primary) hypertension,2021-08-23,active,TRUE
+COND-033C323B,PAT-00183,A15.0,Tuberculosis of lung,2023-04-30,resolved,TRUE
+COND-5675F55A,PAT-00183,A90,Dengue fever,2023-02-27,active,TRUE
+COND-42E277B2,PAT-00184,E11.9,Type 2 diabetes mellitus without complications,2022-12-12,active,TRUE
+COND-BB2D6D87,PAT-00184,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-03-29,resolved,TRUE
+COND-82CB6FAD,PAT-00185,I10,Essential (primary) hypertension,2023-04-15,active,TRUE
+COND-21C768CD,PAT-00185,E78.5,"Hyperlipidemia, unspecified",2024-03-02,active,TRUE
+COND-0418A800,PAT-00186,E78.5,"Hyperlipidemia, unspecified",2024-01-16,active,TRUE
+COND-6B8B8B75,PAT-00187,E11.9,Type 2 diabetes mellitus without complications,2016-05-08,active,TRUE
+COND-2E176304,PAT-00188,I25.10,Atherosclerotic heart disease,2020-08-08,active,TRUE
+COND-524C5CA2,PAT-00189,E78.5,"Hyperlipidemia, unspecified",2021-06-21,active,TRUE
+COND-551ECCFE,PAT-00191,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-18,resolved,TRUE
+COND-DD003D21,PAT-00192,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-07-20,active,TRUE
+COND-D76743F9,PAT-00192,E78.5,"Hyperlipidemia, unspecified",2021-05-08,active,TRUE
+COND-521CCC88,PAT-00192,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-12-07,resolved,TRUE
+COND-B99191C7,PAT-00193,A15.0,Tuberculosis of lung,2023-10-05,resolved,TRUE
+COND-2DE96BBB,PAT-00194,I10,Essential (primary) hypertension,2023-12-31,active,TRUE
+COND-32807307,PAT-00194,I25.10,Atherosclerotic heart disease,2023-10-16,active,TRUE
+COND-5B800D0E,PAT-00194,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-22,resolved,TRUE
+COND-5DEBD3A3,PAT-00195,A90,Dengue fever,2023-05-04,active,TRUE
+COND-82CFA69C,PAT-00196,I10,Essential (primary) hypertension,2022-11-08,active,TRUE
+COND-633CD9B4,PAT-00196,E78.5,"Hyperlipidemia, unspecified",2023-07-22,active,TRUE
+COND-8E93AF72,PAT-00197,I10,Essential (primary) hypertension,2021-06-05,active,TRUE
+COND-CCDB5E6E,PAT-00197,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-04-22,active,TRUE
+COND-E84A1525,PAT-00197,N18.3,"Chronic kidney disease, stage 3",2016-10-08,active,TRUE
+COND-26A1D863,PAT-00198,A15.0,Tuberculosis of lung,2023-03-04,active,TRUE
+COND-014429C3,PAT-00198,N18.3,"Chronic kidney disease, stage 3",2016-10-10,active,TRUE
+COND-1E093760,PAT-00200,E11.9,Type 2 diabetes mellitus without complications,2024-03-26,active,TRUE
+COND-B2CBBCAE,PAT-00200,I10,Essential (primary) hypertension,2023-04-08,active,TRUE
+COND-B0D19A42,PAT-00200,A15.0,Tuberculosis of lung,2022-07-07,resolved,TRUE
+COND-FB801990,PAT-00200,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-02-13,active,TRUE
+COND-4FC93BE5,PAT-00201,A15.0,Tuberculosis of lung,2022-04-01,active,TRUE
+COND-9FDFE061,PAT-00201,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-06-17,active,TRUE
+COND-DCB93587,PAT-00201,N18.3,"Chronic kidney disease, stage 3",2019-01-14,active,TRUE
+COND-5B977DE6,PAT-00202,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-08-15,resolved,TRUE
+COND-427DB039,PAT-00204,E11.9,Type 2 diabetes mellitus without complications,2023-01-17,active,TRUE
+COND-8C2F786B,PAT-00204,I10,Essential (primary) hypertension,2023-04-21,active,TRUE
+COND-786D20BA,PAT-00205,E78.5,"Hyperlipidemia, unspecified",2024-02-20,active,TRUE
+COND-A096DC25,PAT-00206,A15.0,Tuberculosis of lung,2022-05-20,resolved,TRUE
+COND-AAAA5567,PAT-00207,N18.3,"Chronic kidney disease, stage 3",2024-05-16,active,TRUE
+COND-84CBF897,PAT-00208,N18.3,"Chronic kidney disease, stage 3",2022-08-05,active,TRUE
+COND-02FF7CD2,PAT-00209,A15.0,Tuberculosis of lung,2022-12-24,active,TRUE
+COND-2ED0E07B,PAT-00209,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-07-17,resolved,TRUE
+COND-DDFDEDAE,PAT-00210,E11.9,Type 2 diabetes mellitus without complications,2018-07-30,active,TRUE
+COND-7295FDB7,PAT-00211,I10,Essential (primary) hypertension,2018-07-01,active,TRUE
+COND-33FEF98D,PAT-00213,E11.9,Type 2 diabetes mellitus without complications,2019-06-14,active,TRUE
+COND-EAE0A8CD,PAT-00213,E78.5,"Hyperlipidemia, unspecified",2020-05-13,active,TRUE
+COND-ECB98086,PAT-00214,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-11-04,active,TRUE
+COND-82969DDC,PAT-00216,E11.9,Type 2 diabetes mellitus without complications,2023-10-19,active,TRUE
+COND-912CB406,PAT-00216,E78.5,"Hyperlipidemia, unspecified",2022-12-21,active,TRUE
+COND-C1ADDBAE,PAT-00217,E11.9,Type 2 diabetes mellitus without complications,2021-01-19,active,TRUE
+COND-2700AEAA,PAT-00217,N18.3,"Chronic kidney disease, stage 3",2020-09-05,active,TRUE
+COND-5F6F7B7E,PAT-00218,I10,Essential (primary) hypertension,2022-07-28,active,TRUE
+COND-3E5F04C7,PAT-00218,N18.3,"Chronic kidney disease, stage 3",2019-12-06,active,TRUE
+COND-839F2232,PAT-00219,I10,Essential (primary) hypertension,2018-03-11,active,TRUE
+COND-6840CC64,PAT-00219,A90,Dengue fever,2022-12-01,resolved,TRUE
+COND-9ADB136F,PAT-00219,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-04-07,active,TRUE
+COND-7C784A94,PAT-00220,I10,Essential (primary) hypertension,2021-04-30,active,TRUE
+COND-E8ACDFC6,PAT-00220,I25.10,Atherosclerotic heart disease,2023-02-22,active,TRUE
+COND-49D3579A,PAT-00221,I10,Essential (primary) hypertension,2017-04-22,active,TRUE
+COND-85A67E59,PAT-00223,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-08-25,resolved,TRUE
+COND-F79AD498,PAT-00224,E11.9,Type 2 diabetes mellitus without complications,2017-04-19,active,TRUE
+COND-BF546195,PAT-00225,I25.10,Atherosclerotic heart disease,2023-10-15,active,TRUE
+COND-1756CA5E,PAT-00226,I10,Essential (primary) hypertension,2023-04-12,active,TRUE
+COND-EFB4288C,PAT-00226,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-04-10,resolved,TRUE
+COND-51428895,PAT-00228,I10,Essential (primary) hypertension,2023-10-27,active,TRUE
+COND-2059B613,PAT-00230,I10,Essential (primary) hypertension,2022-06-17,active,TRUE
+COND-80D172D1,PAT-00232,I10,Essential (primary) hypertension,2021-04-15,active,TRUE
+COND-D4DC3683,PAT-00233,I10,Essential (primary) hypertension,2023-05-15,active,TRUE
+COND-2F1A74CC,PAT-00233,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-01-29,active,TRUE
+COND-AD910398,PAT-00234,E11.9,Type 2 diabetes mellitus without complications,2018-09-12,active,TRUE
+COND-1EFD0491,PAT-00234,I10,Essential (primary) hypertension,2023-08-10,active,TRUE
+COND-83E709B6,PAT-00234,E78.5,"Hyperlipidemia, unspecified",2020-08-11,active,TRUE
+COND-CE4BD88C,PAT-00234,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-02-01,active,TRUE
+COND-F5D58BA7,PAT-00235,E78.5,"Hyperlipidemia, unspecified",2023-08-04,active,TRUE
+COND-3FFBED3D,PAT-00236,E11.9,Type 2 diabetes mellitus without complications,2019-09-22,active,TRUE
+COND-B293E23D,PAT-00236,I10,Essential (primary) hypertension,2019-10-09,active,TRUE
+COND-A78B5CD3,PAT-00236,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-05,active,TRUE
+COND-3ECD5D8E,PAT-00237,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-08-19,active,TRUE
+COND-8E2B402C,PAT-00238,I25.10,Atherosclerotic heart disease,2020-01-29,active,TRUE
+COND-627C0A10,PAT-00239,I10,Essential (primary) hypertension,2022-06-19,active,TRUE
+COND-50993B6D,PAT-00240,E11.9,Type 2 diabetes mellitus without complications,2022-10-09,active,TRUE
+COND-8D027868,PAT-00240,E78.5,"Hyperlipidemia, unspecified",2023-10-31,active,TRUE
+COND-AE80E41C,PAT-00242,I10,Essential (primary) hypertension,2022-10-12,active,TRUE
+COND-D0A29695,PAT-00243,E11.9,Type 2 diabetes mellitus without complications,2023-03-26,active,TRUE
+COND-8994838D,PAT-00243,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-09,active,TRUE
+COND-284C8FE4,PAT-00244,E78.5,"Hyperlipidemia, unspecified",2019-11-30,active,TRUE
+COND-432B370D,PAT-00245,I10,Essential (primary) hypertension,2022-04-11,active,TRUE
+COND-8C462478,PAT-00245,A90,Dengue fever,2023-01-07,resolved,TRUE
+COND-736E0364,PAT-00245,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-06-02,active,TRUE
+COND-09C0D187,PAT-00246,E11.9,Type 2 diabetes mellitus without complications,2021-11-26,active,TRUE
+COND-6D9E48EF,PAT-00246,I10,Essential (primary) hypertension,2023-06-13,active,TRUE
+COND-238FA0E6,PAT-00247,E78.5,"Hyperlipidemia, unspecified",2020-04-08,active,TRUE
+COND-0C252D6E,PAT-00248,E11.9,Type 2 diabetes mellitus without complications,2024-03-22,active,TRUE
+COND-BCEA0225,PAT-00248,I10,Essential (primary) hypertension,2024-06-26,active,TRUE
+COND-8D421480,PAT-00248,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-08-15,active,TRUE
+COND-732B4E8E,PAT-00249,I10,Essential (primary) hypertension,2020-04-25,active,TRUE
+COND-39BECACD,PAT-00250,I25.10,Atherosclerotic heart disease,2020-12-18,active,TRUE
+COND-8EB06A61,PAT-00251,E11.9,Type 2 diabetes mellitus without complications,2022-06-17,active,TRUE
+COND-A525B647,PAT-00251,E78.5,"Hyperlipidemia, unspecified",2019-06-19,active,TRUE
+COND-244FC81F,PAT-00252,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-03,active,TRUE
+COND-0A40BF49,PAT-00253,E11.9,Type 2 diabetes mellitus without complications,2017-04-09,active,TRUE
+COND-9934BEE3,PAT-00253,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-07-23,active,TRUE
+COND-C66536F4,PAT-00254,E11.9,Type 2 diabetes mellitus without complications,2020-06-23,active,TRUE
+COND-7A66FA46,PAT-00255,I10,Essential (primary) hypertension,2023-06-07,active,TRUE
+COND-4A447E0E,PAT-00255,E78.5,"Hyperlipidemia, unspecified",2020-08-11,active,TRUE
+COND-033CC6E9,PAT-00256,I10,Essential (primary) hypertension,2023-02-13,active,TRUE
+COND-D48B9FB9,PAT-00257,E11.9,Type 2 diabetes mellitus without complications,2020-05-15,active,TRUE
+COND-99B9B50B,PAT-00257,I10,Essential (primary) hypertension,2021-02-06,active,TRUE
+COND-975DA8B0,PAT-00258,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-18,resolved,TRUE
+COND-C3B6E721,PAT-00259,E11.9,Type 2 diabetes mellitus without complications,2022-12-21,active,TRUE
+COND-9FFA8246,PAT-00259,I10,Essential (primary) hypertension,2019-01-24,active,TRUE
+COND-0203F1CB,PAT-00259,I25.10,Atherosclerotic heart disease,2018-08-31,active,TRUE
+COND-B6A77883,PAT-00259,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-02-15,active,TRUE
+COND-F159304D,PAT-00260,I25.10,Atherosclerotic heart disease,2021-01-11,active,TRUE
+COND-EE53946E,PAT-00261,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-05-13,active,TRUE
+COND-F46E3187,PAT-00261,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-09-16,active,TRUE
+COND-F6705761,PAT-00263,I10,Essential (primary) hypertension,2021-06-07,active,TRUE
+COND-60BBFCB7,PAT-00263,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-07-11,active,TRUE
+COND-54B80188,PAT-00263,I25.10,Atherosclerotic heart disease,2022-02-25,active,TRUE
+COND-083CA4C7,PAT-00264,E11.9,Type 2 diabetes mellitus without complications,2019-02-25,active,TRUE
+COND-F44DD69A,PAT-00264,I10,Essential (primary) hypertension,2021-12-14,active,TRUE
+COND-DDF4612C,PAT-00264,A90,Dengue fever,2024-05-28,active,TRUE
+COND-7AA15A7C,PAT-00264,E78.5,"Hyperlipidemia, unspecified",2023-01-27,active,TRUE
+COND-78BBDC77,PAT-00265,E11.9,Type 2 diabetes mellitus without complications,2022-12-14,active,TRUE
+COND-008C0A2C,PAT-00265,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-01-09,active,TRUE
+COND-B4C5C899,PAT-00265,E78.5,"Hyperlipidemia, unspecified",2022-03-19,active,TRUE
+COND-C31704FF,PAT-00265,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-04-18,active,TRUE
+COND-8F4EC19B,PAT-00265,N18.3,"Chronic kidney disease, stage 3",2021-04-25,active,TRUE
+COND-318B5BF9,PAT-00266,I10,Essential (primary) hypertension,2019-11-09,active,TRUE
+COND-C87626A3,PAT-00266,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-11-23,active,TRUE
+COND-EEF77EA6,PAT-00266,A90,Dengue fever,2023-06-16,resolved,TRUE
+COND-8CBCB813,PAT-00267,I10,Essential (primary) hypertension,2023-09-30,active,TRUE
+COND-27C20CED,PAT-00267,A90,Dengue fever,2022-12-12,active,TRUE
+COND-35CAF590,PAT-00268,I10,Essential (primary) hypertension,2020-02-25,active,TRUE
+COND-3A8C9589,PAT-00268,A90,Dengue fever,2024-01-22,resolved,TRUE
+COND-DB98E68F,PAT-00269,E11.9,Type 2 diabetes mellitus without complications,2023-04-06,active,TRUE
+COND-C1BE7FE9,PAT-00269,I10,Essential (primary) hypertension,2023-03-03,active,TRUE
+COND-628CF4DB,PAT-00269,N18.3,"Chronic kidney disease, stage 3",2022-06-23,active,TRUE
+COND-32F26F64,PAT-00271,E11.9,Type 2 diabetes mellitus without complications,2021-04-29,active,TRUE
+COND-FC86C4AA,PAT-00272,E11.9,Type 2 diabetes mellitus without complications,2020-06-17,active,TRUE
+COND-33B22794,PAT-00272,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-11-11,active,TRUE
+COND-F113DF21,PAT-00272,I25.10,Atherosclerotic heart disease,2023-04-17,active,TRUE
+COND-58EF2B04,PAT-00272,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-02-24,resolved,TRUE
+COND-ABBEC510,PAT-00274,I10,Essential (primary) hypertension,2020-07-16,active,TRUE
+COND-1285D0A0,PAT-00275,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-01-19,resolved,TRUE
+COND-694D5917,PAT-00275,N18.3,"Chronic kidney disease, stage 3",2021-03-18,active,TRUE
+COND-784FBB37,PAT-00277,E78.5,"Hyperlipidemia, unspecified",2018-09-26,active,TRUE
+COND-109D25B7,PAT-00278,E11.9,Type 2 diabetes mellitus without complications,2022-01-12,active,TRUE
+COND-2ACC25EA,PAT-00278,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-06-04,active,TRUE
+COND-DD47B9F4,PAT-00278,A15.0,Tuberculosis of lung,2022-09-30,active,TRUE
+COND-77A4D3B1,PAT-00278,I25.10,Atherosclerotic heart disease,2023-04-15,active,TRUE
+COND-33371A09,PAT-00279,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-07-20,resolved,TRUE
+COND-E00DA920,PAT-00280,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-12-12,active,TRUE
+COND-DBDFAB0D,PAT-00281,E78.5,"Hyperlipidemia, unspecified",2019-07-16,active,TRUE
+COND-F572B2DC,PAT-00284,A15.0,Tuberculosis of lung,2022-09-28,resolved,TRUE
+COND-458A79FC,PAT-00284,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-02-10,resolved,TRUE
+COND-236B9180,PAT-00286,E11.9,Type 2 diabetes mellitus without complications,2018-12-20,active,TRUE
+COND-96BE2B33,PAT-00286,A15.0,Tuberculosis of lung,2024-04-21,active,TRUE
+COND-3D30488A,PAT-00287,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-09-07,resolved,TRUE
+COND-3F3E2B49,PAT-00288,J44.9,"Chronic obstructive pulmonary disease, unspecified",2016-10-09,active,TRUE
+COND-29C72688,PAT-00289,E11.9,Type 2 diabetes mellitus without complications,2021-03-28,active,TRUE
+COND-585C7672,PAT-00289,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-01-15,resolved,TRUE
+COND-608ED218,PAT-00290,E11.9,Type 2 diabetes mellitus without complications,2022-11-10,active,TRUE
+COND-BDBCDB5A,PAT-00290,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-09-20,active,TRUE
+COND-4C5F1C46,PAT-00291,E11.9,Type 2 diabetes mellitus without complications,2022-07-16,active,TRUE
+COND-B96C317B,PAT-00291,I10,Essential (primary) hypertension,2019-03-10,active,TRUE
+COND-50679C41,PAT-00291,E78.5,"Hyperlipidemia, unspecified",2018-02-01,active,TRUE
+COND-DDA0F66D,PAT-00291,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-07-10,resolved,TRUE
+COND-22E9BF3A,PAT-00292,I10,Essential (primary) hypertension,2023-03-18,active,TRUE
+COND-0AB2368A,PAT-00292,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-12-26,active,TRUE
+COND-81F9856A,PAT-00292,A90,Dengue fever,2024-05-16,resolved,TRUE
+COND-41C6588D,PAT-00293,I10,Essential (primary) hypertension,2020-01-04,active,TRUE
+COND-387C60BE,PAT-00294,E78.5,"Hyperlipidemia, unspecified",2023-10-21,active,TRUE
+COND-F1932DD7,PAT-00294,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-09-30,active,TRUE
+COND-1CB47659,PAT-00295,E11.9,Type 2 diabetes mellitus without complications,2019-07-25,active,TRUE
+COND-65012E28,PAT-00295,I10,Essential (primary) hypertension,2021-06-02,active,TRUE
+COND-CAD5395F,PAT-00295,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-02-28,active,TRUE
+COND-27B31428,PAT-00295,A15.0,Tuberculosis of lung,2023-12-16,active,TRUE
+COND-361C58C4,PAT-00296,I10,Essential (primary) hypertension,2019-12-07,active,TRUE
+COND-B3BF0D32,PAT-00296,E78.5,"Hyperlipidemia, unspecified",2017-07-17,active,TRUE
+COND-5D1F35C7,PAT-00297,E11.9,Type 2 diabetes mellitus without complications,2020-08-11,active,TRUE
+COND-DA0F63C1,PAT-00297,I10,Essential (primary) hypertension,2016-04-02,active,TRUE
+COND-F7C94841,PAT-00297,A15.0,Tuberculosis of lung,2022-11-16,active,TRUE
+COND-530DD727,PAT-00298,E11.9,Type 2 diabetes mellitus without complications,2022-10-08,active,TRUE
+COND-CB2EFAFC,PAT-00298,I10,Essential (primary) hypertension,2020-03-20,active,TRUE
+COND-6D897277,PAT-00298,E78.5,"Hyperlipidemia, unspecified",2022-02-17,active,TRUE
+COND-1A2EF868,PAT-00298,N18.3,"Chronic kidney disease, stage 3",2023-01-18,active,TRUE
+COND-8D59A4E0,PAT-00299,I25.10,Atherosclerotic heart disease,2017-07-27,active,TRUE
+COND-66DF9B7D,PAT-00299,E78.5,"Hyperlipidemia, unspecified",2016-07-20,active,TRUE
+COND-59996C72,PAT-00300,I10,Essential (primary) hypertension,2020-09-26,active,TRUE
+COND-28480487,PAT-00300,I25.10,Atherosclerotic heart disease,2017-11-21,active,TRUE
+COND-AEF4FAB9,PAT-00301,E11.9,Type 2 diabetes mellitus without complications,2019-03-04,active,TRUE
+COND-0ACEC891,PAT-00301,I10,Essential (primary) hypertension,2022-07-22,active,TRUE
+COND-3AAF2C47,PAT-00301,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-02-21,active,TRUE
+COND-46E2B6F4,PAT-00301,A90,Dengue fever,2024-05-16,resolved,TRUE
+COND-B7895EAF,PAT-00302,I10,Essential (primary) hypertension,2017-11-08,active,TRUE
+COND-5C5C8E5B,PAT-00302,E78.5,"Hyperlipidemia, unspecified",2018-12-02,active,TRUE
+COND-F7BD763F,PAT-00302,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-06-29,resolved,TRUE
+COND-2E9DC47D,PAT-00302,N18.3,"Chronic kidney disease, stage 3",2018-11-03,active,TRUE
+COND-7C868591,PAT-00303,A15.0,Tuberculosis of lung,2023-07-18,resolved,TRUE
+COND-D82F8F09,PAT-00304,E11.9,Type 2 diabetes mellitus without complications,2024-03-27,active,TRUE
+COND-DBF022E6,PAT-00305,E78.5,"Hyperlipidemia, unspecified",2017-04-28,active,TRUE
+COND-9880620D,PAT-00306,I10,Essential (primary) hypertension,2022-12-02,active,TRUE
+COND-32B4F41C,PAT-00309,A90,Dengue fever,2023-01-28,active,TRUE
+COND-3DCD7314,PAT-00309,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-01-24,active,TRUE
+COND-6BA6C6F0,PAT-00310,E11.9,Type 2 diabetes mellitus without complications,2024-02-12,active,TRUE
+COND-097BEEF7,PAT-00310,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-02,resolved,TRUE
+COND-95ACAAAE,PAT-00311,I10,Essential (primary) hypertension,2022-02-22,active,TRUE
+COND-88BE4826,PAT-00311,A90,Dengue fever,2023-11-16,active,TRUE
+COND-DA1F3D10,PAT-00311,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-22,active,TRUE
+COND-9E019BD1,PAT-00313,E78.5,"Hyperlipidemia, unspecified",2021-03-06,active,TRUE
+COND-B5407996,PAT-00314,E78.5,"Hyperlipidemia, unspecified",2017-04-20,active,TRUE
+COND-6FDBC6B7,PAT-00315,I25.10,Atherosclerotic heart disease,2023-06-10,active,TRUE
+COND-7224487F,PAT-00316,E11.9,Type 2 diabetes mellitus without complications,2019-10-30,active,TRUE
+COND-49DCF8A7,PAT-00317,E11.9,Type 2 diabetes mellitus without complications,2023-12-27,active,TRUE
+COND-5476F61A,PAT-00317,I10,Essential (primary) hypertension,2024-03-04,active,TRUE
+COND-F3DC3974,PAT-00317,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-02-05,active,TRUE
+COND-236B6EA0,PAT-00317,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-30,resolved,TRUE
+COND-7973482F,PAT-00320,I10,Essential (primary) hypertension,2020-10-03,active,TRUE
+COND-999CE86E,PAT-00321,I10,Essential (primary) hypertension,2021-10-06,active,TRUE
+COND-5EA7A66F,PAT-00323,E11.9,Type 2 diabetes mellitus without complications,2022-04-28,active,TRUE
+COND-2C7B998C,PAT-00323,I10,Essential (primary) hypertension,2021-01-18,active,TRUE
+COND-B77305C5,PAT-00325,E11.9,Type 2 diabetes mellitus without complications,2019-01-03,active,TRUE
+COND-C4D93C58,PAT-00325,E78.5,"Hyperlipidemia, unspecified",2017-05-20,active,TRUE
+COND-12F70BB5,PAT-00326,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-03-06,active,TRUE
+COND-FC3B204F,PAT-00326,E78.5,"Hyperlipidemia, unspecified",2021-06-16,active,TRUE
+COND-813D2CEB,PAT-00326,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-22,active,TRUE
+COND-52702836,PAT-00327,E11.9,Type 2 diabetes mellitus without complications,2018-12-26,active,TRUE
+COND-58E28BD0,PAT-00327,I10,Essential (primary) hypertension,2021-09-26,active,TRUE
+COND-81ABD85A,PAT-00327,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-06-09,active,TRUE
+COND-0A26A70B,PAT-00327,E78.5,"Hyperlipidemia, unspecified",2020-09-20,active,TRUE
+COND-2B5310BD,PAT-00328,E11.9,Type 2 diabetes mellitus without complications,2017-04-04,active,TRUE
+COND-AC621EF5,PAT-00328,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-05-02,resolved,TRUE
+COND-10008269,PAT-00328,N18.3,"Chronic kidney disease, stage 3",2016-12-03,active,TRUE
+COND-C0853FAD,PAT-00329,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-02-07,active,TRUE
+COND-0F933F23,PAT-00330,I25.10,Atherosclerotic heart disease,2020-09-16,active,TRUE
+COND-9E59A2CE,PAT-00330,E78.5,"Hyperlipidemia, unspecified",2017-04-15,active,TRUE
+COND-26267002,PAT-00331,I25.10,Atherosclerotic heart disease,2022-08-31,active,TRUE
+COND-4DAC1D01,PAT-00332,E11.9,Type 2 diabetes mellitus without complications,2023-11-23,active,TRUE
+COND-6E1B2178,PAT-00332,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-17,resolved,TRUE
+COND-CAE31691,PAT-00333,E11.9,Type 2 diabetes mellitus without complications,2023-12-27,active,TRUE
+COND-8700965A,PAT-00334,A15.0,Tuberculosis of lung,2022-02-01,active,TRUE
+COND-B9D2470E,PAT-00334,I25.10,Atherosclerotic heart disease,2019-05-31,active,TRUE
+COND-8E72DB00,PAT-00335,I10,Essential (primary) hypertension,2018-07-02,active,TRUE
+COND-4F58C777,PAT-00336,E11.9,Type 2 diabetes mellitus without complications,2023-07-25,active,TRUE
+COND-8C1F498D,PAT-00336,I10,Essential (primary) hypertension,2022-07-20,active,TRUE
+COND-3C299DE6,PAT-00336,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-09-06,active,TRUE
+COND-24E94335,PAT-00336,I25.10,Atherosclerotic heart disease,2022-04-05,active,TRUE
+COND-9AB37BD9,PAT-00338,E11.9,Type 2 diabetes mellitus without complications,2018-05-06,active,TRUE
+COND-E9C61910,PAT-00338,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-06-21,active,TRUE
+COND-7128B84C,PAT-00339,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-05-06,active,TRUE
+COND-62E09940,PAT-00341,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-06-21,active,TRUE
+COND-0547CFF9,PAT-00341,A15.0,Tuberculosis of lung,2022-07-25,active,TRUE
+COND-2EA51666,PAT-00341,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-10,active,TRUE
+COND-9CD24C48,PAT-00342,I10,Essential (primary) hypertension,2024-05-02,active,TRUE
+COND-D7AC9C56,PAT-00342,A90,Dengue fever,2023-08-18,resolved,TRUE
+COND-0FE57305,PAT-00343,E11.9,Type 2 diabetes mellitus without complications,2023-05-23,active,TRUE
+COND-BACF0BB5,PAT-00343,I25.10,Atherosclerotic heart disease,2020-11-06,active,TRUE
+COND-13A40CC2,PAT-00343,E78.5,"Hyperlipidemia, unspecified",2017-07-16,active,TRUE
+COND-2C6C1C09,PAT-00343,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-03-20,resolved,TRUE
+COND-DD388EB0,PAT-00345,I10,Essential (primary) hypertension,2024-05-07,active,TRUE
+COND-FA4EFC79,PAT-00347,I10,Essential (primary) hypertension,2021-08-18,active,TRUE
+COND-B565D536,PAT-00347,A90,Dengue fever,2023-06-08,resolved,TRUE
+COND-49D5D144,PAT-00347,I25.10,Atherosclerotic heart disease,2016-12-25,active,TRUE
+COND-77CCECED,PAT-00348,E11.9,Type 2 diabetes mellitus without complications,2022-10-31,active,TRUE
+COND-B3A8E24D,PAT-00349,E11.9,Type 2 diabetes mellitus without complications,2020-10-27,active,TRUE
+COND-573C4F14,PAT-00349,I10,Essential (primary) hypertension,2018-07-20,active,TRUE
+COND-8E24E20C,PAT-00349,A90,Dengue fever,2024-05-22,active,TRUE
+COND-CF998E09,PAT-00350,E11.9,Type 2 diabetes mellitus without complications,2022-03-25,active,TRUE
+COND-F3BAB0B2,PAT-00350,A15.0,Tuberculosis of lung,2023-03-14,active,TRUE
+COND-E92BDAC9,PAT-00351,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-11-30,active,TRUE
+COND-6B18561C,PAT-00351,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-03-22,active,TRUE
+COND-BB4B94E3,PAT-00353,I10,Essential (primary) hypertension,2022-10-17,active,TRUE
+COND-12FFEBA5,PAT-00353,E78.5,"Hyperlipidemia, unspecified",2021-05-15,active,TRUE
+COND-705721A2,PAT-00354,E11.9,Type 2 diabetes mellitus without complications,2023-05-12,active,TRUE
+COND-9BCCAB20,PAT-00354,N18.3,"Chronic kidney disease, stage 3",2017-09-17,active,TRUE
+COND-CB0A57D4,PAT-00356,E11.9,Type 2 diabetes mellitus without complications,2021-08-25,active,TRUE
+COND-E2B6FE9C,PAT-00356,I10,Essential (primary) hypertension,2021-11-10,active,TRUE
+COND-A5427CB2,PAT-00357,E11.9,Type 2 diabetes mellitus without complications,2022-04-01,active,TRUE
+COND-F3BC5A9F,PAT-00360,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-07-17,active,TRUE
+COND-5A8218D9,PAT-00360,E78.5,"Hyperlipidemia, unspecified",2019-05-27,active,TRUE
+COND-A23ECD54,PAT-00361,E11.9,Type 2 diabetes mellitus without complications,2023-02-10,active,TRUE
+COND-72B34518,PAT-00362,I10,Essential (primary) hypertension,2019-12-12,active,TRUE
+COND-4E0C7538,PAT-00363,E11.9,Type 2 diabetes mellitus without complications,2021-09-30,active,TRUE
+COND-27D526D5,PAT-00363,E78.5,"Hyperlipidemia, unspecified",2020-08-15,active,TRUE
+COND-2B51E72E,PAT-00364,I25.10,Atherosclerotic heart disease,2024-02-11,active,TRUE
+COND-C2240664,PAT-00365,I25.10,Atherosclerotic heart disease,2018-05-25,active,TRUE
+COND-30E981B5,PAT-00365,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-12-18,active,TRUE
+COND-D4A2E831,PAT-00367,N18.3,"Chronic kidney disease, stage 3",2023-10-05,active,TRUE
+COND-A0AEF358,PAT-00368,I10,Essential (primary) hypertension,2021-06-02,active,TRUE
+COND-177AE3CF,PAT-00368,E78.5,"Hyperlipidemia, unspecified",2021-08-10,active,TRUE
+COND-BC3A9D44,PAT-00369,A90,Dengue fever,2022-02-01,active,TRUE
+COND-3F1F07BA,PAT-00370,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-03-26,active,TRUE
+COND-C5122347,PAT-00370,E78.5,"Hyperlipidemia, unspecified",2019-05-19,active,TRUE
+COND-5FE633E8,PAT-00371,E11.9,Type 2 diabetes mellitus without complications,2020-06-24,active,TRUE
+COND-387C7A7F,PAT-00372,I10,Essential (primary) hypertension,2019-04-09,active,TRUE
+COND-3CA2E333,PAT-00372,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-05-28,active,TRUE
+COND-F6C40C2F,PAT-00372,E78.5,"Hyperlipidemia, unspecified",2020-05-22,active,TRUE
+COND-358B9506,PAT-00373,I10,Essential (primary) hypertension,2023-03-22,active,TRUE
+COND-53CC38AF,PAT-00374,E78.5,"Hyperlipidemia, unspecified",2020-04-08,active,TRUE
+COND-28659FAC,PAT-00375,I10,Essential (primary) hypertension,2018-03-31,active,TRUE
+COND-9A30F4EB,PAT-00375,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-18,resolved,TRUE
+COND-99DE8EEE,PAT-00376,I25.10,Atherosclerotic heart disease,2016-06-24,active,TRUE
+COND-23D16FA7,PAT-00377,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-03-20,resolved,TRUE
+COND-B98344B0,PAT-00378,E78.5,"Hyperlipidemia, unspecified",2022-04-25,active,TRUE
+COND-80726607,PAT-00379,I10,Essential (primary) hypertension,2024-02-18,active,TRUE
+COND-484149EE,PAT-00379,I25.10,Atherosclerotic heart disease,2019-12-24,active,TRUE
+COND-BB12B93D,PAT-00380,E11.9,Type 2 diabetes mellitus without complications,2018-11-23,active,TRUE
+COND-6D5BF5BD,PAT-00380,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-06-11,active,TRUE
+COND-65266C9E,PAT-00380,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-07-14,resolved,TRUE
+COND-E69A2A1C,PAT-00381,I10,Essential (primary) hypertension,2024-03-18,active,TRUE
+COND-A71A727E,PAT-00382,I10,Essential (primary) hypertension,2021-08-13,active,TRUE
+COND-27E25ADD,PAT-00384,E11.9,Type 2 diabetes mellitus without complications,2020-05-09,active,TRUE
+COND-58B7D53F,PAT-00384,I10,Essential (primary) hypertension,2019-09-20,active,TRUE
+COND-A992B400,PAT-00384,E78.5,"Hyperlipidemia, unspecified",2021-09-09,active,TRUE
+COND-184A3B34,PAT-00385,A15.0,Tuberculosis of lung,2024-01-26,active,TRUE
+COND-5F517846,PAT-00386,I25.10,Atherosclerotic heart disease,2020-08-19,active,TRUE
+COND-5E43E535,PAT-00387,E11.9,Type 2 diabetes mellitus without complications,2023-04-14,active,TRUE
+COND-E7711AE9,PAT-00387,I25.10,Atherosclerotic heart disease,2021-10-31,active,TRUE
+COND-19DF2053,PAT-00388,A15.0,Tuberculosis of lung,2024-06-25,resolved,TRUE
+COND-9F2E3060,PAT-00388,A90,Dengue fever,2024-02-29,active,TRUE
+COND-01952B95,PAT-00389,I10,Essential (primary) hypertension,2022-09-20,active,TRUE
+COND-C76CC250,PAT-00389,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-04-07,active,TRUE
+COND-5B10075C,PAT-00389,A90,Dengue fever,2024-04-18,active,TRUE
+COND-6A996295,PAT-00389,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-15,resolved,TRUE
+COND-D444EBCC,PAT-00390,I10,Essential (primary) hypertension,2017-11-23,active,TRUE
+COND-301AD144,PAT-00391,I25.10,Atherosclerotic heart disease,2020-09-15,active,TRUE
+COND-C3C4BF40,PAT-00391,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-01-17,active,TRUE
+COND-C07D9A32,PAT-00392,I25.10,Atherosclerotic heart disease,2018-06-30,active,TRUE
+COND-B9CA3049,PAT-00393,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-02-07,active,TRUE
+COND-30DB7EA6,PAT-00394,E11.9,Type 2 diabetes mellitus without complications,2016-07-12,active,TRUE
+COND-6098ADBE,PAT-00394,I10,Essential (primary) hypertension,2020-05-31,active,TRUE
+COND-76D00E96,PAT-00395,E11.9,Type 2 diabetes mellitus without complications,2020-09-13,active,TRUE
+COND-210AC39A,PAT-00395,A90,Dengue fever,2022-02-25,active,TRUE
+COND-B82B60B7,PAT-00396,E11.9,Type 2 diabetes mellitus without complications,2024-06-02,active,TRUE
+COND-10E0FF04,PAT-00396,I10,Essential (primary) hypertension,2024-04-06,active,TRUE
+COND-6F6B6293,PAT-00397,I25.10,Atherosclerotic heart disease,2021-12-09,active,TRUE
+COND-9731587D,PAT-00398,E78.5,"Hyperlipidemia, unspecified",2021-03-26,active,TRUE
+COND-176004CB,PAT-00399,I10,Essential (primary) hypertension,2018-02-15,active,TRUE
+COND-FE9218EC,PAT-00399,E78.5,"Hyperlipidemia, unspecified",2019-10-26,active,TRUE
+COND-D9EF50A5,PAT-00401,E11.9,Type 2 diabetes mellitus without complications,2021-07-25,active,TRUE
+COND-9211DEC4,PAT-00401,A90,Dengue fever,2023-03-05,resolved,TRUE
+COND-420773D4,PAT-00402,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-11,active,TRUE
+COND-4F9F2C73,PAT-00403,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-03-15,active,TRUE
+COND-BC2E7810,PAT-00403,I25.10,Atherosclerotic heart disease,2022-03-08,active,TRUE
+COND-CEDA0CAA,PAT-00404,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-01-12,active,TRUE
+COND-DDEABDD7,PAT-00404,E78.5,"Hyperlipidemia, unspecified",2020-04-19,active,TRUE
+COND-EDC37F47,PAT-00405,E11.9,Type 2 diabetes mellitus without complications,2019-03-01,active,TRUE
+COND-E7923474,PAT-00405,I25.10,Atherosclerotic heart disease,2022-12-28,active,TRUE
+COND-F63294D4,PAT-00405,E78.5,"Hyperlipidemia, unspecified",2017-10-29,active,TRUE
+COND-F29C027E,PAT-00407,I10,Essential (primary) hypertension,2022-06-23,active,TRUE
+COND-80A702BE,PAT-00407,I25.10,Atherosclerotic heart disease,2022-12-25,active,TRUE
+COND-43C07439,PAT-00408,I10,Essential (primary) hypertension,2024-05-02,active,TRUE
+COND-085DA5C3,PAT-00409,E78.5,"Hyperlipidemia, unspecified",2018-08-26,active,TRUE
+COND-7AAE07A2,PAT-00410,I10,Essential (primary) hypertension,2017-01-12,active,TRUE
+COND-71A795E8,PAT-00411,I10,Essential (primary) hypertension,2019-10-22,active,TRUE
+COND-64C57452,PAT-00412,I10,Essential (primary) hypertension,2020-01-11,active,TRUE
+COND-4F8BBC94,PAT-00413,A15.0,Tuberculosis of lung,2023-05-23,active,TRUE
+COND-FBF30A1C,PAT-00413,A90,Dengue fever,2024-05-28,active,TRUE
+COND-0D5671C5,PAT-00413,E78.5,"Hyperlipidemia, unspecified",2022-12-14,active,TRUE
+COND-7478E8DF,PAT-00414,E11.9,Type 2 diabetes mellitus without complications,2018-09-06,active,TRUE
+COND-4A257444,PAT-00415,I25.10,Atherosclerotic heart disease,2020-06-25,active,TRUE
+COND-41643308,PAT-00417,I10,Essential (primary) hypertension,2019-04-24,active,TRUE
+COND-39CA3C0A,PAT-00417,N18.3,"Chronic kidney disease, stage 3",2019-03-24,active,TRUE
+COND-AA7FEA5E,PAT-00418,E11.9,Type 2 diabetes mellitus without complications,2023-11-13,active,TRUE
+COND-8BB93943,PAT-00418,I10,Essential (primary) hypertension,2019-03-20,active,TRUE
+COND-BF16280A,PAT-00419,E78.5,"Hyperlipidemia, unspecified",2017-09-21,active,TRUE
+COND-987B3779,PAT-00419,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-07-23,resolved,TRUE
+COND-D8A17B3E,PAT-00420,E11.9,Type 2 diabetes mellitus without complications,2019-11-10,active,TRUE
+COND-D695E36F,PAT-00420,I10,Essential (primary) hypertension,2020-05-04,active,TRUE
+COND-3CA48A43,PAT-00420,A15.0,Tuberculosis of lung,2022-11-30,active,TRUE
+COND-4DA17F2F,PAT-00421,E11.9,Type 2 diabetes mellitus without complications,2022-10-29,active,TRUE
+COND-29BBA904,PAT-00421,I10,Essential (primary) hypertension,2023-10-04,active,TRUE
+COND-B4AF847D,PAT-00421,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-06-14,active,TRUE
+COND-38F70B44,PAT-00422,I10,Essential (primary) hypertension,2023-04-28,active,TRUE
+COND-7E573EC0,PAT-00422,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-08-17,active,TRUE
+COND-43D18305,PAT-00422,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-03-02,resolved,TRUE
+COND-84C28DFC,PAT-00423,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-04-26,active,TRUE
+COND-3B2D7A3F,PAT-00424,E78.5,"Hyperlipidemia, unspecified",2018-11-02,active,TRUE
+COND-10142684,PAT-00426,I10,Essential (primary) hypertension,2019-05-22,active,TRUE
+COND-1FEDF10A,PAT-00427,E11.9,Type 2 diabetes mellitus without complications,2020-12-04,active,TRUE
+COND-B3B33006,PAT-00427,A90,Dengue fever,2024-03-15,active,TRUE
+COND-6312FD9F,PAT-00427,I25.10,Atherosclerotic heart disease,2019-02-21,active,TRUE
+COND-C0907005,PAT-00430,N18.3,"Chronic kidney disease, stage 3",2018-01-12,active,TRUE
+COND-4C195CF7,PAT-00431,I10,Essential (primary) hypertension,2017-02-19,active,TRUE
+COND-E69BDEB3,PAT-00431,E78.5,"Hyperlipidemia, unspecified",2016-10-26,active,TRUE
+COND-320E68B2,PAT-00431,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-21,active,TRUE
+COND-7CC8E169,PAT-00432,I10,Essential (primary) hypertension,2023-07-05,active,TRUE
+COND-FE70BF75,PAT-00432,E78.5,"Hyperlipidemia, unspecified",2022-08-03,active,TRUE
+COND-39C91000,PAT-00433,E11.9,Type 2 diabetes mellitus without complications,2018-08-10,active,TRUE
+COND-129265C5,PAT-00433,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-07-12,active,TRUE
+COND-F0BEEF0C,PAT-00433,N18.3,"Chronic kidney disease, stage 3",2022-06-25,active,TRUE
+COND-1C5D2A7C,PAT-00434,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-19,active,TRUE
+COND-1A428F9B,PAT-00435,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-15,active,TRUE
+COND-53F696D4,PAT-00436,E11.9,Type 2 diabetes mellitus without complications,2023-12-10,active,TRUE
+COND-E1963791,PAT-00437,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-07-11,active,TRUE
+COND-AC865F06,PAT-00438,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-24,resolved,TRUE
+COND-0D63C85F,PAT-00439,E11.9,Type 2 diabetes mellitus without complications,2024-03-09,active,TRUE
+COND-C78863D5,PAT-00439,I10,Essential (primary) hypertension,2021-04-27,active,TRUE
+COND-32700712,PAT-00441,E11.9,Type 2 diabetes mellitus without complications,2023-10-07,active,TRUE
+COND-55D50623,PAT-00442,I10,Essential (primary) hypertension,2021-08-05,active,TRUE
+COND-12C08A69,PAT-00442,I25.10,Atherosclerotic heart disease,2022-07-18,active,TRUE
+COND-D431A178,PAT-00443,I10,Essential (primary) hypertension,2020-04-12,active,TRUE
+COND-2EA8D432,PAT-00443,E78.5,"Hyperlipidemia, unspecified",2022-11-26,active,TRUE
+COND-ABC104D1,PAT-00444,E11.9,Type 2 diabetes mellitus without complications,2017-07-30,active,TRUE
+COND-7727E0C8,PAT-00444,I10,Essential (primary) hypertension,2018-01-09,active,TRUE
+COND-D91C636E,PAT-00444,I25.10,Atherosclerotic heart disease,2020-10-14,active,TRUE
+COND-327BE23E,PAT-00445,I25.10,Atherosclerotic heart disease,2023-05-19,active,TRUE
+COND-228E3E42,PAT-00445,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-08,active,TRUE
+COND-095AF110,PAT-00446,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-31,resolved,TRUE
+COND-46037535,PAT-00447,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-11,active,TRUE
+COND-45B02952,PAT-00449,I10,Essential (primary) hypertension,2023-01-25,active,TRUE
+COND-D38F2872,PAT-00449,I25.10,Atherosclerotic heart disease,2023-01-12,active,TRUE
+COND-BF8D6851,PAT-00450,E11.9,Type 2 diabetes mellitus without complications,2022-04-19,active,TRUE
+COND-6E0D59EA,PAT-00450,I10,Essential (primary) hypertension,2021-07-12,active,TRUE
+COND-39EF7399,PAT-00450,I25.10,Atherosclerotic heart disease,2022-06-11,active,TRUE
+COND-C0F55906,PAT-00452,E11.9,Type 2 diabetes mellitus without complications,2017-04-16,active,TRUE
+COND-79A64259,PAT-00453,I25.10,Atherosclerotic heart disease,2024-06-28,active,TRUE
+COND-A10206FD,PAT-00454,E11.9,Type 2 diabetes mellitus without complications,2023-03-25,active,TRUE
+COND-419BB6EA,PAT-00456,I10,Essential (primary) hypertension,2019-09-10,active,TRUE
+COND-70BB9211,PAT-00456,E78.5,"Hyperlipidemia, unspecified",2017-11-28,active,TRUE
+COND-5680CB00,PAT-00456,N18.3,"Chronic kidney disease, stage 3",2017-09-11,active,TRUE
+COND-4527F5AA,PAT-00457,I10,Essential (primary) hypertension,2016-10-23,active,TRUE
+COND-6CCFF9ED,PAT-00457,N18.3,"Chronic kidney disease, stage 3",2021-01-24,active,TRUE
+COND-B3170484,PAT-00458,I25.10,Atherosclerotic heart disease,2020-11-08,active,TRUE
+COND-FE2DDA57,PAT-00458,E78.5,"Hyperlipidemia, unspecified",2018-10-04,active,TRUE
+COND-33049CB5,PAT-00460,E11.9,Type 2 diabetes mellitus without complications,2023-04-01,active,TRUE
+COND-C3CA4CD7,PAT-00460,E78.5,"Hyperlipidemia, unspecified",2023-05-26,active,TRUE
+COND-13268DAB,PAT-00461,E11.9,Type 2 diabetes mellitus without complications,2017-02-26,active,TRUE
+COND-D7BC40FC,PAT-00461,I10,Essential (primary) hypertension,2019-03-24,active,TRUE
+COND-FC08F435,PAT-00461,I25.10,Atherosclerotic heart disease,2019-01-30,active,TRUE
+COND-6D233B39,PAT-00462,I25.10,Atherosclerotic heart disease,2020-10-12,active,TRUE
+COND-9AEB94B0,PAT-00462,E78.5,"Hyperlipidemia, unspecified",2020-03-05,active,TRUE
+COND-84606107,PAT-00462,N18.3,"Chronic kidney disease, stage 3",2022-10-25,active,TRUE
+COND-B4558C9E,PAT-00463,I10,Essential (primary) hypertension,2021-10-17,active,TRUE
+COND-C3EAB949,PAT-00463,E78.5,"Hyperlipidemia, unspecified",2017-01-13,active,TRUE
+COND-94ECAEFC,PAT-00463,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-03-08,resolved,TRUE
+COND-11709CDA,PAT-00464,I10,Essential (primary) hypertension,2020-12-20,active,TRUE
+COND-5FAB407D,PAT-00464,I25.10,Atherosclerotic heart disease,2018-03-12,active,TRUE
+COND-BA11343C,PAT-00464,E78.5,"Hyperlipidemia, unspecified",2016-11-03,active,TRUE
+COND-480918BF,PAT-00465,I10,Essential (primary) hypertension,2020-05-24,active,TRUE
+COND-AB2AE531,PAT-00465,A90,Dengue fever,2024-06-15,active,TRUE
+COND-E8DC852E,PAT-00466,E11.9,Type 2 diabetes mellitus without complications,2018-11-07,active,TRUE
+COND-C7BC7810,PAT-00466,I25.10,Atherosclerotic heart disease,2021-09-16,active,TRUE
+COND-1A5C7AD0,PAT-00468,E78.5,"Hyperlipidemia, unspecified",2019-06-15,active,TRUE
+COND-81CC804B,PAT-00470,I25.10,Atherosclerotic heart disease,2019-09-04,active,TRUE
+COND-EB3102D4,PAT-00470,E78.5,"Hyperlipidemia, unspecified",2017-05-15,active,TRUE
+COND-1737C9B2,PAT-00471,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-01-09,active,TRUE
+COND-C63BD07B,PAT-00472,I10,Essential (primary) hypertension,2018-08-29,active,TRUE
+COND-45F8F051,PAT-00473,E11.9,Type 2 diabetes mellitus without complications,2020-05-01,active,TRUE
+COND-E6001539,PAT-00473,E78.5,"Hyperlipidemia, unspecified",2024-04-30,active,TRUE
+COND-2B19B708,PAT-00474,I10,Essential (primary) hypertension,2023-06-19,active,TRUE
+COND-68A568D9,PAT-00474,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-09-17,active,TRUE
+COND-7564875D,PAT-00474,A15.0,Tuberculosis of lung,2024-06-09,active,TRUE
+COND-324FD182,PAT-00474,N18.3,"Chronic kidney disease, stage 3",2023-06-13,active,TRUE
+COND-3F043D5A,PAT-00475,E11.9,Type 2 diabetes mellitus without complications,2017-07-16,active,TRUE
+COND-CE305CAD,PAT-00475,I10,Essential (primary) hypertension,2017-06-21,active,TRUE
+COND-B27E894C,PAT-00476,E11.9,Type 2 diabetes mellitus without complications,2023-04-06,active,TRUE
+COND-60BE51EC,PAT-00476,I10,Essential (primary) hypertension,2024-03-02,active,TRUE
+COND-043A2684,PAT-00476,E78.5,"Hyperlipidemia, unspecified",2024-04-04,active,TRUE
+COND-0F56EAD3,PAT-00477,E78.5,"Hyperlipidemia, unspecified",2021-02-09,active,TRUE
+COND-DCE1F992,PAT-00477,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-03,active,TRUE
+COND-5FE3B197,PAT-00479,E11.9,Type 2 diabetes mellitus without complications,2018-09-06,active,TRUE
+COND-B4829128,PAT-00480,I10,Essential (primary) hypertension,2020-02-14,active,TRUE
+COND-CBC2D7D9,PAT-00481,E11.9,Type 2 diabetes mellitus without complications,2021-10-05,active,TRUE
+COND-55FE1690,PAT-00481,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-10-26,active,TRUE
+COND-FE3E1F4E,PAT-00482,I10,Essential (primary) hypertension,2021-03-18,active,TRUE
+COND-7E2D8323,PAT-00483,E11.9,Type 2 diabetes mellitus without complications,2018-05-29,active,TRUE
+COND-19448C6E,PAT-00483,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-05-18,active,TRUE
+COND-E6D05329,PAT-00484,I10,Essential (primary) hypertension,2017-04-25,active,TRUE
+COND-06212357,PAT-00485,I10,Essential (primary) hypertension,2018-10-03,active,TRUE
+COND-B56B3ED4,PAT-00485,A90,Dengue fever,2022-04-23,active,TRUE
+COND-D6D25265,PAT-00486,I10,Essential (primary) hypertension,2016-07-17,active,TRUE
+COND-09581872,PAT-00486,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-04-05,active,TRUE
+COND-4A693F34,PAT-00487,E78.5,"Hyperlipidemia, unspecified",2018-06-14,active,TRUE
+COND-AA6EB70A,PAT-00489,I25.10,Atherosclerotic heart disease,2024-03-29,active,TRUE
+COND-420168A7,PAT-00489,E78.5,"Hyperlipidemia, unspecified",2016-12-19,active,TRUE
+COND-F92E6528,PAT-00489,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-05,resolved,TRUE
+COND-6717A9E2,PAT-00491,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-04-29,active,TRUE
+COND-C71152A3,PAT-00491,E78.5,"Hyperlipidemia, unspecified",2018-06-26,active,TRUE
+COND-409D3FAD,PAT-00492,E11.9,Type 2 diabetes mellitus without complications,2022-10-08,active,TRUE
+COND-CDF4366E,PAT-00492,I10,Essential (primary) hypertension,2022-05-29,active,TRUE
+COND-EE06973C,PAT-00492,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-02-13,active,TRUE
+COND-17F3F134,PAT-00492,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-06-28,active,TRUE
+COND-3EB826CC,PAT-00494,E78.5,"Hyperlipidemia, unspecified",2023-06-01,active,TRUE
+COND-04F0D313,PAT-00495,I10,Essential (primary) hypertension,2017-09-02,active,TRUE
+COND-184BEF7E,PAT-00496,E11.9,Type 2 diabetes mellitus without complications,2021-08-11,active,TRUE
+COND-BB8EC5A0,PAT-00496,I10,Essential (primary) hypertension,2022-05-17,active,TRUE
+COND-C6C3B4FC,PAT-00496,E78.5,"Hyperlipidemia, unspecified",2018-07-25,active,TRUE
+COND-1CA6FC31,PAT-00498,E11.9,Type 2 diabetes mellitus without complications,2021-05-12,active,TRUE
+COND-E1722101,PAT-00498,I10,Essential (primary) hypertension,2018-06-06,active,TRUE
+COND-CBA58EAD,PAT-00499,I10,Essential (primary) hypertension,2024-05-26,active,TRUE
+COND-134DD8ED,PAT-00500,E11.9,Type 2 diabetes mellitus without complications,2022-08-28,active,TRUE
+COND-294A1385,PAT-00502,I10,Essential (primary) hypertension,2023-06-22,active,TRUE
+COND-B48CFFA7,PAT-00502,I25.10,Atherosclerotic heart disease,2022-09-20,active,TRUE
+COND-1B1E720D,PAT-00503,E11.9,Type 2 diabetes mellitus without complications,2023-08-11,active,TRUE
+COND-47424840,PAT-00504,E11.9,Type 2 diabetes mellitus without complications,2019-05-02,active,TRUE
+COND-B25DF66A,PAT-00505,A90,Dengue fever,2024-03-29,active,TRUE
+COND-D528A7C0,PAT-00506,E11.9,Type 2 diabetes mellitus without complications,2022-09-14,active,TRUE
+COND-95D388E2,PAT-00507,E11.9,Type 2 diabetes mellitus without complications,2016-12-19,active,TRUE
+COND-6CFF0FE9,PAT-00507,I10,Essential (primary) hypertension,2018-03-13,active,TRUE
+COND-E1DC02D4,PAT-00508,E11.9,Type 2 diabetes mellitus without complications,2024-06-25,active,TRUE
+COND-3C566944,PAT-00508,I10,Essential (primary) hypertension,2022-10-20,active,TRUE
+COND-724D4E60,PAT-00508,I25.10,Atherosclerotic heart disease,2023-06-08,active,TRUE
+COND-AD53929C,PAT-00510,I10,Essential (primary) hypertension,2023-09-23,active,TRUE
+COND-089BAC42,PAT-00512,E11.9,Type 2 diabetes mellitus without complications,2023-04-01,active,TRUE
+COND-414BB01E,PAT-00516,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-09-21,active,TRUE
+COND-D3DE5972,PAT-00516,E78.5,"Hyperlipidemia, unspecified",2024-02-14,active,TRUE
+COND-33DFB383,PAT-00518,E11.9,Type 2 diabetes mellitus without complications,2023-11-21,active,TRUE
+COND-155C1F25,PAT-00518,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-03-04,active,TRUE
+COND-CAA66FE9,PAT-00518,A15.0,Tuberculosis of lung,2022-10-12,active,TRUE
+COND-B368E6FB,PAT-00518,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-01-18,resolved,TRUE
+COND-686EA2B2,PAT-00519,E11.9,Type 2 diabetes mellitus without complications,2016-09-16,active,TRUE
+COND-77B5C342,PAT-00519,I10,Essential (primary) hypertension,2024-04-05,active,TRUE
+COND-2C33FA71,PAT-00519,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-14,active,TRUE
+COND-464F96B5,PAT-00521,I10,Essential (primary) hypertension,2022-08-10,active,TRUE
+COND-3C2C0391,PAT-00521,I25.10,Atherosclerotic heart disease,2018-07-30,active,TRUE
+COND-22E968B7,PAT-00522,I10,Essential (primary) hypertension,2018-11-30,active,TRUE
+COND-01F45D65,PAT-00523,I10,Essential (primary) hypertension,2018-11-11,active,TRUE
+COND-97242E19,PAT-00524,I10,Essential (primary) hypertension,2019-04-22,active,TRUE
+COND-2E29A985,PAT-00525,E11.9,Type 2 diabetes mellitus without complications,2019-04-05,active,TRUE
+COND-1E15F466,PAT-00525,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-08-05,resolved,TRUE
+COND-A3DB377E,PAT-00526,I25.10,Atherosclerotic heart disease,2019-03-27,active,TRUE
+COND-4BC73267,PAT-00527,E11.9,Type 2 diabetes mellitus without complications,2017-02-08,active,TRUE
+COND-D8BD1FD8,PAT-00528,I10,Essential (primary) hypertension,2020-02-22,active,TRUE
+COND-0B8E7624,PAT-00528,I25.10,Atherosclerotic heart disease,2020-02-03,active,TRUE
+COND-B37E8B5B,PAT-00529,I10,Essential (primary) hypertension,2019-04-28,active,TRUE
+COND-89B957A0,PAT-00529,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-01-01,active,TRUE
+COND-8D677A11,PAT-00529,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-07-31,active,TRUE
+COND-1D336F80,PAT-00531,E11.9,Type 2 diabetes mellitus without complications,2022-09-28,active,TRUE
+COND-654E7F6A,PAT-00533,I10,Essential (primary) hypertension,2022-07-24,active,TRUE
+COND-0E7B09C7,PAT-00534,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-04,active,TRUE
+COND-D8627360,PAT-00535,E11.9,Type 2 diabetes mellitus without complications,2024-02-27,active,TRUE
+COND-7803B10B,PAT-00535,I10,Essential (primary) hypertension,2017-12-30,active,TRUE
+COND-A4DE9144,PAT-00535,E78.5,"Hyperlipidemia, unspecified",2022-10-14,active,TRUE
+COND-3A1419D5,PAT-00536,A90,Dengue fever,2022-01-06,active,TRUE
+COND-D7282352,PAT-00537,E78.5,"Hyperlipidemia, unspecified",2023-10-12,active,TRUE
+COND-337FAEED,PAT-00539,E11.9,Type 2 diabetes mellitus without complications,2018-12-10,active,TRUE
+COND-7AA06E1F,PAT-00540,I10,Essential (primary) hypertension,2019-12-28,active,TRUE
+COND-7A2526FB,PAT-00540,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-20,active,TRUE
+COND-3363469D,PAT-00541,I10,Essential (primary) hypertension,2022-01-19,active,TRUE
+COND-46C79BE6,PAT-00541,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-12-31,active,TRUE
+COND-E1F1F284,PAT-00541,E78.5,"Hyperlipidemia, unspecified",2020-06-17,active,TRUE
+COND-2AA8258C,PAT-00541,N18.3,"Chronic kidney disease, stage 3",2019-02-03,active,TRUE
+COND-EF9F223D,PAT-00542,I10,Essential (primary) hypertension,2020-02-15,active,TRUE
+COND-9E1CF632,PAT-00542,A90,Dengue fever,2023-03-27,active,TRUE
+COND-4BD12C1F,PAT-00542,I25.10,Atherosclerotic heart disease,2020-12-13,active,TRUE
+COND-0EABE8F4,PAT-00543,E78.5,"Hyperlipidemia, unspecified",2022-06-29,active,TRUE
+COND-D2E8C553,PAT-00543,N18.3,"Chronic kidney disease, stage 3",2022-02-21,active,TRUE
+COND-C94F5E55,PAT-00544,I10,Essential (primary) hypertension,2020-06-30,active,TRUE
+COND-8BCF048E,PAT-00544,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-01-02,resolved,TRUE
+COND-FC2BA3EB,PAT-00545,E78.5,"Hyperlipidemia, unspecified",2018-06-20,active,TRUE
+COND-A6D05761,PAT-00546,A15.0,Tuberculosis of lung,2024-05-03,active,TRUE
+COND-D1FC2977,PAT-00546,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-08,active,TRUE
+COND-45A671E6,PAT-00548,I10,Essential (primary) hypertension,2023-12-05,active,TRUE
+COND-C844F535,PAT-00549,E78.5,"Hyperlipidemia, unspecified",2017-10-29,active,TRUE
+COND-02CFC62C,PAT-00549,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-24,resolved,TRUE
+COND-53BCE8AE,PAT-00549,N18.3,"Chronic kidney disease, stage 3",2019-02-03,active,TRUE
+COND-E176881F,PAT-00552,I10,Essential (primary) hypertension,2023-03-19,active,TRUE
+COND-3F1EF86F,PAT-00552,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-03-28,active,TRUE
+COND-6B99E00C,PAT-00554,I10,Essential (primary) hypertension,2024-02-24,active,TRUE
+COND-3EC9984F,PAT-00554,A15.0,Tuberculosis of lung,2023-05-06,resolved,TRUE
+COND-6DC5EF0E,PAT-00555,E11.9,Type 2 diabetes mellitus without complications,2021-08-31,active,TRUE
+COND-51CF0740,PAT-00555,I10,Essential (primary) hypertension,2019-10-30,active,TRUE
+COND-96473369,PAT-00555,E78.5,"Hyperlipidemia, unspecified",2021-03-31,active,TRUE
+COND-78B4617B,PAT-00555,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-16,active,TRUE
+COND-86DFAC87,PAT-00556,I10,Essential (primary) hypertension,2024-04-21,active,TRUE
+COND-FCBD6EA6,PAT-00556,I25.10,Atherosclerotic heart disease,2018-05-30,active,TRUE
+COND-50774D19,PAT-00559,I10,Essential (primary) hypertension,2018-02-08,active,TRUE
+COND-F06D6961,PAT-00560,I25.10,Atherosclerotic heart disease,2019-01-24,active,TRUE
+COND-015CEA8D,PAT-00560,E78.5,"Hyperlipidemia, unspecified",2023-07-13,active,TRUE
+COND-04BD5C92,PAT-00561,E11.9,Type 2 diabetes mellitus without complications,2017-01-20,active,TRUE
+COND-5B5D8044,PAT-00562,I10,Essential (primary) hypertension,2016-08-15,active,TRUE
+COND-E139AD21,PAT-00562,E78.5,"Hyperlipidemia, unspecified",2022-06-04,active,TRUE
+COND-B8D463B0,PAT-00563,I25.10,Atherosclerotic heart disease,2021-06-24,active,TRUE
+COND-ECF0FA05,PAT-00565,I25.10,Atherosclerotic heart disease,2020-10-18,active,TRUE
+COND-C568D0BE,PAT-00566,I10,Essential (primary) hypertension,2024-04-16,active,TRUE
+COND-1C6C0B65,PAT-00566,E78.5,"Hyperlipidemia, unspecified",2024-06-13,active,TRUE
+COND-F9432062,PAT-00567,E11.9,Type 2 diabetes mellitus without complications,2018-04-08,active,TRUE
+COND-4C6E2FF5,PAT-00568,I10,Essential (primary) hypertension,2023-08-28,active,TRUE
+COND-99AB9373,PAT-00568,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-11-12,active,TRUE
+COND-C1A8A883,PAT-00569,I10,Essential (primary) hypertension,2021-02-27,active,TRUE
+COND-50CE86E1,PAT-00569,A15.0,Tuberculosis of lung,2023-07-06,resolved,TRUE
+COND-371F2512,PAT-00569,E78.5,"Hyperlipidemia, unspecified",2023-07-08,active,TRUE
+COND-9B8B647D,PAT-00569,N18.3,"Chronic kidney disease, stage 3",2019-03-31,active,TRUE
+COND-181F93A3,PAT-00570,I10,Essential (primary) hypertension,2018-12-22,active,TRUE
+COND-8B6B1F07,PAT-00570,E78.5,"Hyperlipidemia, unspecified",2016-08-29,active,TRUE
+COND-0D23E881,PAT-00571,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-01-18,active,TRUE
+COND-56704781,PAT-00572,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-04-27,resolved,TRUE
+COND-C377CC34,PAT-00572,N18.3,"Chronic kidney disease, stage 3",2018-07-15,active,TRUE
+COND-866D3520,PAT-00575,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-06-08,active,TRUE
+COND-A2F8D1EE,PAT-00577,I10,Essential (primary) hypertension,2018-04-22,active,TRUE
+COND-62813719,PAT-00578,A15.0,Tuberculosis of lung,2021-05-23,resolved,TRUE
+COND-91E28CB1,PAT-00579,I10,Essential (primary) hypertension,2019-02-20,active,TRUE
+COND-0EA67E4B,PAT-00580,I10,Essential (primary) hypertension,2022-12-10,active,TRUE
+COND-8C0C947A,PAT-00581,I25.10,Atherosclerotic heart disease,2021-04-29,active,TRUE
+COND-985D65CA,PAT-00582,I10,Essential (primary) hypertension,2024-04-19,active,TRUE
+COND-15C19293,PAT-00582,A15.0,Tuberculosis of lung,2021-10-13,active,TRUE
+COND-6C61BFF3,PAT-00583,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-04-30,active,TRUE
+COND-D4F17334,PAT-00584,E78.5,"Hyperlipidemia, unspecified",2017-08-16,active,TRUE
+COND-2366DF26,PAT-00585,E78.5,"Hyperlipidemia, unspecified",2019-07-24,active,TRUE
+COND-7D1CBED6,PAT-00586,I10,Essential (primary) hypertension,2024-03-27,active,TRUE
+COND-2926B37D,PAT-00586,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-03,resolved,TRUE
+COND-CC85CEC2,PAT-00587,E78.5,"Hyperlipidemia, unspecified",2021-06-25,active,TRUE
+COND-195A060D,PAT-00588,I10,Essential (primary) hypertension,2017-06-23,active,TRUE
+COND-EB021C84,PAT-00589,E78.5,"Hyperlipidemia, unspecified",2017-09-09,active,TRUE
+COND-374CDD75,PAT-00590,I10,Essential (primary) hypertension,2022-08-19,active,TRUE
+COND-FE28FE81,PAT-00591,I10,Essential (primary) hypertension,2023-03-09,active,TRUE
+COND-86E4E666,PAT-00591,J44.9,"Chronic obstructive pulmonary disease, unspecified",2016-09-10,active,TRUE
+COND-97FB8100,PAT-00593,E11.9,Type 2 diabetes mellitus without complications,2023-06-16,active,TRUE
+COND-C4879C21,PAT-00594,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-02-09,resolved,TRUE
+COND-25390739,PAT-00595,I10,Essential (primary) hypertension,2019-10-24,active,TRUE
+COND-28ED6679,PAT-00595,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-10-13,active,TRUE
+COND-DD68976E,PAT-00595,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-07-06,active,TRUE
+COND-0460D50F,PAT-00596,I10,Essential (primary) hypertension,2018-04-28,active,TRUE
+COND-B5AFA50B,PAT-00596,E78.5,"Hyperlipidemia, unspecified",2020-05-29,active,TRUE
+COND-5E2C24FF,PAT-00598,I10,Essential (primary) hypertension,2023-12-18,active,TRUE
+COND-F2B3C437,PAT-00598,J44.9,"Chronic obstructive pulmonary disease, unspecified",2016-07-16,active,TRUE
+COND-F2ED9AAB,PAT-00598,I25.10,Atherosclerotic heart disease,2021-09-24,active,TRUE
+COND-67487025,PAT-00598,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-10,active,TRUE
+COND-D71CB7EB,PAT-00598,N18.3,"Chronic kidney disease, stage 3",2022-03-24,active,TRUE
+COND-866DF75E,PAT-00599,E11.9,Type 2 diabetes mellitus without complications,2023-10-01,active,TRUE
+COND-2DCE181D,PAT-00600,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-04-26,active,TRUE
+COND-4803A317,PAT-00601,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-03-28,active,TRUE
+COND-F7A2A4EB,PAT-00601,E78.5,"Hyperlipidemia, unspecified",2020-03-31,active,TRUE
+COND-AD5BF96E,PAT-00601,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-11-15,active,TRUE
+COND-29845A1D,PAT-00603,I10,Essential (primary) hypertension,2023-03-17,active,TRUE
+COND-DC08D8C8,PAT-00604,I10,Essential (primary) hypertension,2017-10-11,active,TRUE
+COND-DC025B3C,PAT-00604,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-02-29,active,TRUE
+COND-49A61B1D,PAT-00605,I10,Essential (primary) hypertension,2022-10-12,active,TRUE
+COND-6E45BAC9,PAT-00606,I10,Essential (primary) hypertension,2022-01-19,active,TRUE
+COND-39421FB8,PAT-00606,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-05-02,active,TRUE
+COND-DD6391D3,PAT-00609,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-08-13,active,TRUE
+COND-E83A7A2C,PAT-00610,E11.9,Type 2 diabetes mellitus without complications,2021-02-09,active,TRUE
+COND-10EC990C,PAT-00610,I10,Essential (primary) hypertension,2019-02-01,active,TRUE
+COND-7815C39A,PAT-00611,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-01-01,active,TRUE
+COND-313F4611,PAT-00611,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-11-21,resolved,TRUE
+COND-5205B329,PAT-00611,N18.3,"Chronic kidney disease, stage 3",2018-03-28,active,TRUE
+COND-7D3EBDC4,PAT-00612,E11.9,Type 2 diabetes mellitus without complications,2019-07-13,active,TRUE
+COND-69B36D7B,PAT-00612,I10,Essential (primary) hypertension,2020-05-26,active,TRUE
+COND-E2334290,PAT-00613,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-10-22,active,TRUE
+COND-B62155AF,PAT-00614,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-07-31,resolved,TRUE
+COND-1A1EFAB7,PAT-00615,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-02-18,active,TRUE
+COND-20E57813,PAT-00616,E78.5,"Hyperlipidemia, unspecified",2020-10-28,active,TRUE
+COND-E39D4CB8,PAT-00618,E11.9,Type 2 diabetes mellitus without complications,2017-08-20,active,TRUE
+COND-A923067D,PAT-00618,A15.0,Tuberculosis of lung,2023-02-22,resolved,TRUE
+COND-6C518B39,PAT-00619,I10,Essential (primary) hypertension,2018-07-06,active,TRUE
+COND-E02D5BC2,PAT-00619,E78.5,"Hyperlipidemia, unspecified",2021-04-01,active,TRUE
+COND-81F40DF8,PAT-00620,E11.9,Type 2 diabetes mellitus without complications,2017-12-03,active,TRUE
+COND-4A8CDEE5,PAT-00620,I10,Essential (primary) hypertension,2023-08-05,active,TRUE
+COND-D9F81CD3,PAT-00621,E11.9,Type 2 diabetes mellitus without complications,2018-03-24,active,TRUE
+COND-91B27878,PAT-00621,I25.10,Atherosclerotic heart disease,2021-12-26,active,TRUE
+COND-8E27FFE0,PAT-00621,E78.5,"Hyperlipidemia, unspecified",2017-12-08,active,TRUE
+COND-2788F219,PAT-00622,I10,Essential (primary) hypertension,2021-02-09,active,TRUE
+COND-F150D236,PAT-00622,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-03-29,resolved,TRUE
+COND-51BD5A3B,PAT-00623,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-11-02,active,TRUE
+COND-A787FEB8,PAT-00624,E11.9,Type 2 diabetes mellitus without complications,2018-05-03,active,TRUE
+COND-0C234A72,PAT-00624,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-10-12,active,TRUE
+COND-4702DD59,PAT-00624,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-10,active,TRUE
+COND-0D7DC10B,PAT-00625,A15.0,Tuberculosis of lung,2023-08-08,resolved,TRUE
+COND-77F7B7C5,PAT-00625,A90,Dengue fever,2021-11-26,active,TRUE
+COND-FB56A1E8,PAT-00626,E78.5,"Hyperlipidemia, unspecified",2019-01-22,active,TRUE
+COND-46EB16F7,PAT-00626,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-11-14,active,TRUE
+COND-76880A63,PAT-00627,I10,Essential (primary) hypertension,2019-06-19,active,TRUE
+COND-9AAE9A3B,PAT-00628,E11.9,Type 2 diabetes mellitus without complications,2023-01-03,active,TRUE
+COND-C1E474A0,PAT-00628,I25.10,Atherosclerotic heart disease,2021-11-17,active,TRUE
+COND-8C972C0D,PAT-00628,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-09,resolved,TRUE
+COND-5F2D62EF,PAT-00632,E11.9,Type 2 diabetes mellitus without complications,2022-11-14,active,TRUE
+COND-F33A4D08,PAT-00632,I10,Essential (primary) hypertension,2023-01-21,active,TRUE
+COND-6F43607C,PAT-00632,E78.5,"Hyperlipidemia, unspecified",2020-09-21,active,TRUE
+COND-650B2316,PAT-00633,I10,Essential (primary) hypertension,2022-11-17,active,TRUE
+COND-93DB0B90,PAT-00634,E11.9,Type 2 diabetes mellitus without complications,2022-10-17,active,TRUE
+COND-A0B9D31E,PAT-00634,E78.5,"Hyperlipidemia, unspecified",2021-06-10,active,TRUE
+COND-E021F510,PAT-00634,N18.3,"Chronic kidney disease, stage 3",2020-03-25,active,TRUE
+COND-596BEDB4,PAT-00635,I10,Essential (primary) hypertension,2021-07-22,active,TRUE
+COND-3809B79A,PAT-00635,E78.5,"Hyperlipidemia, unspecified",2020-03-09,active,TRUE
+COND-1E029573,PAT-00636,E11.9,Type 2 diabetes mellitus without complications,2018-01-31,active,TRUE
+COND-5FDADF63,PAT-00636,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-05-10,active,TRUE
+COND-6A44FEF1,PAT-00637,E11.9,Type 2 diabetes mellitus without complications,2019-04-18,active,TRUE
+COND-34FC3768,PAT-00637,I10,Essential (primary) hypertension,2022-10-27,active,TRUE
+COND-8A6C3746,PAT-00637,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-20,resolved,TRUE
+COND-10A5C13B,PAT-00637,N18.3,"Chronic kidney disease, stage 3",2020-11-05,active,TRUE
+COND-E0ACC0B1,PAT-00638,E78.5,"Hyperlipidemia, unspecified",2023-10-22,active,TRUE
+COND-EEE7CF01,PAT-00638,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-11-24,resolved,TRUE
+COND-DBD9F1CA,PAT-00639,E11.9,Type 2 diabetes mellitus without complications,2018-05-30,active,TRUE
+COND-4B3A94B1,PAT-00639,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-16,active,TRUE
+COND-7394D233,PAT-00641,E11.9,Type 2 diabetes mellitus without complications,2023-02-10,active,TRUE
+COND-578DBF08,PAT-00647,E11.9,Type 2 diabetes mellitus without complications,2023-01-15,active,TRUE
+COND-F2C0785A,PAT-00647,I10,Essential (primary) hypertension,2019-07-13,active,TRUE
+COND-2C5BD99F,PAT-00647,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-04-07,active,TRUE
+COND-92D2B4FA,PAT-00647,A90,Dengue fever,2023-03-01,active,TRUE
+COND-FDD430D5,PAT-00648,I10,Essential (primary) hypertension,2018-04-17,active,TRUE
+COND-9CDB728C,PAT-00649,E11.9,Type 2 diabetes mellitus without complications,2021-05-07,active,TRUE
+COND-61ED0B80,PAT-00649,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-07-30,active,TRUE
+COND-CA8BF527,PAT-00650,E11.9,Type 2 diabetes mellitus without complications,2020-02-18,active,TRUE
+COND-6DE8F0BD,PAT-00651,E11.9,Type 2 diabetes mellitus without complications,2020-09-20,active,TRUE
+COND-994563A4,PAT-00651,N18.3,"Chronic kidney disease, stage 3",2022-09-20,active,TRUE
+COND-C6EF3FA1,PAT-00652,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-02-29,active,TRUE
+COND-6ADCE429,PAT-00653,N18.3,"Chronic kidney disease, stage 3",2022-11-24,active,TRUE
+COND-7AB8B232,PAT-00654,I25.10,Atherosclerotic heart disease,2018-07-15,active,TRUE
+COND-2F366199,PAT-00656,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-29,resolved,TRUE
+COND-125E3BE9,PAT-00657,I10,Essential (primary) hypertension,2017-10-11,active,TRUE
+COND-B4B476AF,PAT-00659,E11.9,Type 2 diabetes mellitus without complications,2022-10-11,active,TRUE
+COND-ADBCDB70,PAT-00659,I10,Essential (primary) hypertension,2020-03-10,active,TRUE
+COND-B7177405,PAT-00660,I10,Essential (primary) hypertension,2017-12-18,active,TRUE
+COND-AD4FB4A6,PAT-00661,E11.9,Type 2 diabetes mellitus without complications,2023-04-01,active,TRUE
+COND-66EC28E4,PAT-00661,E78.5,"Hyperlipidemia, unspecified",2017-10-16,active,TRUE
+COND-89236D20,PAT-00662,E78.5,"Hyperlipidemia, unspecified",2019-12-14,active,TRUE
+COND-B0ED543B,PAT-00663,A90,Dengue fever,2022-07-06,resolved,TRUE
+COND-33E24082,PAT-00663,E78.5,"Hyperlipidemia, unspecified",2020-07-30,active,TRUE
+COND-A2A5FF9A,PAT-00663,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-22,active,TRUE
+COND-41732F81,PAT-00664,I10,Essential (primary) hypertension,2018-01-25,active,TRUE
+COND-45F58D97,PAT-00665,I10,Essential (primary) hypertension,2020-07-25,active,TRUE
+COND-DC189EC0,PAT-00667,E11.9,Type 2 diabetes mellitus without complications,2020-11-04,active,TRUE
+COND-142CBAFD,PAT-00667,E78.5,"Hyperlipidemia, unspecified",2017-11-08,active,TRUE
+COND-40E24AB9,PAT-00667,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-05-28,resolved,TRUE
+COND-3A85CC98,PAT-00667,N18.3,"Chronic kidney disease, stage 3",2021-07-24,active,TRUE
+COND-05E21C03,PAT-00668,I10,Essential (primary) hypertension,2020-08-24,active,TRUE
+COND-AACDCAE7,PAT-00669,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-03-07,active,TRUE
+COND-1A6C90AF,PAT-00672,E11.9,Type 2 diabetes mellitus without complications,2021-12-24,active,TRUE
+COND-FD8C2BC7,PAT-00672,I10,Essential (primary) hypertension,2020-10-23,active,TRUE
+COND-008A1ABF,PAT-00673,E11.9,Type 2 diabetes mellitus without complications,2022-03-31,active,TRUE
+COND-05A2BAF5,PAT-00673,I10,Essential (primary) hypertension,2021-09-13,active,TRUE
+COND-9B41A90B,PAT-00673,A15.0,Tuberculosis of lung,2023-04-27,active,TRUE
+COND-F7F42226,PAT-00674,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-16,resolved,TRUE
+COND-E83DDE51,PAT-00675,I25.10,Atherosclerotic heart disease,2016-05-27,active,TRUE
+COND-DC1B6C0C,PAT-00676,E11.9,Type 2 diabetes mellitus without complications,2019-09-18,active,TRUE
+COND-7F61B5F4,PAT-00676,I10,Essential (primary) hypertension,2023-09-08,active,TRUE
+COND-9139C807,PAT-00676,I25.10,Atherosclerotic heart disease,2021-11-30,active,TRUE
+COND-55E9C577,PAT-00677,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-03-15,active,TRUE
+COND-6D0B50C6,PAT-00678,N18.3,"Chronic kidney disease, stage 3",2024-02-13,active,TRUE
+COND-DCAC94AB,PAT-00680,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-07,resolved,TRUE
+COND-29BC15AE,PAT-00682,I10,Essential (primary) hypertension,2020-09-06,active,TRUE
+COND-C5EF7F03,PAT-00682,E78.5,"Hyperlipidemia, unspecified",2023-11-04,active,TRUE
+COND-2152B978,PAT-00683,I10,Essential (primary) hypertension,2022-07-20,active,TRUE
+COND-40983861,PAT-00683,A90,Dengue fever,2022-09-23,resolved,TRUE
+COND-5D799DD5,PAT-00683,N18.3,"Chronic kidney disease, stage 3",2020-12-28,active,TRUE
+COND-96B43229,PAT-00684,E11.9,Type 2 diabetes mellitus without complications,2020-02-07,active,TRUE
+COND-FF0006D4,PAT-00684,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-09-19,resolved,TRUE
+COND-0700648E,PAT-00686,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-06-11,active,TRUE
+COND-05DE5C5A,PAT-00687,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-11-26,active,TRUE
+COND-C666342F,PAT-00687,E78.5,"Hyperlipidemia, unspecified",2021-10-02,active,TRUE
+COND-2D7606ED,PAT-00690,I10,Essential (primary) hypertension,2023-11-29,active,TRUE
+COND-5B5667C7,PAT-00691,I25.10,Atherosclerotic heart disease,2023-10-23,active,TRUE
+COND-34A399F9,PAT-00692,E11.9,Type 2 diabetes mellitus without complications,2017-08-12,active,TRUE
+COND-E1A1E52D,PAT-00692,I10,Essential (primary) hypertension,2017-07-02,active,TRUE
+COND-2D19F15E,PAT-00692,E78.5,"Hyperlipidemia, unspecified",2021-06-09,active,TRUE
+COND-F5EA0D49,PAT-00693,A15.0,Tuberculosis of lung,2021-10-11,active,TRUE
+COND-77A071AF,PAT-00693,I25.10,Atherosclerotic heart disease,2016-08-16,active,TRUE
+COND-70682D7D,PAT-00693,E78.5,"Hyperlipidemia, unspecified",2018-07-19,active,TRUE
+COND-4C68D6CC,PAT-00695,E78.5,"Hyperlipidemia, unspecified",2020-02-21,active,TRUE
+COND-41408C50,PAT-00696,I10,Essential (primary) hypertension,2017-08-18,active,TRUE
+COND-94719E08,PAT-00697,I10,Essential (primary) hypertension,2018-07-06,active,TRUE
+COND-5B1228B1,PAT-00699,E11.9,Type 2 diabetes mellitus without complications,2019-10-15,active,TRUE
+COND-F8B60294,PAT-00699,I10,Essential (primary) hypertension,2020-12-19,active,TRUE
+COND-AD557C04,PAT-00699,E78.5,"Hyperlipidemia, unspecified",2018-01-06,active,TRUE
+COND-A2B68B07,PAT-00700,E11.9,Type 2 diabetes mellitus without complications,2022-10-15,active,TRUE
+COND-76C854E1,PAT-00701,E11.9,Type 2 diabetes mellitus without complications,2023-08-06,active,TRUE
+COND-47807598,PAT-00701,I10,Essential (primary) hypertension,2023-04-21,active,TRUE
+COND-A07EDCCD,PAT-00701,A15.0,Tuberculosis of lung,2021-06-12,active,TRUE
+COND-FA25A808,PAT-00703,I10,Essential (primary) hypertension,2023-05-24,active,TRUE
+COND-9F78EFD2,PAT-00704,E11.9,Type 2 diabetes mellitus without complications,2018-01-25,active,TRUE
+COND-C4A8D391,PAT-00704,E78.5,"Hyperlipidemia, unspecified",2018-01-09,active,TRUE
+COND-8D1CF8BE,PAT-00705,I25.10,Atherosclerotic heart disease,2021-12-15,active,TRUE
+COND-CBB02196,PAT-00705,E78.5,"Hyperlipidemia, unspecified",2020-06-11,active,TRUE
+COND-D7A77362,PAT-00705,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-10,resolved,TRUE
+COND-939C13B8,PAT-00708,E11.9,Type 2 diabetes mellitus without complications,2023-09-05,active,TRUE
+COND-76EFEE1F,PAT-00708,I25.10,Atherosclerotic heart disease,2024-05-08,active,TRUE
+COND-42FBF590,PAT-00710,E11.9,Type 2 diabetes mellitus without complications,2020-10-26,active,TRUE
+COND-CB9BAE5B,PAT-00710,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-08-04,resolved,TRUE
+COND-B6DFEC04,PAT-00711,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-01-09,active,TRUE
+COND-F3CC8111,PAT-00711,N18.3,"Chronic kidney disease, stage 3",2017-08-19,active,TRUE
+COND-2516FE3E,PAT-00712,I10,Essential (primary) hypertension,2022-07-19,active,TRUE
+COND-7EB34471,PAT-00713,I10,Essential (primary) hypertension,2018-05-03,active,TRUE
+COND-EE72F009,PAT-00713,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-03-16,active,TRUE
+COND-6C051AA0,PAT-00715,E78.5,"Hyperlipidemia, unspecified",2022-06-29,active,TRUE
+COND-CC1ABC1D,PAT-00715,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-08-01,active,TRUE
+COND-762B5A76,PAT-00718,E11.9,Type 2 diabetes mellitus without complications,2018-03-23,active,TRUE
+COND-4917415F,PAT-00718,I25.10,Atherosclerotic heart disease,2019-11-02,active,TRUE
+COND-8CC73D5B,PAT-00719,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-02-13,active,TRUE
+COND-4159C8A7,PAT-00720,E11.9,Type 2 diabetes mellitus without complications,2022-09-08,active,TRUE
+COND-E8207995,PAT-00720,I10,Essential (primary) hypertension,2020-04-13,active,TRUE
+COND-82D7686A,PAT-00721,E11.9,Type 2 diabetes mellitus without complications,2016-06-30,active,TRUE
+COND-9C904051,PAT-00722,E11.9,Type 2 diabetes mellitus without complications,2017-06-27,active,TRUE
+COND-AA6695B6,PAT-00722,I10,Essential (primary) hypertension,2024-05-31,active,TRUE
+COND-642308A0,PAT-00722,E78.5,"Hyperlipidemia, unspecified",2020-08-19,active,TRUE
+COND-E545C68C,PAT-00723,I10,Essential (primary) hypertension,2022-11-16,active,TRUE
+COND-BE5EEE80,PAT-00724,I10,Essential (primary) hypertension,2020-02-17,active,TRUE
+COND-03290C62,PAT-00724,I25.10,Atherosclerotic heart disease,2016-07-03,active,TRUE
+COND-E9DEB3C7,PAT-00724,E78.5,"Hyperlipidemia, unspecified",2017-12-06,active,TRUE
+COND-5E249E8C,PAT-00725,A15.0,Tuberculosis of lung,2023-02-11,active,TRUE
+COND-760E6E13,PAT-00725,E78.5,"Hyperlipidemia, unspecified",2024-05-27,active,TRUE
+COND-8E0C824C,PAT-00726,E11.9,Type 2 diabetes mellitus without complications,2020-11-19,active,TRUE
+COND-FF21A00C,PAT-00726,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-07-06,active,TRUE
+COND-DC72B91B,PAT-00728,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-10-23,active,TRUE
+COND-B377FDD0,PAT-00728,A15.0,Tuberculosis of lung,2023-03-02,resolved,TRUE
+COND-1EB37B36,PAT-00728,N18.3,"Chronic kidney disease, stage 3",2022-02-05,active,TRUE
+COND-A08DBBCD,PAT-00730,A90,Dengue fever,2022-03-14,resolved,TRUE
+COND-DCB319B3,PAT-00730,E78.5,"Hyperlipidemia, unspecified",2022-06-24,active,TRUE
+COND-2C1A2AF4,PAT-00731,E11.9,Type 2 diabetes mellitus without complications,2020-07-17,active,TRUE
+COND-81EB50BF,PAT-00731,I10,Essential (primary) hypertension,2024-01-19,active,TRUE
+COND-6E4B6025,PAT-00731,A15.0,Tuberculosis of lung,2023-05-07,active,TRUE
+COND-67E12CB2,PAT-00732,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-01-09,resolved,TRUE
+COND-5946DCB1,PAT-00734,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-11-05,active,TRUE
+COND-58BD19BC,PAT-00738,I10,Essential (primary) hypertension,2022-03-18,active,TRUE
+COND-5EEBDD59,PAT-00738,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-08-25,active,TRUE
+COND-97380A02,PAT-00738,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-05-20,resolved,TRUE
+COND-5694D3A4,PAT-00739,I10,Essential (primary) hypertension,2017-05-28,active,TRUE
+COND-AF8E1F23,PAT-00741,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-02-17,active,TRUE
+COND-8540B3D4,PAT-00741,E78.5,"Hyperlipidemia, unspecified",2021-10-22,active,TRUE
+COND-CF653A59,PAT-00741,N18.3,"Chronic kidney disease, stage 3",2024-05-01,active,TRUE
+COND-1D1A20CD,PAT-00742,E11.9,Type 2 diabetes mellitus without complications,2024-04-27,active,TRUE
+COND-C5A61246,PAT-00744,I10,Essential (primary) hypertension,2021-09-13,active,TRUE
+COND-71F95F7F,PAT-00745,E11.9,Type 2 diabetes mellitus without complications,2023-04-26,active,TRUE
+COND-6ECD838C,PAT-00745,I10,Essential (primary) hypertension,2019-09-02,active,TRUE
+COND-6C9B7CCE,PAT-00745,E78.5,"Hyperlipidemia, unspecified",2018-02-11,active,TRUE
+COND-10BE2797,PAT-00746,I10,Essential (primary) hypertension,2022-07-23,active,TRUE
+COND-18F96A14,PAT-00746,E78.5,"Hyperlipidemia, unspecified",2022-01-12,active,TRUE
+COND-C7220630,PAT-00747,I25.10,Atherosclerotic heart disease,2024-06-21,active,TRUE
+COND-D80F7278,PAT-00747,N18.3,"Chronic kidney disease, stage 3",2023-02-02,active,TRUE
+COND-F632704D,PAT-00749,E11.9,Type 2 diabetes mellitus without complications,2021-04-04,active,TRUE
+COND-9A8DDDD1,PAT-00749,I10,Essential (primary) hypertension,2019-03-03,active,TRUE
+COND-40BCFE27,PAT-00750,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-08-26,active,TRUE
+COND-897C6F9F,PAT-00751,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-07-31,active,TRUE
+COND-EE4F2F3B,PAT-00751,N18.3,"Chronic kidney disease, stage 3",2016-12-19,active,TRUE
+COND-BD8B531E,PAT-00752,E11.9,Type 2 diabetes mellitus without complications,2017-04-02,active,TRUE
+COND-76D748D5,PAT-00752,I10,Essential (primary) hypertension,2020-04-06,active,TRUE
+COND-89B62FFF,PAT-00752,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-08-09,active,TRUE
+COND-42242C45,PAT-00752,E78.5,"Hyperlipidemia, unspecified",2019-09-10,active,TRUE
+COND-2CB1FE88,PAT-00754,A90,Dengue fever,2022-04-03,active,TRUE
+COND-0255B18B,PAT-00754,I25.10,Atherosclerotic heart disease,2018-09-03,active,TRUE
+COND-69FB0053,PAT-00755,E78.5,"Hyperlipidemia, unspecified",2019-05-29,active,TRUE
+COND-B05B007C,PAT-00756,A90,Dengue fever,2023-02-17,active,TRUE
+COND-389323D1,PAT-00756,I25.10,Atherosclerotic heart disease,2016-08-19,active,TRUE
+COND-D2F745F7,PAT-00757,I10,Essential (primary) hypertension,2021-06-20,active,TRUE
+COND-D13C6FF3,PAT-00757,E78.5,"Hyperlipidemia, unspecified",2021-10-21,active,TRUE
+COND-488C0493,PAT-00759,I10,Essential (primary) hypertension,2020-01-08,active,TRUE
+COND-8E8CB17B,PAT-00759,A90,Dengue fever,2022-07-31,resolved,TRUE
+COND-7767214D,PAT-00759,E78.5,"Hyperlipidemia, unspecified",2023-07-09,active,TRUE
+COND-A5E4B116,PAT-00761,I25.10,Atherosclerotic heart disease,2022-09-30,active,TRUE
+COND-7B0720CE,PAT-00762,E11.9,Type 2 diabetes mellitus without complications,2024-06-04,active,TRUE
+COND-CAA8DB91,PAT-00762,I25.10,Atherosclerotic heart disease,2024-06-18,active,TRUE
+COND-15054AF5,PAT-00762,E78.5,"Hyperlipidemia, unspecified",2022-12-03,active,TRUE
+COND-CCE57EDF,PAT-00764,E11.9,Type 2 diabetes mellitus without complications,2022-06-08,active,TRUE
+COND-48520724,PAT-00767,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-01-31,active,TRUE
+COND-EFD1927D,PAT-00768,E11.9,Type 2 diabetes mellitus without complications,2022-01-18,active,TRUE
+COND-59437760,PAT-00768,I25.10,Atherosclerotic heart disease,2023-04-02,active,TRUE
+COND-4CFEC970,PAT-00768,E78.5,"Hyperlipidemia, unspecified",2020-01-12,active,TRUE
+COND-D97D6F67,PAT-00769,E11.9,Type 2 diabetes mellitus without complications,2020-02-18,active,TRUE
+COND-79EC5175,PAT-00769,I10,Essential (primary) hypertension,2020-08-02,active,TRUE
+COND-210FFE50,PAT-00769,E78.5,"Hyperlipidemia, unspecified",2017-09-01,active,TRUE
+COND-7185444A,PAT-00769,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-02-14,resolved,TRUE
+COND-957D972E,PAT-00771,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-07-17,resolved,TRUE
+COND-C767FA7F,PAT-00773,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-05-03,active,TRUE
+COND-8AFC434E,PAT-00773,E78.5,"Hyperlipidemia, unspecified",2018-04-03,active,TRUE
+COND-61199664,PAT-00775,E11.9,Type 2 diabetes mellitus without complications,2016-10-25,active,TRUE
+COND-A033D718,PAT-00776,N18.3,"Chronic kidney disease, stage 3",2018-07-07,active,TRUE
+COND-9FE3A6E8,PAT-00777,E11.9,Type 2 diabetes mellitus without complications,2023-02-21,active,TRUE
+COND-D6F1A2A3,PAT-00777,I10,Essential (primary) hypertension,2018-01-31,active,TRUE
+COND-E8AC9474,PAT-00778,I25.10,Atherosclerotic heart disease,2023-02-24,active,TRUE
+COND-1869B4E1,PAT-00779,I10,Essential (primary) hypertension,2019-10-06,active,TRUE
+COND-96E9B50A,PAT-00779,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-03-21,active,TRUE
+COND-F70B640C,PAT-00780,E11.9,Type 2 diabetes mellitus without complications,2018-11-19,active,TRUE
+COND-251C1C8B,PAT-00780,I10,Essential (primary) hypertension,2021-11-02,active,TRUE
+COND-2789E4C1,PAT-00781,I10,Essential (primary) hypertension,2018-05-11,active,TRUE
+COND-93D325AD,PAT-00782,I25.10,Atherosclerotic heart disease,2022-01-07,active,TRUE
+COND-B1958E63,PAT-00784,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-02-19,resolved,TRUE
+COND-05949D6B,PAT-00785,I10,Essential (primary) hypertension,2021-07-05,active,TRUE
+COND-60D91166,PAT-00785,A15.0,Tuberculosis of lung,2024-02-09,active,TRUE
+COND-C8C75CE4,PAT-00786,E11.9,Type 2 diabetes mellitus without complications,2022-07-03,active,TRUE
+COND-2E3E00DD,PAT-00786,I10,Essential (primary) hypertension,2018-01-29,active,TRUE
+COND-8137BAB4,PAT-00786,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-04-17,active,TRUE
+COND-D36AE2B0,PAT-00786,N18.3,"Chronic kidney disease, stage 3",2017-07-13,active,TRUE
+COND-8219BDD5,PAT-00787,I10,Essential (primary) hypertension,2020-10-05,active,TRUE
+COND-B01411FC,PAT-00787,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-06-05,active,TRUE
+COND-A6BD095D,PAT-00787,A15.0,Tuberculosis of lung,2024-01-11,resolved,TRUE
+COND-E17D5EBF,PAT-00787,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-01-31,active,TRUE
+COND-9D9831C2,PAT-00789,I10,Essential (primary) hypertension,2023-09-01,active,TRUE
+COND-71C7F384,PAT-00789,A90,Dengue fever,2022-09-04,active,TRUE
+COND-DC094D5D,PAT-00789,N18.3,"Chronic kidney disease, stage 3",2017-06-27,active,TRUE
+COND-101658E2,PAT-00790,I10,Essential (primary) hypertension,2019-12-07,active,TRUE
+COND-61C3AFFE,PAT-00792,E11.9,Type 2 diabetes mellitus without complications,2018-04-24,active,TRUE
+COND-B80B5B88,PAT-00792,I10,Essential (primary) hypertension,2018-12-06,active,TRUE
+COND-86D38E9A,PAT-00793,I10,Essential (primary) hypertension,2024-02-27,active,TRUE
+COND-36162FDB,PAT-00794,I10,Essential (primary) hypertension,2024-02-06,active,TRUE
+COND-91A6D3B7,PAT-00794,E78.5,"Hyperlipidemia, unspecified",2018-11-09,active,TRUE
+COND-80BB0FED,PAT-00794,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-24,active,TRUE
+COND-54C8AAAD,PAT-00794,N18.3,"Chronic kidney disease, stage 3",2022-06-18,active,TRUE
+COND-6F9E0C6F,PAT-00795,I10,Essential (primary) hypertension,2021-10-11,active,TRUE
+COND-765789FB,PAT-00796,I10,Essential (primary) hypertension,2022-06-10,active,TRUE
+COND-48B05FD5,PAT-00796,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-05-13,active,TRUE
+COND-29F8FF4A,PAT-00797,I25.10,Atherosclerotic heart disease,2022-09-10,active,TRUE
+COND-1E383263,PAT-00797,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-11-05,active,TRUE
+COND-3704CB7C,PAT-00798,E11.9,Type 2 diabetes mellitus without complications,2019-03-06,active,TRUE
+COND-069A9070,PAT-00799,I25.10,Atherosclerotic heart disease,2019-11-19,active,TRUE
+COND-EE0F2E51,PAT-00800,I10,Essential (primary) hypertension,2024-05-06,active,TRUE
+COND-CFD1968B,PAT-00801,E11.9,Type 2 diabetes mellitus without complications,2022-12-29,active,TRUE
+COND-A5B848ED,PAT-00801,I25.10,Atherosclerotic heart disease,2023-04-21,active,TRUE
+COND-450ED450,PAT-00802,E78.5,"Hyperlipidemia, unspecified",2019-07-25,active,TRUE
+COND-7A871F82,PAT-00802,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-04-20,active,TRUE
+COND-DC08F211,PAT-00803,E11.9,Type 2 diabetes mellitus without complications,2022-07-22,active,TRUE
+COND-126F3275,PAT-00803,I10,Essential (primary) hypertension,2023-11-08,active,TRUE
+COND-6F7AFECC,PAT-00803,E78.5,"Hyperlipidemia, unspecified",2023-02-17,active,TRUE
+COND-2BAAD171,PAT-00803,N18.3,"Chronic kidney disease, stage 3",2024-02-21,active,TRUE
+COND-EA70DBB3,PAT-00804,N18.3,"Chronic kidney disease, stage 3",2018-10-18,active,TRUE
+COND-DF168B34,PAT-00806,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-06-30,active,TRUE
+COND-8A0EB580,PAT-00806,N18.3,"Chronic kidney disease, stage 3",2023-02-23,active,TRUE
+COND-3DD2A504,PAT-00807,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-03-05,active,TRUE
+COND-DF2E0420,PAT-00808,E11.9,Type 2 diabetes mellitus without complications,2017-08-15,active,TRUE
+COND-BC00EC00,PAT-00808,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-05-25,active,TRUE
+COND-99C3B265,PAT-00809,I10,Essential (primary) hypertension,2020-11-22,active,TRUE
+COND-FACCF94D,PAT-00809,E78.5,"Hyperlipidemia, unspecified",2018-08-31,active,TRUE
+COND-8F64F729,PAT-00809,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-05-16,resolved,TRUE
+COND-CF331A38,PAT-00810,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-11-08,active,TRUE
+COND-A33D9FE6,PAT-00811,E11.9,Type 2 diabetes mellitus without complications,2023-06-28,active,TRUE
+COND-1E09C627,PAT-00811,I10,Essential (primary) hypertension,2022-03-22,active,TRUE
+COND-56F63D45,PAT-00811,I25.10,Atherosclerotic heart disease,2022-04-10,active,TRUE
+COND-65FB0301,PAT-00812,I10,Essential (primary) hypertension,2019-03-08,active,TRUE
+COND-FAE6FF5A,PAT-00812,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-03-25,active,TRUE
+COND-5E25FA7C,PAT-00814,E11.9,Type 2 diabetes mellitus without complications,2022-08-23,active,TRUE
+COND-C814C8EC,PAT-00816,E11.9,Type 2 diabetes mellitus without complications,2024-04-23,active,TRUE
+COND-9AACC519,PAT-00816,E78.5,"Hyperlipidemia, unspecified",2023-12-04,active,TRUE
+COND-556C4DF6,PAT-00817,E11.9,Type 2 diabetes mellitus without complications,2019-08-27,active,TRUE
+COND-2C1EEA18,PAT-00817,I25.10,Atherosclerotic heart disease,2022-03-14,active,TRUE
+COND-0238E56D,PAT-00818,E11.9,Type 2 diabetes mellitus without complications,2020-10-18,active,TRUE
+COND-7278CCC8,PAT-00819,I10,Essential (primary) hypertension,2020-04-13,active,TRUE
+COND-0DC16D48,PAT-00819,A15.0,Tuberculosis of lung,2022-12-08,active,TRUE
+COND-4120EA4D,PAT-00819,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-27,resolved,TRUE
+COND-E6F93F1D,PAT-00820,E78.5,"Hyperlipidemia, unspecified",2022-10-16,active,TRUE
+COND-ED9393EF,PAT-00820,N18.3,"Chronic kidney disease, stage 3",2020-02-18,active,TRUE
+COND-0B42A4E6,PAT-00822,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-06-08,active,TRUE
+COND-1B63E32D,PAT-00824,E78.5,"Hyperlipidemia, unspecified",2018-05-10,active,TRUE
+COND-24F263B9,PAT-00824,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-03-17,resolved,TRUE
+COND-FC143C5B,PAT-00825,I25.10,Atherosclerotic heart disease,2019-05-19,active,TRUE
+COND-00D31E01,PAT-00825,E78.5,"Hyperlipidemia, unspecified",2020-03-30,active,TRUE
+COND-23B5C49D,PAT-00826,E11.9,Type 2 diabetes mellitus without complications,2024-04-17,active,TRUE
+COND-E558DE3F,PAT-00826,E78.5,"Hyperlipidemia, unspecified",2019-12-10,active,TRUE
+COND-D09F3186,PAT-00827,E11.9,Type 2 diabetes mellitus without complications,2022-02-24,active,TRUE
+COND-D34998DC,PAT-00827,E78.5,"Hyperlipidemia, unspecified",2023-03-25,active,TRUE
+COND-2661066F,PAT-00827,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-02-07,active,TRUE
+COND-1D041978,PAT-00828,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-08-14,active,TRUE
+COND-F90E4B97,PAT-00829,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-12-08,active,TRUE
+COND-3734284A,PAT-00830,E11.9,Type 2 diabetes mellitus without complications,2019-12-23,active,TRUE
+COND-8B467F30,PAT-00830,I10,Essential (primary) hypertension,2023-05-14,active,TRUE
+COND-72F49135,PAT-00830,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-12-21,active,TRUE
+COND-FF4E22D1,PAT-00830,E78.5,"Hyperlipidemia, unspecified",2023-02-07,active,TRUE
+COND-3F49C879,PAT-00831,E11.9,Type 2 diabetes mellitus without complications,2018-03-18,active,TRUE
+COND-565A1D03,PAT-00832,E11.9,Type 2 diabetes mellitus without complications,2018-12-12,active,TRUE
+COND-AEC41491,PAT-00832,I10,Essential (primary) hypertension,2023-11-29,active,TRUE
+COND-6BB5558E,PAT-00832,A90,Dengue fever,2023-05-12,resolved,TRUE
+COND-E3568256,PAT-00832,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-04-17,active,TRUE
+COND-5C56902F,PAT-00833,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-08-17,resolved,TRUE
+COND-AC41EC3E,PAT-00834,E11.9,Type 2 diabetes mellitus without complications,2020-11-27,active,TRUE
+COND-D2E1A6BA,PAT-00834,E78.5,"Hyperlipidemia, unspecified",2023-11-09,active,TRUE
+COND-E38B5EF2,PAT-00835,E11.9,Type 2 diabetes mellitus without complications,2016-11-09,active,TRUE
+COND-D729CEFB,PAT-00835,A15.0,Tuberculosis of lung,2022-10-30,resolved,TRUE
+COND-B9AA6D4C,PAT-00838,E78.5,"Hyperlipidemia, unspecified",2018-06-18,active,TRUE
+COND-EA3374D7,PAT-00838,N18.3,"Chronic kidney disease, stage 3",2022-04-28,active,TRUE
+COND-F80A7FEA,PAT-00839,E78.5,"Hyperlipidemia, unspecified",2016-08-15,active,TRUE
+COND-086B645A,PAT-00840,E11.9,Type 2 diabetes mellitus without complications,2022-09-27,active,TRUE
+COND-7CE4102B,PAT-00840,I10,Essential (primary) hypertension,2019-04-01,active,TRUE
+COND-24F74979,PAT-00840,E78.5,"Hyperlipidemia, unspecified",2023-11-27,active,TRUE
+COND-CE0E1871,PAT-00841,I25.10,Atherosclerotic heart disease,2018-09-20,active,TRUE
+COND-0A301194,PAT-00842,E11.9,Type 2 diabetes mellitus without complications,2019-04-04,active,TRUE
+COND-1E124948,PAT-00842,I10,Essential (primary) hypertension,2019-08-28,active,TRUE
+COND-426C8730,PAT-00842,J44.9,"Chronic obstructive pulmonary disease, unspecified",2016-11-06,active,TRUE
+COND-792922CE,PAT-00843,E78.5,"Hyperlipidemia, unspecified",2016-09-26,active,TRUE
+COND-A56A53A8,PAT-00844,A90,Dengue fever,2022-08-27,active,TRUE
+COND-2CC0035F,PAT-00844,E78.5,"Hyperlipidemia, unspecified",2023-10-19,active,TRUE
+COND-2AEE5AF9,PAT-00846,E11.9,Type 2 diabetes mellitus without complications,2017-05-24,active,TRUE
+COND-B6B37DE2,PAT-00846,A90,Dengue fever,2021-11-05,active,TRUE
+COND-9C97D81A,PAT-00846,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-06-04,active,TRUE
+COND-646C50B2,PAT-00847,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-04-26,active,TRUE
+COND-FE998CE4,PAT-00848,E78.5,"Hyperlipidemia, unspecified",2022-07-31,active,TRUE
+COND-3CB9A84F,PAT-00850,I10,Essential (primary) hypertension,2019-01-29,active,TRUE
+COND-695CF301,PAT-00850,E78.5,"Hyperlipidemia, unspecified",2018-08-23,active,TRUE
+COND-9C86778D,PAT-00851,E11.9,Type 2 diabetes mellitus without complications,2024-02-03,active,TRUE
+COND-E6068D93,PAT-00851,A15.0,Tuberculosis of lung,2022-06-17,active,TRUE
+COND-51C356FF,PAT-00851,A90,Dengue fever,2022-07-03,active,TRUE
+COND-4BAE6861,PAT-00851,E78.5,"Hyperlipidemia, unspecified",2023-07-26,active,TRUE
+COND-E8F06F16,PAT-00851,N18.3,"Chronic kidney disease, stage 3",2023-08-07,active,TRUE
+COND-3E105707,PAT-00852,A15.0,Tuberculosis of lung,2023-06-16,resolved,TRUE
+COND-64C95E93,PAT-00852,A90,Dengue fever,2022-05-09,resolved,TRUE
+COND-0F9557D1,PAT-00853,E78.5,"Hyperlipidemia, unspecified",2021-05-04,active,TRUE
+COND-913C603C,PAT-00853,N18.3,"Chronic kidney disease, stage 3",2024-02-22,active,TRUE
+COND-A9AA0ACB,PAT-00854,E11.9,Type 2 diabetes mellitus without complications,2023-08-13,active,TRUE
+COND-F9756423,PAT-00854,I10,Essential (primary) hypertension,2019-08-26,active,TRUE
+COND-66799A64,PAT-00854,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-23,active,TRUE
+COND-41793367,PAT-00855,E78.5,"Hyperlipidemia, unspecified",2024-06-03,active,TRUE
+COND-1ED6D0CA,PAT-00855,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-12,resolved,TRUE
+COND-5C9ECEAB,PAT-00856,I10,Essential (primary) hypertension,2023-11-02,active,TRUE
+COND-AAD5AD50,PAT-00857,E11.9,Type 2 diabetes mellitus without complications,2021-11-16,active,TRUE
+COND-F25E6B6C,PAT-00857,I10,Essential (primary) hypertension,2021-02-05,active,TRUE
+COND-E4457ECF,PAT-00857,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-06-28,active,TRUE
+COND-F8A12F02,PAT-00859,I10,Essential (primary) hypertension,2018-09-04,active,TRUE
+COND-C8DBFAB4,PAT-00859,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-04,active,TRUE
+COND-0632D964,PAT-00860,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-01-04,resolved,TRUE
+COND-0B3FAD83,PAT-00861,A15.0,Tuberculosis of lung,2023-02-28,resolved,TRUE
+COND-4CEE45B0,PAT-00862,I10,Essential (primary) hypertension,2019-10-08,active,TRUE
+COND-956BC117,PAT-00862,I25.10,Atherosclerotic heart disease,2018-02-09,active,TRUE
+COND-6F44A13C,PAT-00863,E11.9,Type 2 diabetes mellitus without complications,2018-10-28,active,TRUE
+COND-ABD739C1,PAT-00863,I10,Essential (primary) hypertension,2022-06-20,active,TRUE
+COND-7C9B1686,PAT-00865,E11.9,Type 2 diabetes mellitus without complications,2017-10-15,active,TRUE
+COND-DB9B3613,PAT-00866,I10,Essential (primary) hypertension,2022-01-07,active,TRUE
+COND-E2DA5BFD,PAT-00867,E11.9,Type 2 diabetes mellitus without complications,2022-05-04,active,TRUE
+COND-2A308478,PAT-00868,E11.9,Type 2 diabetes mellitus without complications,2023-12-13,active,TRUE
+COND-4E16ECC4,PAT-00868,I10,Essential (primary) hypertension,2019-12-13,active,TRUE
+COND-15590BB7,PAT-00868,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-11-13,active,TRUE
+COND-5E9A15D6,PAT-00869,E11.9,Type 2 diabetes mellitus without complications,2021-05-19,active,TRUE
+COND-29226BCE,PAT-00869,I25.10,Atherosclerotic heart disease,2018-12-15,active,TRUE
+COND-F2FD576D,PAT-00870,I10,Essential (primary) hypertension,2024-03-08,active,TRUE
+COND-B7D40DB0,PAT-00870,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-02,active,TRUE
+COND-AE448585,PAT-00871,E11.9,Type 2 diabetes mellitus without complications,2017-06-07,active,TRUE
+COND-61D369D0,PAT-00872,E11.9,Type 2 diabetes mellitus without complications,2018-02-13,active,TRUE
+COND-7C5BA67A,PAT-00872,E78.5,"Hyperlipidemia, unspecified",2021-07-06,active,TRUE
+COND-FAB9DD94,PAT-00873,E11.9,Type 2 diabetes mellitus without complications,2022-01-23,active,TRUE
+COND-FBEC6080,PAT-00873,I10,Essential (primary) hypertension,2023-07-15,active,TRUE
+COND-7C69A2EE,PAT-00873,E78.5,"Hyperlipidemia, unspecified",2022-04-22,active,TRUE
+COND-C890E9A6,PAT-00876,E11.9,Type 2 diabetes mellitus without complications,2018-08-15,active,TRUE
+COND-8476ED76,PAT-00876,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-11-19,active,TRUE
+COND-3B7C28D5,PAT-00877,E11.9,Type 2 diabetes mellitus without complications,2022-03-22,active,TRUE
+COND-A1E0C44C,PAT-00877,I10,Essential (primary) hypertension,2017-10-20,active,TRUE
+COND-82EA84A3,PAT-00877,N18.3,"Chronic kidney disease, stage 3",2024-01-02,active,TRUE
+COND-777E3416,PAT-00879,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-01-24,active,TRUE
+COND-CEDFC502,PAT-00881,I10,Essential (primary) hypertension,2023-07-06,active,TRUE
+COND-981E0512,PAT-00881,N18.3,"Chronic kidney disease, stage 3",2020-10-04,active,TRUE
+COND-7E39EB2A,PAT-00882,E11.9,Type 2 diabetes mellitus without complications,2018-06-06,active,TRUE
+COND-0B759294,PAT-00883,E11.9,Type 2 diabetes mellitus without complications,2019-04-14,active,TRUE
+COND-583B65BB,PAT-00883,I10,Essential (primary) hypertension,2023-04-06,active,TRUE
+COND-D49D126D,PAT-00884,E11.9,Type 2 diabetes mellitus without complications,2020-08-20,active,TRUE
+COND-811C960C,PAT-00884,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-05-15,active,TRUE
+COND-30D568F6,PAT-00885,E11.9,Type 2 diabetes mellitus without complications,2016-11-16,active,TRUE
+COND-42EB2EF8,PAT-00885,N18.3,"Chronic kidney disease, stage 3",2020-07-03,active,TRUE
+COND-BC5045E0,PAT-00886,I10,Essential (primary) hypertension,2021-05-09,active,TRUE
+COND-8396B9C7,PAT-00888,E11.9,Type 2 diabetes mellitus without complications,2016-04-04,active,TRUE
+COND-459D7378,PAT-00888,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-02-20,active,TRUE
+COND-B40678F7,PAT-00889,I25.10,Atherosclerotic heart disease,2023-01-08,active,TRUE
+COND-E2E400E4,PAT-00890,E11.9,Type 2 diabetes mellitus without complications,2021-02-25,active,TRUE
+COND-1D8F446C,PAT-00890,I10,Essential (primary) hypertension,2023-03-09,active,TRUE
+COND-010CDD21,PAT-00891,I10,Essential (primary) hypertension,2024-05-31,active,TRUE
+COND-F36C6A5F,PAT-00891,E78.5,"Hyperlipidemia, unspecified",2021-10-09,active,TRUE
+COND-23FBFE3C,PAT-00891,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-15,active,TRUE
+COND-289453F3,PAT-00897,I10,Essential (primary) hypertension,2021-07-17,active,TRUE
+COND-AE1EE700,PAT-00897,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-12-06,resolved,TRUE
+COND-8EE85B7D,PAT-00898,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-08-27,active,TRUE
+COND-2616527E,PAT-00899,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-24,active,TRUE
+COND-4232ACDD,PAT-00901,I25.10,Atherosclerotic heart disease,2022-09-13,active,TRUE
+COND-66ED99FD,PAT-00902,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-02-26,resolved,TRUE
+COND-25FC96C9,PAT-00905,I10,Essential (primary) hypertension,2017-06-08,active,TRUE
+COND-3DD4C38E,PAT-00905,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-10-16,active,TRUE
+COND-8F817F95,PAT-00906,I10,Essential (primary) hypertension,2018-05-31,active,TRUE
+COND-B41BDB89,PAT-00906,E78.5,"Hyperlipidemia, unspecified",2023-11-11,active,TRUE
+COND-5CB7111F,PAT-00907,J44.9,"Chronic obstructive pulmonary disease, unspecified",2017-03-14,active,TRUE
+COND-48487EB0,PAT-00907,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-30,resolved,TRUE
+COND-FF652ECD,PAT-00908,I10,Essential (primary) hypertension,2018-11-29,active,TRUE
+COND-B340DEBC,PAT-00909,E78.5,"Hyperlipidemia, unspecified",2016-09-01,active,TRUE
+COND-4687ED08,PAT-00911,E11.9,Type 2 diabetes mellitus without complications,2022-01-25,active,TRUE
+COND-AF0B02F5,PAT-00911,I10,Essential (primary) hypertension,2022-01-13,active,TRUE
+COND-9A4C5A20,PAT-00915,E11.9,Type 2 diabetes mellitus without complications,2022-03-16,active,TRUE
+COND-35008C77,PAT-00915,I10,Essential (primary) hypertension,2016-09-10,active,TRUE
+COND-A6A1C91A,PAT-00916,I10,Essential (primary) hypertension,2018-01-20,active,TRUE
+COND-F11C1F15,PAT-00917,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-05-24,active,TRUE
+COND-75DBD24F,PAT-00919,I10,Essential (primary) hypertension,2023-08-15,active,TRUE
+COND-63D20981,PAT-00919,I25.10,Atherosclerotic heart disease,2018-11-29,active,TRUE
+COND-56970412,PAT-00919,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-01-15,resolved,TRUE
+COND-ABF0A8A8,PAT-00920,I10,Essential (primary) hypertension,2018-11-06,active,TRUE
+COND-E6C83436,PAT-00920,A15.0,Tuberculosis of lung,2024-03-03,active,TRUE
+COND-D8AA7E1A,PAT-00921,E11.9,Type 2 diabetes mellitus without complications,2020-04-27,active,TRUE
+COND-07440618,PAT-00921,I10,Essential (primary) hypertension,2024-06-19,active,TRUE
+COND-ECFB7FB0,PAT-00921,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-07-07,active,TRUE
+COND-07A410A1,PAT-00922,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-12-14,resolved,TRUE
+COND-197C2407,PAT-00924,I10,Essential (primary) hypertension,2023-02-25,active,TRUE
+COND-7A32F117,PAT-00925,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-05-09,active,TRUE
+COND-86BE0907,PAT-00925,A15.0,Tuberculosis of lung,2023-07-09,active,TRUE
+COND-21138FCF,PAT-00926,E11.9,Type 2 diabetes mellitus without complications,2022-02-01,active,TRUE
+COND-6B622B78,PAT-00926,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-08-13,active,TRUE
+COND-A1AB56AC,PAT-00927,E11.9,Type 2 diabetes mellitus without complications,2023-08-21,active,TRUE
+COND-F7B54800,PAT-00927,A15.0,Tuberculosis of lung,2022-12-14,active,TRUE
+COND-11ADD9A5,PAT-00927,E78.5,"Hyperlipidemia, unspecified",2018-12-04,active,TRUE
+COND-3438239C,PAT-00927,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-11-15,active,TRUE
+COND-835C6CC4,PAT-00928,I10,Essential (primary) hypertension,2024-02-27,active,TRUE
+COND-1B1F084B,PAT-00928,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-05-24,active,TRUE
+COND-95021C2C,PAT-00928,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-19,resolved,TRUE
+COND-8EB49F9D,PAT-00929,A15.0,Tuberculosis of lung,2024-02-25,active,TRUE
+COND-13C9BB72,PAT-00929,I25.10,Atherosclerotic heart disease,2024-02-01,active,TRUE
+COND-656D12F4,PAT-00930,I10,Essential (primary) hypertension,2020-09-15,active,TRUE
+COND-C792941B,PAT-00930,E78.5,"Hyperlipidemia, unspecified",2023-11-13,active,TRUE
+COND-938BA616,PAT-00931,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-06-02,active,TRUE
+COND-AB581A95,PAT-00933,E11.9,Type 2 diabetes mellitus without complications,2019-04-24,active,TRUE
+COND-80149CEC,PAT-00933,I10,Essential (primary) hypertension,2020-01-04,active,TRUE
+COND-EC04027B,PAT-00934,E78.5,"Hyperlipidemia, unspecified",2020-10-14,active,TRUE
+COND-00A157A1,PAT-00935,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-12-30,active,TRUE
+COND-F446078B,PAT-00935,E78.5,"Hyperlipidemia, unspecified",2022-12-25,active,TRUE
+COND-0496035F,PAT-00936,E78.5,"Hyperlipidemia, unspecified",2022-08-19,active,TRUE
+COND-B5C32DCF,PAT-00937,E11.9,Type 2 diabetes mellitus without complications,2023-10-25,active,TRUE
+COND-FF4664F2,PAT-00937,J44.9,"Chronic obstructive pulmonary disease, unspecified",2019-04-12,active,TRUE
+COND-D1DF1636,PAT-00937,K21.9,Gastro-esophageal reflux disease without esophagitis,2024-05-09,active,TRUE
+COND-F9A578A9,PAT-00939,I10,Essential (primary) hypertension,2017-09-23,active,TRUE
+COND-86918CC2,PAT-00940,I10,Essential (primary) hypertension,2024-03-10,active,TRUE
+COND-0DB9A1A6,PAT-00942,J44.9,"Chronic obstructive pulmonary disease, unspecified",2024-03-25,active,TRUE
+COND-E93ECF49,PAT-00943,E11.9,Type 2 diabetes mellitus without complications,2017-10-28,active,TRUE
+COND-4164863C,PAT-00943,I10,Essential (primary) hypertension,2018-09-02,active,TRUE
+COND-4EEEC2FD,PAT-00943,E78.5,"Hyperlipidemia, unspecified",2023-11-30,active,TRUE
+COND-188431CE,PAT-00944,E11.9,Type 2 diabetes mellitus without complications,2021-10-11,active,TRUE
+COND-BBAEEF03,PAT-00944,A15.0,Tuberculosis of lung,2021-05-13,resolved,TRUE
+COND-8CECB9E4,PAT-00945,E11.9,Type 2 diabetes mellitus without complications,2019-08-25,active,TRUE
+COND-C293561D,PAT-00945,I10,Essential (primary) hypertension,2019-09-22,active,TRUE
+COND-441129C6,PAT-00945,N18.3,"Chronic kidney disease, stage 3",2018-08-06,active,TRUE
+COND-65791CE2,PAT-00946,I10,Essential (primary) hypertension,2018-04-22,active,TRUE
+COND-0863871A,PAT-00946,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-11-04,active,TRUE
+COND-F247594E,PAT-00948,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-07-16,active,TRUE
+COND-775A2841,PAT-00949,I10,Essential (primary) hypertension,2024-03-23,active,TRUE
+COND-58B82745,PAT-00949,I25.10,Atherosclerotic heart disease,2020-06-20,active,TRUE
+COND-95C12EE3,PAT-00950,E11.9,Type 2 diabetes mellitus without complications,2022-01-19,active,TRUE
+COND-4517C6E0,PAT-00951,I10,Essential (primary) hypertension,2016-11-05,active,TRUE
+COND-22AC5E39,PAT-00951,E78.5,"Hyperlipidemia, unspecified",2016-10-06,active,TRUE
+COND-24C4D43A,PAT-00952,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-03-22,active,TRUE
+COND-D4AA2C54,PAT-00953,I10,Essential (primary) hypertension,2018-11-11,active,TRUE
+COND-39C51290,PAT-00953,E78.5,"Hyperlipidemia, unspecified",2021-12-09,active,TRUE
+COND-75E6E925,PAT-00956,I10,Essential (primary) hypertension,2022-09-20,active,TRUE
+COND-2FB57878,PAT-00956,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-09-15,active,TRUE
+COND-4977D6CC,PAT-00957,E78.5,"Hyperlipidemia, unspecified",2020-01-28,active,TRUE
+COND-F430CDF6,PAT-00958,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-03-14,resolved,TRUE
+COND-383F1EC7,PAT-00959,I10,Essential (primary) hypertension,2022-07-13,active,TRUE
+COND-7E348E9D,PAT-00959,I25.10,Atherosclerotic heart disease,2023-03-11,active,TRUE
+COND-0AB24C8B,PAT-00959,K21.9,Gastro-esophageal reflux disease without esophagitis,2021-02-16,resolved,TRUE
+COND-1B272D4C,PAT-00960,E11.9,Type 2 diabetes mellitus without complications,2023-11-21,active,TRUE
+COND-F1B451A6,PAT-00961,E11.9,Type 2 diabetes mellitus without complications,2017-10-13,active,TRUE
+COND-0CCB0907,PAT-00962,I10,Essential (primary) hypertension,2019-06-18,active,TRUE
+COND-E4A6E237,PAT-00963,I10,Essential (primary) hypertension,2019-10-26,active,TRUE
+COND-A63E5AD0,PAT-00963,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-10-11,active,TRUE
+COND-64C7AC59,PAT-00964,E11.9,Type 2 diabetes mellitus without complications,2021-05-30,active,TRUE
+COND-94F80ACE,PAT-00964,I10,Essential (primary) hypertension,2017-01-10,active,TRUE
+COND-5171B662,PAT-00964,A90,Dengue fever,2023-03-04,active,TRUE
+COND-A3273BC3,PAT-00964,E78.5,"Hyperlipidemia, unspecified",2024-01-19,active,TRUE
+COND-B5E8C63A,PAT-00964,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-19,resolved,TRUE
+COND-13F6CD24,PAT-00965,E78.5,"Hyperlipidemia, unspecified",2022-03-18,active,TRUE
+COND-38F0F5F0,PAT-00965,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-08-25,resolved,TRUE
+COND-C2D70222,PAT-00966,E11.9,Type 2 diabetes mellitus without complications,2021-10-24,active,TRUE
+COND-7D0DBEDD,PAT-00966,A90,Dengue fever,2023-01-30,resolved,TRUE
+COND-80C66618,PAT-00967,N18.3,"Chronic kidney disease, stage 3",2023-01-16,active,TRUE
+COND-E104E040,PAT-00968,J44.9,"Chronic obstructive pulmonary disease, unspecified",2020-02-09,active,TRUE
+COND-228BF33D,PAT-00970,A15.0,Tuberculosis of lung,2023-08-20,resolved,TRUE
+COND-9E298729,PAT-00971,E78.5,"Hyperlipidemia, unspecified",2019-08-15,active,TRUE
+COND-165AE34B,PAT-00972,E11.9,Type 2 diabetes mellitus without complications,2023-12-07,active,TRUE
+COND-287B74B5,PAT-00972,I10,Essential (primary) hypertension,2023-06-01,active,TRUE
+COND-5C167F13,PAT-00973,A15.0,Tuberculosis of lung,2023-12-20,resolved,TRUE
+COND-6B9822E7,PAT-00974,E11.9,Type 2 diabetes mellitus without complications,2020-09-06,active,TRUE
+COND-579893F1,PAT-00974,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-01-14,active,TRUE
+COND-9A80B613,PAT-00975,E11.9,Type 2 diabetes mellitus without complications,2016-09-18,active,TRUE
+COND-7CE4E2B3,PAT-00976,E78.5,"Hyperlipidemia, unspecified",2021-05-21,active,TRUE
+COND-F87D00E1,PAT-00977,E11.9,Type 2 diabetes mellitus without complications,2024-02-27,active,TRUE
+COND-AAD90021,PAT-00977,A90,Dengue fever,2021-08-21,active,TRUE
+COND-14ECB0C1,PAT-00980,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-09-18,active,TRUE
+COND-B48B9C85,PAT-00981,A15.0,Tuberculosis of lung,2023-12-18,resolved,TRUE
+COND-1CBE1D20,PAT-00981,I25.10,Atherosclerotic heart disease,2018-12-29,active,TRUE
+COND-E6CA960A,PAT-00982,E11.9,Type 2 diabetes mellitus without complications,2018-03-27,active,TRUE
+COND-359E48BC,PAT-00983,E78.5,"Hyperlipidemia, unspecified",2022-07-19,active,TRUE
+COND-01DA0A29,PAT-00984,I25.10,Atherosclerotic heart disease,2016-12-06,active,TRUE
+COND-78BD8A60,PAT-00985,E11.9,Type 2 diabetes mellitus without complications,2019-09-16,active,TRUE
+COND-3ADF225E,PAT-00985,J44.9,"Chronic obstructive pulmonary disease, unspecified",2018-03-16,active,TRUE
+COND-178E9820,PAT-00986,N18.3,"Chronic kidney disease, stage 3",2018-04-23,active,TRUE
+COND-11C4677F,PAT-00989,I10,Essential (primary) hypertension,2017-10-25,active,TRUE
+COND-C4590E14,PAT-00989,E78.5,"Hyperlipidemia, unspecified",2023-01-31,active,TRUE
+COND-41DBE23D,PAT-00990,E11.9,Type 2 diabetes mellitus without complications,2022-11-14,active,TRUE
+COND-3E75EAAF,PAT-00990,J44.9,"Chronic obstructive pulmonary disease, unspecified",2021-03-29,active,TRUE
+COND-3694EF37,PAT-00990,I25.10,Atherosclerotic heart disease,2023-04-14,active,TRUE
+COND-243EC3E0,PAT-00990,E78.5,"Hyperlipidemia, unspecified",2022-07-23,active,TRUE
+COND-94F755A8,PAT-00991,J44.9,"Chronic obstructive pulmonary disease, unspecified",2016-11-13,active,TRUE
+COND-02221CFB,PAT-00993,I10,Essential (primary) hypertension,2022-05-17,active,TRUE
+COND-0E58FEB0,PAT-00994,E78.5,"Hyperlipidemia, unspecified",2020-01-27,active,TRUE
+COND-6812245C,PAT-00995,I10,Essential (primary) hypertension,2020-10-18,active,TRUE
+COND-37D0B16A,PAT-00995,J44.9,"Chronic obstructive pulmonary disease, unspecified",2023-06-20,active,TRUE
+COND-67E7E504,PAT-00995,A15.0,Tuberculosis of lung,2023-04-14,active,TRUE
+COND-E6AE6A18,PAT-00995,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-12-15,active,TRUE
+COND-568554F8,PAT-00996,K21.9,Gastro-esophageal reflux disease without esophagitis,2022-12-07,resolved,TRUE
+COND-3B2E7E5D,PAT-00997,I10,Essential (primary) hypertension,2020-05-14,active,TRUE
+COND-0AC764FF,PAT-00998,J44.9,"Chronic obstructive pulmonary disease, unspecified",2022-10-13,active,TRUE
+COND-DADDEFD2,PAT-00998,E78.5,"Hyperlipidemia, unspecified",2021-05-01,active,TRUE
+COND-989D44FE,PAT-00998,K21.9,Gastro-esophageal reflux disease without esophagitis,2023-10-17,resolved,TRUE
+COND-D1176EB6,PAT-01000,E11.9,Type 2 diabetes mellitus without complications,2020-04-18,active,TRUE

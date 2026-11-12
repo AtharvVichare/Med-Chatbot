@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-ACUTE-CARDIAC-CARE-2021" version="WHO-PB-2021">
+  <title>WHO Pocket Book of Hospital Care: Acute Coronary and Resuscitation Protocols</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/publications/i/item/9789241548373</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>emergency</domain>
+  <topic>emergency_cardiac</topic>
+  <publication-date>2021-07-30</publication-date>
+  <sections>
+    <section title="WHO Acute Coronary Resuscitation - MONA Protocol and Early Defibrillation">
+      In patients presenting with suspected acute coronary syndrome or myocardial infarction, initial emergency management comprises: 1. Immediate resting 12-lead electrocardiogram (ECG) performed and interpreted within 10 minutes of arrival. 2. Oxygen supplementation only if hypoxemic (SpO2 &lt; 90%). 3. Immediate chewable Aspirin (162-325 mg) unless contraindicated by active hemorrhage. 4. Sublingual nitroglycerin (0.4 mg every 5 minutes up to 3 doses) for ischemic chest discomfort, provided SBP is &gt; 90 mmHg and phosphodiesterase-5 inhibitors have not been taken in past 24-48 hours. 5. Rapid cardiac biomarker assessment (high-sensitivity cardiac troponin). 6. For ventricular fibrillation or pulseless ventricular tachycardia cardiac arrest, immediate cardiopulmonary resuscitation (CPR) and rapid automated external defibrillation (AED) are the determinative survival factors.
+    </section>
+  </sections>
+</medical-reference-document>

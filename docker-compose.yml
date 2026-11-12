@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: aarogya-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: aarogya
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: aarogya_db
+
+    ports:
+      - "127.0.0.1:5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U aarogya -d aarogya_db" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-TUBERCULOSIS-2023" version="WHO-TB-MOD4-2023">
+  <title>WHO Consolidated Guidelines on Tuberculosis: Module 4 Treatment of Drug-Susceptible TB</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/publications/i/item/9789240048126</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>infectious_diseases</domain>
+  <topic>tuberculosis</topic>
+  <publication-date>2023-06-20</publication-date>
+  <sections>
+    <section title="WHO Tuberculosis Guidelines - Diagnostic Algorithms and Rapid Molecular Testing">
+      Tuberculosis (TB) is an airborne infectious disease caused by Mycobacterium tuberculosis, primarily affecting the lungs (pulmonary TB) but capable of infecting any organ (extrapulmonary TB). Classical pulmonary symptoms comprise persistent productive cough for 2 weeks or more, hemoptysis, low-grade evening fever, night sweats, anorexia, and progressive weight loss. The World Health Organization strongly recommends rapid molecular diagnostic tests—such as GeneXpert MTB/RIF and Ultra—as initial tests over conventional sputum smear microscopy. Rapid molecular tests simultaneously confirm M. tuberculosis DNA and detect rifampicin resistance within 2 hours.
+    </section>
+    <section title="WHO Tuberculosis Guidelines - Standard First-Line Chemotherapy Regimens">
+      Standard treatment for drug-susceptible pulmonary tuberculosis consists of a 6-month regimen divided into two phases: an intensive phase of 2 months with four bactericidal antibiotics: Isoniazid (H), Rifampicin (R), Pyrazinamide (Z), and Ethambutol (E) (2HRZE), followed by a 4-month continuation phase with two drugs: Isoniazid and Rifampicin (4HR). To optimize adherence and minimize emergence of multidrug-resistant TB (MDR-TB), WHO mandates daily administration of fixed-dose combination (FDC) tablets under Directly Observed Therapy (DOT) or verified digital adherence support. Pyridoxine (Vitamin B6) is co-prescribed to prevent Isoniazid-induced peripheral neuropathy.
+    </section>
+  </sections>
+</medical-reference-document>

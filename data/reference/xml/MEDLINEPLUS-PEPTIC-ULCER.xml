@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-PEPTIC-ULCER" version="v2024.4">
+  <title>MedlinePlus: Peptic Ulcer Disease and Helicobacter pylori Infection</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/pepticulcer.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>gastroenterology</domain>
+  <topic>peptic_ulcer</topic>
+  <publication-date>2024-11-29</publication-date>
+  <sections>
+    <section title="Peptic Ulcer Disease - H. pylori Etiology and NSAID Gastropathy">
+      Peptic Ulcer Disease (PUD) encompasses focal mucosal breaks extending through the muscularis mucosae in the stomach (gastric ulcers) or proximal duodenum (duodenal ulcers). The overwhelming majority of peptic ulcers are caused by chronic infection with Helicobacter pylori bacteria or recurrent use of non-steroidal anti-inflammatory drugs (NSAIDs, including aspirin, ibuprofen, naproxen, and diclofenac). Classical symptoms include burning epigastric pain that occurs 2 to 3 hours after meals or at night and improves with food or antacids (typical of duodenal ulcers), or epigastric pain exacerbated by eating (typical of gastric ulcers). Complications include acute gastrointestinal hemorrhage, gastric perforation, and gastric outlet obstruction.
+    </section>
+    <section title="Peptic Ulcer Disease - H. pylori Eradication and Ulcer Healing">
+      Diagnosis of H. pylori is established by urea breath testing, stool antigen assays, or endoscopic gastric biopsy urease testing. First-line eradication therapy involves a 14-day quadruple regimen: Bismuth subsalicylate, Metronidazole, Tetracycline, and a high-dose Proton Pump Inhibitor (bismuth quadruple therapy) or high-dose PPI plus Amoxicillin, Clarithromycin, and Metronidazole in low-resistance settings. In patients with NSAID-induced ulcers, the offending NSAID should be discontinued immediately and potent PPI therapy administered for 8 weeks to promote complete mucosal re-epithelialization.
+    </section>
+  </sections>
+</medical-reference-document>

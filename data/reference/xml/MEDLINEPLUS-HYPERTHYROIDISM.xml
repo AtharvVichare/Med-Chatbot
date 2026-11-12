@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-HYPERTHYROIDISM" version="v2025.1">
+  <title>MedlinePlus: Hyperthyroidism and Thyrotoxicosis</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/hyperthyroidism.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>endocrinology</domain>
+  <topic>hyperthyroidism</topic>
+  <publication-date>2025-01-14</publication-date>
+  <sections>
+    <section title="Hyperthyroidism - Etiology, Graves' Disease, and Symptoms">
+      Hyperthyroidism is characterized by excessive synthesis and secretion of thyroid hormones by the thyroid gland, leading to a hypermetabolic clinical state (thyrotoxicosis). Graves' disease is an autoimmune disorder caused by stimulating antibodies directed against the TSH receptor (TRAb) and accounts for 70% to 80% of cases. Symptoms include nervousness, irritability, heat intolerance, diaphoresis, unintentional weight loss despite increased appetite, palpitations, tremors of the hands, frequent bowel movements, oligomenorrhea, and fatigue. Specific physical findings in Graves' disease include thyroid dermopathy, diffuse nontender vascular goiter, and Graves' orbitopathy (exophthalmos, proptosis, and lid lag).
+    </section>
+    <section title="Hyperthyroidism - Diagnosis and Antithyroid Therapy">
+      Laboratory findings show a suppressed serum TSH (&lt; 0.01 mIU/L) with elevated free T4 and/or free T3 levels. Radioactive iodine uptake (RAIU) scans differentiate Graves' disease (diffuse elevated uptake) from toxic multinodular goiter or subacute thyroiditis. Management modalities include: 1. Beta-blockers (e.g., Propranolol, Atenolol) for rapid relief of adrenergic symptoms such as tachycardia and tremor. 2. Antithyroid thionamide drugs (Methimazole is preferred in most adults due to lower hepatotoxicity; Propylthiouracil [PTU] is preferred during the first trimester of pregnancy and in thyroid storm). 3. Radioactive iodine ablation (I-131). 4. Subtotal or total thyroidectomy.
+    </section>
+  </sections>
+</medical-reference-document>

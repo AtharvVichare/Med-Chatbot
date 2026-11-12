@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-MALARIA-TREATMENT-2022" version="WHO-MAL-2022.3">
+  <title>WHO Guidelines for Malaria: Clinical Management and Artemisinin-Based Combination Therapy</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/publications/i/item/guidelines-for-malaria</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>infectious_diseases</domain>
+  <topic>malaria</topic>
+  <publication-date>2022-11-25</publication-date>
+  <sections>
+    <section title="WHO Malaria Guidelines - Pathogens, Clinical Staging, and Rapid Diagnosis">
+      Malaria is a life-threatening parasitic infection transmitted through the bite of infected female Anopheles mosquitoes. Five Plasmodium species infect humans: P. falciparum, P. vivax, P. malariae, P. ovale, and P. knowlesi, with P. falciparum posing the highest mortality risk. Uncomplicated malaria presents with acute fever, chills, rigors, profuse sweating, headache, generalized myalgias, nausea, and vomiting. Prompt parasitological confirmation using either quality-assured rapid diagnostic tests (RDTs) detecting histidine-rich protein 2 (HRP2) or light microscopy of Giemsa-stained thick and thin blood films is required prior to initiating antimalarial treatment.
+    </section>
+    <section title="WHO Malaria Guidelines - Artemisinin-Based Combination Therapy (ACT)">
+      The World Health Organization strongly recommends Artemisinin-Based Combination Therapies (ACTs) as the first-line standard of care for uncomplicated P. falciparum malaria worldwide. ACT regimens combine a fast-acting artemisinin derivative with a longer-acting partner drug: Artemether-lumefantrine (AL), Artesunate-amodiaquine (ASAQ), or Dihydroartemisinin-piperaquine (DP) administered over a 3-day course. For severe malaria (manifesting with cerebral malaria, coma, severe anemia, pulmonary edema, hypoglycemia, or acute kidney injury), intravenous or intramuscular Artesunate is the treatment of choice for at least 24 hours until oral medication can be tolerated.
+    </section>
+  </sections>
+</medical-reference-document>

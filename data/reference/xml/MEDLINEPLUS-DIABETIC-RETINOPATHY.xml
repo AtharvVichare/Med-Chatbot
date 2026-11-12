@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-DIABETIC-RETINOPATHY" version="v2024.2">
+  <title>MedlinePlus: Diabetic Eye Disease and Retinopathy</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/diabeticeyedisease.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>diabetes</domain>
+  <topic>diabetic_complications</topic>
+  <publication-date>2024-11-20</publication-date>
+  <sections>
+    <section title="Diabetic Retinopathy - Classification and Clinical Signs">
+      Diabetic retinopathy is a microvascular complication of diabetes characterized by vascular damage to retinal capillaries due to prolonged chronic hyperglycemia. It is clinically stratified into non-proliferative diabetic retinopathy (NPDR) and proliferative diabetic retinopathy (PDR). NPDR features microaneurysms, dot-and-blot retinal hemorrhages, hard lipid exudates, and cotton-wool spots indicating micro-infarctions of nerve fiber layers. PDR is defined by pathological neovascularization induced by retinal ischemia and vascular endothelial growth factor (VEGF). Diabetic macular edema (DME) involves retinal thickening at the macula and can cause profound vision loss at any stage of retinopathy.
+    </section>
+    <section title="Diabetic Retinopathy - Screening, Prevention, and Treatment">
+      Routine dilated fundoscopic examination is mandated annually for all individuals with Type 2 diabetes upon initial diagnosis, and starting 5 years after diagnosis in Type 1 diabetes. Intensive glycemic control (targeting HbA1c &lt; 7.0%) and rigorous blood pressure control (&lt; 130/80 mmHg) significantly reduce the onset and progression of retinopathy. Active proliferative retinopathy and center-involved macular edema are treated with intravitreal anti-VEGF injections (e.g., Aflibercept, Ranibizumab), panretinal photocoagulation (PRP laser), and vitreoretinal surgery for non-clearing vitreous hemorrhage.
+    </section>
+  </sections>
+</medical-reference-document>

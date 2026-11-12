@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-KIDNEY-HEALTH-2022" version="WHO-CKD-2022">
+  <title>WHO Guidelines: Prevention and Management of Chronic Renal Impairment</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/publications/i/item/chronic-kidney-disease</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>nephrology</domain>
+  <topic>chronic_kidney_disease</topic>
+  <publication-date>2022-09-12</publication-date>
+  <sections>
+    <section title="WHO Global Protocols - Renal Replacement and Screening in Primary Care">
+      WHO guidelines emphasize integrating CKD screening into primary health care non-communicable disease packages, particularly for individuals with hypertension, diabetes, or family history of renal disease. Point-of-care urine albumin dipsticks and blood creatinine testing facilitate early detection before irreversible nephron loss occurs. Preparation for renal replacement therapy (hemodialysis, peritoneal dialysis, or preemptive kidney transplantation) is recommended when eGFR falls below 20 mL/min/1.73 m2, ensuring timely creation of autologous arteriovenous fistulas for vascular access.
+    </section>
+  </sections>
+</medical-reference-document>

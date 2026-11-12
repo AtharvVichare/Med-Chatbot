@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<health-topics xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date-generated="2025-02-10">
+  <health-topic id="2002" title="High Blood Pressure" url="https://medlineplus.gov/highbloodpressure.html">
+    <full-summary><![CDATA[<p>Blood pressure is the force of your blood pushing against the walls of your arteries. Each time your heart beats, it pumps blood into the arteries. Your blood pressure is at its highest when your heart beats, pumping the blood. This is called systolic pressure. When your heart is at rest, between beats, your blood pressure falls. This is called diastolic pressure.</p><p>High blood pressure, also called <strong>hypertension</strong>, is dangerous because it makes the heart work harder to pump blood out to the body and contributes to hardening of the arteries, or atherosclerosis, to stroke, kidney disease, and to heart failure.</p>]]></full-summary>
+    <section title="Blood Pressure Categories and Diagnostic Thresholds">
+      Blood pressure measurements are classified into categories:
+      - Normal: Systolic less than 120 mmHg and diastolic less than 80 mmHg.
+      - Elevated: Systolic between 120-129 mmHg and diastolic less than 80 mmHg.
+      - Stage 1 Hypertension: Systolic between 130-139 mmHg or diastolic between 80-89 mmHg.
+      - Stage 2 Hypertension: Systolic 140 mmHg or higher or diastolic 90 mmHg or higher.
+      - Hypertensive Crisis: Systolic higher than 180 mmHg and/or diastolic higher than 120 mmHg requiring prompt medical intervention.
+    </section>
+    <section title="Therapeutic Approaches">
+      First-line antihypertensive agents include thiazide diuretics, calcium channel blockers (such as amlodipine), and ACE inhibitors or angiotensin receptor blockers (such as telmisartan or losartan). Lifestyle modifications (DASH diet, reducing sodium intake to less than 2,000 mg/day, regular aerobic exercise) are foundational.
+    </section>
+  </health-topic>
+</health-topics>
+

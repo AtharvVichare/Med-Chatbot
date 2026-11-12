@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-11-04T15:10:34.090875+00:00",
+  "cohort_size": 1000,
+  "is_synthetic": true,
+  "geography": "India (Districts & State Hospitals)",
+  "risk_model": {
+    "model_name": "SIMULATED_HEURISTIC_WHO_ISH_SEAR_D",
+    "type": "Synthetic Heuristic Model (Non-Validated Simulation)",
+    "reference": "Heuristic adaptation inspired by WHO/ISH South-East Asia Region D variables for prototyping"
+  },
+  "standards": {
+    "conditions": "ICD-10 (WHO)",
+    "observations": "LOINC (Regenstrief)",
+    "medications": "RxNorm (NLM)",
+    "health_id_syntax": "Internal Synthetic Mock ID (SYNTH-ID-XXXX-XXXX)"
+  },
+  "tables": {
+    "patients": 1000,
+    "encounters": 3612,
+    "conditions": 1444,
+    "observations": 14264,
+    "medications": 3689,
+    "risk_assessments": 1000,
+    "audit_logs": 1000
+  }
+}

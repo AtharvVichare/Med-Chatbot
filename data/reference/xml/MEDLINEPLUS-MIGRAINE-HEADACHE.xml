@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-MIGRAINE-HEADACHE" version="v2025.1">
+  <title>MedlinePlus: Migraine Headache and Chronic Cephalea</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/migraine.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>neurology</domain>
+  <topic>migraine</topic>
+  <publication-date>2025-01-08</publication-date>
+  <sections>
+    <section title="Migraine Headache - Phases, Symptoms, and Diagnostic Criteria">
+      Migraine is a neurovascular primary headache disorder characterized by recurrent attacks of moderate to severe pulsating or throbbing head pain, predominantly unilateral, typically lasting 4 to 72 hours. Key diagnostic clinical features include pain aggravated by routine physical activity, accompanied by nausea, vomiting, photophobia (sensitivity to light), and phonophobia (sensitivity to sound). Approximately one-third of individuals experience an aura—transient focal neurological symptoms lasting 5 to 60 minutes prior to headache onset, most commonly scintillating scotomas, zigzag lines, or unilateral tingling sensations. Migraine triggers include hormonal fluctuations, emotional stress, irregular sleep, skipped meals, and specific sensory stimuli.
+    </section>
+    <section title="Migraine Headache - Acute Abortive and Prophylactic Treatment">
+      Acute abortive therapy should be taken as early as possible after headache onset: mild-to-moderate attacks respond to simple analgesics or NSAIDs (Ibuprofen 400-800 mg, Naproxen sodium 550 mg, or Acetaminophen/Aspirin/Caffeine combinations). Moderate-to-severe attacks require 5-HT1B/1D receptor agonists (Triptans, e.g., Sumatriptan 50-100 mg, Rizatriptan 10 mg) or newer CGRP receptor antagonists (Gepants). Prophylactic preventive therapy is indicated for patients with &gt;= 4 headache days per month or debilitating attacks, utilizing beta-blockers (Propranolol), anticonvulsants (Topiramate), antidepressants (Amitriptyline), or monoclonal antibodies targeting CGRP.
+    </section>
+  </sections>
+</medical-reference-document>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-ASTHMA" version="v2025.1">
+  <title>MedlinePlus: Asthma Diagnosis and Management</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/asthma.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>respiratory</domain>
+  <topic>asthma</topic>
+  <publication-date>2025-02-01</publication-date>
+  <sections>
+    <section title="Asthma - Pathophysiology and Clinical Diagnosis">
+      Asthma is a chronic inflammatory disorder of the conducting airways characterized by bronchial hyperresponsiveness, airway edema, mucus hypersecretion, and variable airflow obstruction that is often reversible either spontaneously or with bronchodilator treatment. Classic symptoms comprise episodic wheezing, cough (particularly nocturnal or early morning), chest tightness, and shortness of breath. Diagnosis is confirmed objectively by spirometry demonstrating airflow limitation (reduced FEV1/FVC ratio &lt; 0.70) with significant bronchodilator reversibility, defined as an increase in FEV1 of greater than 12% and at least 200 mL following inhalation of a short-acting beta2-agonist.
+    </section>
+    <section title="Asthma - Stepped Pharmacological Management">
+      The Global Initiative for Asthma (GINA) and clinical guidelines emphasize that inhaled corticosteroids (ICS) form the fundamental controller therapy across all severity steps to suppress airway inflammation and prevent fatal exacerbations. First-line therapy for mild asthma utilizes as-needed low-dose ICS-formoterol as the preferred reliever. For moderate-to-severe persistent asthma, regular maintenance ICS-LABA (e.g., Fluticasone/Salmeterol or Budesonide/Formoterol) is prescribed daily. Leukotriene receptor antagonists (Montelukast) provide add-on benefit in allergic asthma. Severe acute asthma exacerbations mandate systemic oral corticosteroids (Prednisolone 40-50 mg daily for 5-7 days), high-dose nebulized SABA (Albuterol), and supplemental oxygen titrated to maintain SpO2 93-95%.
+    </section>
+  </sections>
+</medical-reference-document>

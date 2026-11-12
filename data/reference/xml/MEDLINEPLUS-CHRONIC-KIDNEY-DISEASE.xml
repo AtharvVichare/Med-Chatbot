@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-CHRONIC-KIDNEY-DISEASE" version="v2025.1">
+  <title>MedlinePlus: Chronic Kidney Disease Staging and Evaluation</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/chronickidneydisease.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>nephrology</domain>
+  <topic>chronic_kidney_disease</topic>
+  <publication-date>2025-01-22</publication-date>
+  <sections>
+    <section title="Chronic Kidney Disease - KDIGO Staging and Diagnostic Definition">
+      Chronic Kidney Disease (CKD) is defined by abnormalities of kidney structure or function present for more than 3 months with health implications. Diagnostic criteria include either an estimated Glomerular Filtration Rate (eGFR) less than 60 mL/min/1.73 m2 or markers of kidney damage (most commonly persistent albuminuria with UACR &gt;= 30 mg/g). CKD is staged based on eGFR: Stage G1 (eGFR &gt;= 90 with kidney damage), Stage G2 (eGFR 60-89 with kidney damage), Stage G3a (eGFR 45-59), Stage G3b (eGFR 30-44), Stage G4 (eGFR 15-29, severely decreased), and Stage G5 (eGFR &lt; 15, kidney failure requiring renal replacement therapy). Albuminuria is staged: A1 (&lt; 30 mg/g, normal), A2 (30-300 mg/g, microalbuminuria), and A3 (&gt; 300 mg/g, macroalbuminuria).
+    </section>
+    <section title="Chronic Kidney Disease - Clinical Complications and Management">
+      Progressive CKD causes metabolic acidosis, hyperkalemia, secondary hyperparathyroidism and renal osteodystrophy (mineral bone disorder), normocytic anemia due to impaired erythropoietin production, and accelerated systemic atherosclerosis. Key therapeutic principles involve strict blood pressure control (target &lt; 120 mmHg systolic using standardized automated measurement), dietary sodium restriction (&lt; 2 g/day), moderate dietary protein restriction (0.8 g/kg/day for stages G3-G5), maximum tolerated doses of ACE inhibitors or ARBs, SGLT2 inhibitors for diabetic and non-diabetic proteinuric CKD, and avoidance of nephrotoxic medications such as non-steroidal anti-inflammatory drugs (NSAIDs) and intravenous iodinated contrast.
+    </section>
+  </sections>
+</medical-reference-document>

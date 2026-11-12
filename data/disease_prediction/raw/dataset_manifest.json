@@ -1,0 +1,18 @@
+{
+  "dataset_name": "SymbiPredict - Symptom-Disease Prediction Dataset (SDPD)",
+  "publisher": "Mendeley Data",
+  "doi": "10.17632/dv5z3v2xyd.1",
+  "dataset_url": "https://data.mendeley.com/datasets/dv5z3v2xyd/1",
+  "download_url": "https://data.mendeley.com/public-files/datasets/dv5z3v2xyd/files/72d80d7b-a027-480c-99a7-c3dd3815bdf1/file_downloaded",
+  "author": "Jay Tucker",
+  "institution": "CDC Development Solutions",
+  "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+  "license_url": "http://creativecommons.org/licenses/by/4.0",
+  "publish_date": "2024-04-02T15:42:51.172Z",
+  "download_timestamp_utc": "2026-11-05T14:38:01.681633+00:00",
+  "filename": "symbipredict_2022.csv",
+  "file_size_bytes": 1382907,
+  "sha256": "9834c90dd48eb2fef1fa56282f8f016a6781b0e4ada878015dc34a81af8e9e1b",
+  "verification_status": "VERIFIED_OFFICIAL_HASH_MATCH",
+  "provenance_note": "Candidate research dataset downloaded directly from official Mendeley Data repository. Undergoes independent clinical and leakage audit for research prototyping. Not clinically validated patient data."
+}

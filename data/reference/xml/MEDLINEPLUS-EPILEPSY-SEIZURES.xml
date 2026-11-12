@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-EPILEPSY-SEIZURES" version="v2025.1">
+  <title>MedlinePlus: Epilepsy and Seizure Disorders</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/epilepsy.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>neurology</domain>
+  <topic>epilepsy</topic>
+  <publication-date>2025-01-25</publication-date>
+  <sections>
+    <section title="Epilepsy - Seizure Classification and Status Epilepticus">
+      Epilepsy is a chronic brain disorder characterized by an enduring predisposition to generate unprovoked epileptic seizures. Seizures are classified into focal seizures (originating within neural networks limited to one cerebral hemisphere) and generalized seizures (originating at some point within and rapidly engaging bilaterally distributed networks, including generalized tonic-clonic seizures, absence seizures, and myoclonic seizures). Status epilepticus is a critical neurological emergency defined as a continuous seizure lasting &gt;= 5 minutes, or two or more seizures without complete recovery of consciousness between events, carrying high risks of systemic hyperpyrexia, neuronal death, and mortality.
+    </section>
+    <section title="Epilepsy - Antiseizure Medications and Emergency Protocol">
+      First-line maintenance Antiseizure Medications (ASMs) are selected based on seizure classification: Levetiracetam, Lamotrigine, Carbamazepine, and Oxcarbazepine for focal-onset seizures; and Levetiracetam, Valproic acid (avoided in women of childbearing potential due to teratogenicity), and Topiramate for generalized-onset seizures. Monotherapy with dose titration is the standard strategy. Status epilepticus requires immediate airway protection, oxygen, intravenous access, and rapid intravenous administration of a benzodiazepine (Lorazepam 4 mg IV or Midazolam 10 mg IM), followed promptly by non-sedating IV ASMs (Levetiracetam, Fosphenytoin, or Valproate).
+    </section>
+  </sections>
+</medical-reference-document>

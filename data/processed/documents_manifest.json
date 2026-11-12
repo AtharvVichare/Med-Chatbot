@@ -1,0 +1,71 @@
+{
+  "last_updated": "2026-11-04T18:08:08.160332+00:00",
+  "documents": {
+    "MEDLINEPLUS-DIABETES-XML": {
+      "document_id": "MEDLINEPLUS-DIABETES-XML",
+      "title": "MedlinePlus Health Topic: Diabetes",
+      "source_id": "MEDLINEPLUS-DIABETES-XML",
+      "file_path": "data\\reference\\xml\\medlineplus_diabetes.xml",
+      "sha256": "a796116d6a25922bea4ebde048ceada6c5733bb485a005dac3bc96764a23848c",
+      "status": "SUCCESS",
+      "chunk_count": 3,
+      "error_message": null,
+      "processed_at": "2026-11-04T18:08:08.146834+00:00",
+      "metadata": {
+        "output_jsonl": "data\\processed\\MEDLINEPLUS-DIABETES-XML.jsonl",
+        "chunks": 3
+      }
+    },
+    "MEDLINEPLUS-HYPERTENSION-XML": {
+      "document_id": "MEDLINEPLUS-HYPERTENSION-XML",
+      "title": "MedlinePlus Health Topic: High Blood Pressure",
+      "source_id": "MEDLINEPLUS-HYPERTENSION-XML",
+      "file_path": "data\\reference\\xml\\medlineplus_hypertension.xml",
+      "sha256": "ba419c037df04562f9b16bd22cbcfafddf9deb18cab0f0a2ec71ef6f65e606de",
+      "status": "SUCCESS",
+      "chunk_count": 3,
+      "error_message": null,
+      "processed_at": "2026-11-04T18:08:08.148847+00:00",
+      "metadata": {
+        "output_jsonl": "data\\processed\\MEDLINEPLUS-HYPERTENSION-XML.jsonl",
+        "chunks": 3
+      }
+    },
+    "WHO-HTN-GUIDELINE-2021": {
+      "document_id": "WHO-HTN-GUIDELINE-2021",
+      "title": "WHO Guideline for the Pharmacological Treatment of Hypertension in Adults",
+      "source_id": "WHO-HTN-GUIDELINE-2021",
+      "file_path": "data\\reference\\guidelines\\who_hypertension_guideline_2021.pdf",
+      "sha256": "cc35f2ecbba6f1f2d194bf6c72525ac02925ef80e9aa3db2d3283c259d6531a6",
+      "status": "SUCCESS",
+      "chunk_count": 2,
+      "error_message": null,
+      "processed_at": "2026-11-04T18:08:08.157240+00:00",
+      "metadata": {
+        "output_jsonl": "data\\processed\\WHO-HTN-GUIDELINE-2021.jsonl",
+        "chunks": 2
+      }
+    },
+    "WHO-HEARTS-CVD-2020": {
+      "document_id": "WHO-HEARTS-CVD-2020",
+      "title": "HEARTS Technical Package for Cardiovascular Disease Management in Primary Health Care",
+      "source_id": "WHO-HEARTS-CVD-2020",
+      "file_path": "data\\reference\\guidelines\\who_hearts_cvd_package.pdf",
+      "sha256": "f37b563cdaad3fc6edb24bdc6b5b8bbdb9fc157d6d7174efded6579f537cb8e0",
+      "status": "SUCCESS",
+      "chunk_count": 1,
+      "error_message": null,
+      "processed_at": "2026-11-04T18:08:08.160324+00:00",
+      "metadata": {
+        "output_jsonl": "data\\processed\\WHO-HEARTS-CVD-2020.jsonl",
+        "chunks": 1
+      }
+    }
+  },
+  "summary": {
+    "total_documents": 4,
+    "successful_documents": 4,
+    "failed_documents": 0,
+    "total_chunks": 9
+  }
+}

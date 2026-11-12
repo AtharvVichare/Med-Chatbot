@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-GERD-REFLUX" version="v2025.1">
+  <title>MedlinePlus: Gastroesophageal Reflux Disease (GERD) and Acid Reflux</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/gerd.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>gastroenterology</domain>
+  <topic>gerd</topic>
+  <publication-date>2025-01-12</publication-date>
+  <sections>
+    <section title="Gastroesophageal Reflux Disease - Symptoms and Alarm Features">
+      Gastroesophageal Reflux Disease (GERD) is a chronic digestive condition where stomach acid and gastric enzymes retrograde into the esophagus, causing mucosal irritation and distressing symptoms. Classic symptoms comprise pyrosis (heartburn—a retrosternal burning discomfort rising towards the neck) and acid regurgitation. Atypical symptoms include chronic non-productive cough, wheezing, laryngitis, globus sensation, and enamel erosion. Alarm features warranting urgent diagnostic upper gastrointestinal endoscopy include dysphagia (difficulty swallowing), odynophagia (painful swallowing), persistent vomiting, hematemesis, melena, unexplained anemia, and involuntary weight loss.
+    </section>
+    <section title="Gastroesophageal Reflux Disease - Lifestyle Measures and Pharmacotherapy">
+      Lifestyle modifications for GERD include elevating the head of the bed by 6-8 inches, maintaining a healthy body weight, avoiding recumbency within 3 hours after meals, avoiding tight-fitting garments, and moderating trigger foods (high-fat meals, chocolate, caffeine, alcohol, citrus, and mint). Pharmacological therapy is spearheaded by Proton Pump Inhibitors (PPIs, e.g., Omeprazole 20-40 mg, Pantoprazole 40 mg, Esomeprazole 40 mg once daily taken 30-60 minutes before the first meal of the day) for an initial 4 to 8-week healing course. Histamine-2 receptor antagonists (Famotidine) and oral alginate antacids provide on-demand symptomatic relief.
+    </section>
+  </sections>
+</medical-reference-document>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-GESTATIONAL-DIABETES" version="v2024.4">
+  <title>MedlinePlus: Gestational Diabetes Screening and Management</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/diabetesandpregnancy.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>maternal_health</domain>
+  <topic>gestational_diabetes</topic>
+  <publication-date>2024-12-22</publication-date>
+  <sections>
+    <section title="Gestational Diabetes - Screening Protocols and Diagnostic Thresholds">
+      Gestational Diabetes Mellitus (GDM) is defined as carbohydrate intolerance resulting in hyperglycemia with onset or first recognition during pregnancy. GDM increases risks of macrosomia, birth trauma, neonatal hypoglycemia, hyperbilirubinemia, respiratory distress syndrome, and long-term risk of maternal Type 2 diabetes. Universal screening is recommended at 24 to 28 weeks of gestation. Under the one-step 75-gram oral glucose tolerance test (IADPSG/WHO criteria), GDM is diagnosed if any single plasma glucose value meets or exceeds: Fasting: 92 mg/dL (5.1 mmol/L); 1-hour: 180 mg/dL (10.0 mmol/L); 2-hour: 153 mg/dL (8.5 mmol/L). In India, the DIPSI single-step non-fasting 75g OGTT cut-off is 2-hour plasma glucose &gt;= 140 mg/dL.
+    </section>
+    <section title="Gestational Diabetes - Glycemic Targets and Insulin Therapy">
+      Primary management of GDM involves medical nutrition therapy, structured physical activity (walking 30 minutes after meals), and frequent self-monitoring of blood glucose. Glycemic targets for pregnant women are: Fasting blood glucose &lt; 95 mg/dL (5.3 mmol/L), 1-hour postprandial &lt; 140 mg/dL (7.8 mmol/L), and 2-hour postprandial &lt; 120 mg/dL (6.7 mmol/L). If lifestyle interventions fail to achieve glycemic targets within 1 to 2 weeks, insulin therapy is the gold standard pharmacological treatment because it does not cross the placenta. Metformin may be considered in select circumstances when insulin is unavailable or refused.
+    </section>
+  </sections>
+</medical-reference-document>

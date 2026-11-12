@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="MEDLINEPLUS-HEART-FAILURE" version="v2024.4">
+  <title>MedlinePlus: Heart Failure</title>
+  <publisher>U.S. National Library of Medicine (NLM / NIH)</publisher>
+  <url>https://medlineplus.gov/heartfailure.html</url>
+  <license>Public Domain (U.S. Government Work)</license>
+  <domain>cardiovascular</domain>
+  <topic>cardiovascular</topic>
+  <publication-date>2024-12-15</publication-date>
+  <sections>
+    <section title="Heart Failure - Clinical Presentation and Ejection Fraction Classification">
+      Heart failure (HF) is a complex clinical syndrome resulting from structural or functional cardiac disorders that impair ventricular filling or blood ejection. Heart failure is classified based on left ventricular ejection fraction (LVEF): Heart Failure with Reduced Ejection Fraction (HFrEF, LVEF &lt;= 40%), Heart Failure with Mildly Reduced Ejection Fraction (HFmrEF, LVEF 41-49%), and Heart Failure with Preserved Ejection Fraction (HFpEF, LVEF &gt;= 50%). Hallmark clinical symptoms include exertional dyspnea, orthopnea (shortness of breath when lying flat), paroxysmal nocturnal dyspnea, dependent bilateral ankle edema, elevated jugular venous pressure, pulmonary rales, and persistent fatigue.
+    </section>
+    <section title="Heart Failure - Guideline-Directed Medical Therapy (GDMT)">
+      The cornerstone of management for HFrEF comprises four foundational drug classes (the 'four pillars' of GDMT): 1. Angiotensin Receptor-Neprilysin Inhibitor (ARNI, Sacubitril/Valsartan) or ACE-inhibitor/ARB. 2. Evidence-based beta-blockers (Carvedilol, Metoprolol succinate extended-release, or Bisoprolol). 3. Mineralocorticoid receptor antagonists (MRA, Spironolactone or Eplerenone). 4. SGLT2 inhibitors (Dapagliflozin or Empagliflozin). Loop diuretics (such as Furosemide or Torsemide) are administered to achieve and maintain euvolemia, titrated to relieve pulmonary and peripheral congestion without altering long-term mortality.
+    </section>
+  </sections>
+</medical-reference-document>

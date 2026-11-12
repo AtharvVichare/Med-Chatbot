@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<medical-reference-document id="WHO-ANTENATAL-CARE-2021" version="WHO-ANC-2021">
+  <title>WHO Recommendations on Antenatal Care for a Positive Pregnancy Experience</title>
+  <publisher>World Health Organization (WHO)</publisher>
+  <url>https://www.who.int/publications/i/item/9789241549912</url>
+  <license>CC BY-NC-SA 3.0 IGO</license>
+  <domain>maternal_health</domain>
+  <topic>maternal_health</topic>
+  <publication-date>2021-04-10</publication-date>
+  <sections>
+    <section title="WHO Antenatal Care - Routine Visits and Micronutrient Supplementation">
+      The World Health Organization recommendations on antenatal care (ANC) for a positive pregnancy experience recommend a minimum of eight antenatal contacts to reduce perinatal mortality and maternal morbidity. Essential nutritional interventions include daily oral iron supplementation (30 to 60 mg elemental iron) and folic acid (400 mcg or 0.4 mg) starting preconception or as early in pregnancy as possible to prevent maternal anemia, puerperal sepsis, low birth weight, and neural tube defects. Routine screening at initial ANC visits comprises blood typing, Rh status, complete blood count, syphilis serology, HIV testing, Hepatitis B surface antigen, and urine culture for asymptomatic bacteriuria.
+    </section>
+  </sections>
+</medical-reference-document>
