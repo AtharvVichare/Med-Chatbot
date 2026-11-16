@@ -8,7 +8,12 @@ import {
   PlusCircle, 
   CheckCircle2, 
   ShieldAlert,
-  ArrowRight
+  ArrowRight,
+  Building2,
+  Stethoscope,
+  HeartPulse,
+  Receipt,
+  FileText
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
@@ -27,10 +32,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const [latestLog, setLatestLog] = useState<DailyHealthLog | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const patientId = user?.patient_id || 'PAT-00001';
+  const patientId = user?.role === 'patient' ? (user?.patient_id || 'PAT-AARAV-001') : null;
 
   useEffect(() => {
     let isMounted = true;
+    if (!patientId) {
+      setLoading(false);
+      return;
+    }
     const fetchDashboardData = async () => {
       setLoading(true);
       try {
@@ -73,10 +82,14 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="relative z-10 max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm text-teal-100 text-xs font-medium mb-3">
             <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse"></span>
-            <span>Personal Health Portal · {patientId}</span>
+            <span>
+              {user?.role === 'patient' 
+                ? `Personal Health Portal · ${patientId}` 
+                : `${user?.role === 'doctor' ? 'Physician Clinical Station' : user?.role === 'nurse' ? 'Inpatient Nursing Station' : 'Hospital Workspace'} · ${(user as any)?.facility || 'Seth GS Medical College & KEM Hospital'}`}
+            </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-            Welcome back, {patient?.first_name || user?.full_name?.split(' ')[0] || 'Patient'}!
+            Welcome back, {user?.full_name || (patient?.first_name ? `${patient.first_name} ${patient.last_name}` : 'Patient')}!
           </h1>
           <p className="mt-2 text-teal-100 text-sm leading-relaxed">
             Your connected longitudinal health record is synchronized. Track daily measurements, review your care routines, or consult with your AI Health Assistant.
@@ -181,6 +194,112 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <span>View longitudinal risk factors</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </p>
+        </div>
+      </div>
+
+      {/* HMS Portals & Integrated Operations Stations */}
+      <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-md">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+          <div>
+            <h2 className="text-base font-bold tracking-tight text-white flex items-center gap-2">
+              <Building2 className="w-4 h-4 text-teal-400" />
+              <span>Aarogya-HMS Integrated Care Stations</span>
+            </h2>
+            <p className="text-xs text-slate-300">
+              Role-synchronized 100-bed clinical operations, multi-agent AI event bus, and financial management
+            </p>
+          </div>
+          <span className="text-[11px] font-mono text-teal-300 bg-teal-950/80 px-2.5 py-1 rounded-full border border-teal-800">
+            Current User: {user?.role?.toUpperCase()}
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {/* Management Dashboard Card */}
+          {(user?.role === 'admin' || user?.role === 'hospital_admin') && (
+            <div 
+              onClick={() => onNavigate('management')}
+              className="p-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-teal-400/50 transition cursor-pointer group"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold text-teal-400">Management & BI</span>
+                <Building2 className="w-4 h-4 text-teal-400" />
+              </div>
+              <p className="text-xs text-slate-300 mt-2">100-bed occupancy, conversational NL query BI, procurement alerts & revenue.</p>
+              <div className="mt-3 flex items-center gap-1 text-[11px] font-medium text-teal-300 group-hover:translate-x-0.5 transition-transform">
+                <span>Open Management</span>
+                <ArrowRight className="w-3 h-3" />
+              </div>
+            </div>
+          )}
+
+          {/* Doctor Portal Card */}
+          {(user?.role === 'doctor' || user?.role === 'hospital_admin' || user?.role === 'admin') && (
+            <div 
+              onClick={() => onNavigate('doctor_portal')}
+              className="p-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-indigo-400/50 transition cursor-pointer group"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold text-indigo-400">Doctor Station</span>
+                <Stethoscope className="w-4 h-4 text-indigo-400" />
+              </div>
+              <p className="text-xs text-slate-300 mt-2">Pending patient EHR verification queue, consultation slots & clinical notes.</p>
+              <div className="mt-3 flex items-center gap-1 text-[11px] font-medium text-indigo-300 group-hover:translate-x-0.5 transition-transform">
+                <span>Open Doctor Station</span>
+                <ArrowRight className="w-3 h-3" />
+              </div>
+            </div>
+          )}
+
+          {/* Nurse Portal Card */}
+          {(user?.role === 'nurse' || user?.role === 'hospital_admin' || user?.role === 'admin') && (
+            <div 
+              onClick={() => onNavigate('nurse_portal')}
+              className="p-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-emerald-400/50 transition cursor-pointer group"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold text-emerald-400">Nurse Station</span>
+                <HeartPulse className="w-4 h-4 text-emerald-400" />
+              </div>
+              <p className="text-xs text-slate-300 mt-2">100-bed floor plan matrix, patient triage, bedside vitals recording & transfers.</p>
+              <div className="mt-3 flex items-center gap-1 text-[11px] font-medium text-emerald-300 group-hover:translate-x-0.5 transition-transform">
+                <span>Open Nurse Station</span>
+                <ArrowRight className="w-3 h-3" />
+              </div>
+            </div>
+          )}
+
+          {/* Billing & Invoices Card */}
+          <div 
+            onClick={() => onNavigate('billing')}
+            className="p-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-amber-400/50 transition cursor-pointer group"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-semibold text-amber-400">Billing & RCM</span>
+              <Receipt className="w-4 h-4 text-amber-400" />
+            </div>
+            <p className="text-xs text-slate-300 mt-2">Invoices, assisted ICD-10 clinical coding, and payment settlements.</p>
+            <div className="mt-3 flex items-center gap-1 text-[11px] font-medium text-amber-300 group-hover:translate-x-0.5 transition-transform">
+              <span>View Invoices</span>
+              <ArrowRight className="w-3 h-3" />
+            </div>
+          </div>
+
+          {/* Patient Longitudinal EHR Card */}
+          <div 
+            onClick={() => onNavigate('health_record')}
+            className="p-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-purple-400/50 transition cursor-pointer group"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-semibold text-purple-400">Patient EHR Export</span>
+              <FileText className="w-4 h-4 text-purple-400" />
+            </div>
+            <p className="text-xs text-slate-300 mt-2">Longitudinal timeline, vitals trends & complete PDF clinical export.</p>
+            <div className="mt-3 flex items-center gap-1 text-[11px] font-medium text-purple-300 group-hover:translate-x-0.5 transition-transform">
+              <span>View Record</span>
+              <ArrowRight className="w-3 h-3" />
+            </div>
+          </div>
         </div>
       </div>
 

@@ -12,15 +12,17 @@ import uuid
 from pathlib import Path
 from datetime import datetime, date
 from typing import Dict, Any, List, Optional
-from fastapi import APIRouter, UploadFile, File, Form, Depends, HTTPException, status
+from fastapi import APIRouter, UploadFile, File, Form, Depends, HTTPException, status, Query
+from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
 from backend.app.db.session import get_db
-from backend.app.db.models import PatientDocument, Observation, Encounter
+from backend.app.db.models import PatientDocument, Observation, Encounter, UserAccount
 from backend.app.db.schemas import PatientDocumentRead
 from backend.app.core.dependencies import get_current_user, verify_patient_access
-from backend.app.core.demo_users import User
+from backend.app.core.security import decode_access_token
+from backend.app.core.demo_users import DEMO_USERS_DB, User
 
 DOCUMENTS_UPLOAD_DIR = Path("data/uploads/patient_documents")
 DOCUMENTS_UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
@@ -248,3 +250,62 @@ def confirm_extracted_observations(
     db.commit()
     db.refresh(doc)
     return PatientDocumentRead.model_validate(doc)
+
+@router.get("/{document_id}/file")
+def get_document_file(
+    document_id: str,
+    token: Optional[str] = Query(None),
+    db: Session = Depends(get_db),
+    current_user: Optional[User] = Depends(lambda: None)
+):
+    """Serve the raw medical document file (PDF, PNG, JPG, scan) for viewing or downloading."""
+    # Resolve user from Bearer header or query token parameter (for direct browser <img> / <iframe> loads)
+    authenticated_user: Optional[User] = None
+    if token:
+        payload = decode_access_token(token)
+        if payload and payload.get("sub"):
+            sub = payload.get("sub")
+            if sub in DEMO_USERS_DB:
+                authenticated_user = DEMO_USERS_DB[sub]
+            else:
+                db_user = db.scalar(select(UserAccount).where((UserAccount.username == sub) | (UserAccount.email == sub)))
+                if db_user:
+                    authenticated_user = User(
+                        username=db_user.username,
+                        password_hash=db_user.password_hash,
+                        role=db_user.role,
+                        patient_id=db_user.patient_id,
+                        full_name=db_user.full_name,
+                        facility="Aarogya Patient Portal"
+                    )
+
+    doc = db.scalar(select(PatientDocument).where(PatientDocument.document_id == document_id))
+    if not doc:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Document not found")
+
+    if authenticated_user and authenticated_user.role == "patient" and authenticated_user.patient_id != doc.patient_id:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Unauthorized access to patient document.")
+
+    path = Path(doc.file_path)
+    if not path.exists():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Physical document file missing on server storage.")
+
+    media_type_map = {
+        "pdf": "application/pdf",
+        "png": "image/png",
+        "jpg": "image/jpeg",
+        "jpeg": "image/jpeg",
+        "webp": "image/webp",
+        "bmp": "image/bmp",
+        "csv": "text/csv",
+        "txt": "text/plain"
+    }
+    media_type = media_type_map.get(doc.file_type.lower(), "application/octet-stream")
+
+    return FileResponse(
+        path=str(path),
+        filename=doc.file_name,
+        media_type=media_type,
+        content_disposition_type="inline"  # Allows in-browser rendering for PDFs and Images
+    )
+

@@ -16,7 +16,8 @@ from backend.app.db.models import (
     FamilyMember,
     FamilyCondition,
     DailyHealthLog,
-    PatientDocument
+    PatientDocument,
+    UserAccount
 )
 from backend.app.db.schemas import (
     PatientRead,
@@ -119,24 +120,50 @@ def update_patient_profile(
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Patient {patient_id} not found")
     
     if update_data.first_name is not None:
-        patient.first_name = update_data.first_name
+        patient.first_name = update_data.first_name.strip()
     if update_data.last_name is not None:
-        patient.last_name = update_data.last_name
+        patient.last_name = update_data.last_name.strip()
     if update_data.phone_number is not None:
-        patient.contact_no = update_data.phone_number
+        patient.contact_no = update_data.phone_number.strip()
     elif update_data.contact_no is not None:
-        patient.contact_no = update_data.contact_no
+        patient.contact_no = update_data.contact_no.strip()
     if update_data.district is not None:
-        patient.district = update_data.district
+        patient.district = update_data.district.strip()
     if update_data.state is not None:
-        patient.state = update_data.state
+        patient.state = update_data.state.strip()
     if update_data.is_smoker is not None:
         patient.is_smoker = update_data.is_smoker
+
+    new_gender = update_data.gender or update_data.sex
+    if new_gender is not None and new_gender.strip():
+        patient.sex = new_gender.lower().strip()
+
+    new_dob = update_data.date_of_birth or update_data.birth_date
+    if new_dob is not None:
+        patient.birth_date = new_dob
+        today = date.today()
+        patient.age = max(0, today.year - new_dob.year - ((today.month, today.day) < (new_dob.month, new_dob.day)))
+
+    # Synchronize linked UserAccount if exists
+    db_user = db.scalar(select(UserAccount).where(UserAccount.patient_id == patient_id))
+    if db_user:
+        if update_data.first_name is not None or update_data.last_name is not None:
+            fn = update_data.first_name or patient.first_name
+            ln = update_data.last_name or patient.last_name
+            db_user.full_name = f"{fn} {ln}".strip()
+        if new_gender is not None:
+            db_user.gender = new_gender.lower().strip()
+        if new_dob is not None:
+            db_user.date_of_birth = new_dob
+        if update_data.phone_number or update_data.contact_no:
+            db_user.phone_number = update_data.phone_number or update_data.contact_no
 
     db.commit()
     db.refresh(patient)
     res = PatientRead.model_validate(patient)
     res.phone_number = patient.contact_no
+    res.gender = patient.sex
+    res.date_of_birth = patient.birth_date
     return res
 
 
@@ -777,5 +804,41 @@ def get_patient_documents(
         .order_by(PatientDocument.created_at.desc())
     ).all()
     return [PatientDocumentRead.model_validate(d) for d in docs]
+
+
+# ==========================================
+# Complete Longitudinal EHR PDF Export Endpoint
+# ==========================================
+
+from fastapi.responses import Response
+
+@router.get("/{patient_id}/pdf-export")
+def export_patient_ehr_pdf(
+    patient_id: str,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(verify_patient_access)
+):
+    """
+    Downloads the patient's complete longitudinal EHR as an organized,
+    production-grade PDF containing history, vitals, prescriptions, lab values,
+    doctor-verified chat updates, and embedded scan images and trend charts.
+    """
+    from backend.app.services.pdf_export_service import LongitudinalPDFExportService
+
+    try:
+        pdf_stream = LongitudinalPDFExportService.build_ehr_pdf(patient_id, db)
+        return Response(
+            content=pdf_stream.getvalue(),
+            media_type="application/pdf",
+            headers={
+                "Content-Disposition": f"attachment; filename=EHR_{patient_id}_AarogyaDrishti.pdf"
+            }
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to generate EHR PDF: {str(e)}"
+        )
+
 
 

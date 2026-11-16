@@ -9,10 +9,15 @@ class TokenResponse(BaseModel):
     username: str
     full_name: str
     patient_id: Optional[str] = None
+    gender: Optional[str] = None
+    date_of_birth: Optional[date] = None
 
 class LoginRequest(BaseModel):
     username: str
     password: str
+
+class GoogleAuthRequest(BaseModel):
+    id_token: str
 
 class SignupRequest(BaseModel):
     full_name: Optional[str] = None
@@ -26,12 +31,16 @@ class SignupRequest(BaseModel):
     phone_number: Optional[str] = None
     phone: Optional[str] = None
     district: Optional[str] = None
+    state: Optional[str] = "Maharashtra"
+    is_smoker: Optional[bool] = False
+    blood_group: Optional[str] = None
 
 class ForgotPasswordRequest(BaseModel):
     email: str
 
 class ResetPasswordRequest(BaseModel):
-    email: str
+    token: Optional[str] = None
+    email: Optional[str] = None
     new_password: str
 
 class UserProfileResponse(BaseModel):

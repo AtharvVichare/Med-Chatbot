@@ -100,6 +100,17 @@ class LongitudinalEHRService:
             "date_of_birth": str(dob),
             "district": patient.district,
             "blood_group": blood_grp,
+            "demographics": {
+                "patient_id": patient_id,
+                "first_name": patient.first_name,
+                "last_name": patient.last_name,
+                "full_name": f"{patient.first_name} {patient.last_name}",
+                "age": getattr(patient, "age", 38),
+                "gender": gender,
+                "date_of_birth": str(dob),
+                "district": patient.district,
+                "blood_group": blood_grp or "O+"
+            },
             "conditions": [
                 {
                     "diagnosis_name": c.diagnosis_name,

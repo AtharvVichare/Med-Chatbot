@@ -24,39 +24,84 @@ class User(BaseModel):
 DEMO_PASSWORD = "DemoPassword123!"
 
 DEMO_USERS_DB: Dict[str, User] = {
-    # 1. Patient User: Can ONLY view PAT-00001 (Isha Nair in PostgreSQL synthetic EHR)
+    # 1. Patient User: Can view PAT-00001
     "patient_user": User(
         username="patient_user",
         password_hash=hash_password(DEMO_PASSWORD),
         role="patient",
         patient_id="PAT-00001",
         full_name="Isha Nair",
-        facility="Civil Hospital Ahmedabad [SYNTHETIC]"
+        facility="Seth GS Medical College & KEM Hospital"
     ),
-    # 2. Doctor User: Assigned explicitly to PAT-00001 and PAT-00002
+    # 2. Doctor User: Assigned explicitly to synthetic patients
     "doctor_user": User(
         username="doctor_user",
         password_hash=hash_password(DEMO_PASSWORD),
         role="doctor",
-        assigned_patients=["PAT-00001", "PAT-00002"],
-        full_name="Dr. Priya Deshmukh (Synthetic Doctor)",
-        facility="AIIMS New Delhi [SYNTHETIC]"
+        assigned_patients=["PAT-00001", "PAT-00002", "PAT-AARAV-001", "PAT-PRIYA-002", "PAT-ROHAN-003", "PAT-SUNITA-004"],
+        full_name="Dr. Priya Deshmukh",
+        facility="Seth GS Medical College & KEM Hospital"
     ),
     # 3. Hospital Administrator: Facility wide access
     "admin_user": User(
         username="admin_user",
         password_hash=hash_password(DEMO_PASSWORD),
         role="hospital_admin",
-        full_name="Hospital Administrator",
-        facility="AIIMS New Delhi [SYNTHETIC]"
+        full_name="Dr. Rajesh Deshmukh",
+        facility="Seth GS Medical College & KEM Hospital"
     ),
-    # 4. Public Health Analyst: Strictly forbidden from identifiable patient records
+    # 4. Nurse User: Clinical shift feed, ward vitals, bed allocation
+    "nurse_user": User(
+        username="nurse_user",
+        password_hash=hash_password(DEMO_PASSWORD),
+        role="nurse",
+        assigned_patients=["PAT-00001", "PAT-00002", "PAT-00003", "PAT-AARAV-001", "PAT-PRIYA-002", "PAT-ROHAN-003", "PAT-SUNITA-004"],
+        full_name="Nurse Anjali Sharma",
+        facility="Seth GS Medical College & KEM Hospital"
+    ),
+    # 5. Public Health Analyst: Strictly forbidden from identifiable patient records
     "analyst_user": User(
         username="analyst_user",
         password_hash=hash_password(DEMO_PASSWORD),
         role="public_health_analyst",
         full_name="Public Health Epidemiologist",
         facility="National Health Observatory [SYNTHETIC]"
+    ),
+    # 6. Primary Patient: Aarav Mehta (Demonstration Family Account)
+    "aarav_mehta": User(
+        username="aarav_mehta",
+        password_hash=hash_password(DEMO_PASSWORD),
+        role="patient",
+        patient_id="PAT-AARAV-001",
+        full_name="Aarav Mehta",
+        facility="Seth GS Medical College & KEM Hospital [SYNTHETIC]"
+    ),
+    # 7. Spouse: Priya Mehta
+    "priya_mehta": User(
+        username="priya_mehta",
+        password_hash=hash_password(DEMO_PASSWORD),
+        role="patient",
+        patient_id="PAT-PRIYA-002",
+        full_name="Priya Mehta",
+        facility="Seth GS Medical College & KEM Hospital [SYNTHETIC]"
+    ),
+    # 8. Brother: Rohan Mehta
+    "rohan_mehta": User(
+        username="rohan_mehta",
+        password_hash=hash_password(DEMO_PASSWORD),
+        role="patient",
+        patient_id="PAT-ROHAN-003",
+        full_name="Rohan Mehta",
+        facility="Seth GS Medical College & KEM Hospital [SYNTHETIC]"
+    ),
+    # 9. Mother: Sunita Mehta
+    "sunita_mehta": User(
+        username="sunita_mehta",
+        password_hash=hash_password(DEMO_PASSWORD),
+        role="patient",
+        patient_id="PAT-SUNITA-004",
+        full_name="Sunita Mehta",
+        facility="Seth GS Medical College & KEM Hospital [SYNTHETIC]"
     )
 }
 

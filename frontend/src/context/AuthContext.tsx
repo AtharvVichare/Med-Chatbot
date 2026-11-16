@@ -12,13 +12,18 @@ interface SignupPayload {
   date_of_birth: string;
   phone?: string;
   district?: string;
+  state?: string;
+  is_smoker?: boolean;
+  blood_group?: string;
 }
 
 interface AuthContextType {
   user: User | null;
   token: string | null;
   login: (username: string, password: string) => Promise<void>;
+  googleLogin: (idToken: string) => Promise<void>;
   signup: (payload: SignupPayload) => Promise<void>;
+  updateUser: (updates: Partial<User>) => void;
   logout: () => void;
   isAuthenticated: boolean;
 }
@@ -48,7 +53,26 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       username: response.username,
       role: response.role,
       full_name: response.full_name,
-      patient_id: response.patient_id
+      patient_id: response.patient_id,
+      gender: response.gender,
+      date_of_birth: response.date_of_birth
+    };
+
+    setToken(response.access_token);
+    setUser(loggedUser);
+    localStorage.setItem('aarogya_jwt', response.access_token);
+    localStorage.setItem('aarogya_user', JSON.stringify(loggedUser));
+  };
+
+  const googleLogin = async (idToken: string) => {
+    const response = await api.googleLogin(idToken);
+    const loggedUser: User = {
+      username: response.username,
+      role: response.role,
+      full_name: response.full_name,
+      patient_id: response.patient_id,
+      gender: response.gender,
+      date_of_birth: response.date_of_birth
     };
 
     setToken(response.access_token);
@@ -63,13 +87,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       username: response.username,
       role: response.role,
       full_name: response.full_name,
-      patient_id: response.patient_id
+      patient_id: response.patient_id,
+      gender: response.gender || payload.gender,
+      date_of_birth: response.date_of_birth || payload.date_of_birth
     };
 
     setToken(response.access_token);
     setUser(loggedUser);
     localStorage.setItem('aarogya_jwt', response.access_token);
     localStorage.setItem('aarogya_user', JSON.stringify(loggedUser));
+  };
+
+  const updateUser = (updates: Partial<User>) => {
+    setUser(prev => {
+      if (!prev) return null;
+      const updated = { ...prev, ...updates };
+      localStorage.setItem('aarogya_user', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   const logout = () => {
@@ -80,7 +115,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, login, signup, logout, isAuthenticated: !!token }}>
+    <AuthContext.Provider value={{ user, token, login, googleLogin, signup, updateUser, logout, isAuthenticated: !!token }}>
       {children}
     </AuthContext.Provider>
   );

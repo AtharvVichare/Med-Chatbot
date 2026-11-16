@@ -1,163 +1,158 @@
 """
-Historical EHR-Based 12-Month Incident Type 2 Diabetes Prediction Service
-Features:
-- Lookback horizon: 24 months preceding index prediction date.
-- Prediction horizon: Incident Type 2 Diabetes onset within 12 months.
-- Excludes patients with pre-existing Type 2 Diabetes (E11.9).
-- Uses temporal observations: Fasting Glucose, HbA1c, Systolic/Diastolic BP, Age, Sex, Smoker status.
-- Evaluates Logistic Regression, Random Forest, and XGBoost baselines on historical cohorts.
+Longitudinal Future Disease Risk Forecasting API Router
+Provides comprehensive, evidence-based prospective disease risk predictions
+across multiple chronic disease domains based on genuine patient EHR observations.
 """
 
-import os
-import json
-from pathlib import Path
-from datetime import date, datetime
 from typing import Dict, Any, List, Optional
-import numpy as np
-import pandas as pd
-from pydantic import BaseModel, Field
 from fastapi import APIRouter, Depends, HTTPException, status
+from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 
 from backend.app.db.session import get_db
-from backend.app.db.models import Patient, Condition, Observation, Medication
+from backend.app.db.models import Patient
 from backend.app.core.dependencies import get_current_user
 from backend.app.core.demo_users import User
+from backend.app.services.clinical_future_risk_service import (
+    ClinicalFutureRiskService,
+    ComprehensiveFutureRiskResponse,
+    RESEARCH_DISCLAIMER
+)
 
 router = APIRouter(prefix="/insights", tags=["Future Health Insights"])
 
-class FutureRiskResponse(BaseModel):
+
+# Legacy Backward-Compatible Schema
+class LegacyFutureRiskResponse(BaseModel):
     patient_id: str
     target_condition: str = "Incident Type 2 Diabetes Mellitus"
     prediction_horizon: str = "12 Months"
     lookback_window: str = "24 Months"
     status: str  # 'EVALUATED', 'PRE_EXISTING_CONDITION', 'INSUFFICIENT_HISTORICAL_DATA'
     estimated_risk_score: Optional[float] = None
-    risk_category: Optional[str] = None  # Low, Moderate, Elevated
+    risk_category: Optional[str] = None  # Low, Moderate, Elevated, Diagnosed, Indeterminate
     contributing_factors: List[Dict[str, Any]] = []
     historical_metrics_analyzed: Dict[str, Any] = {}
-    clinical_disclaimer: str
+    clinical_disclaimer: str = RESEARCH_DISCLAIMER
 
-RESEARCH_DISCLAIMER = (
-    "RESEARCH PROOF-OF-CONCEPT: This prospective 12-month risk estimate is derived from experimental "
-    "temporal EHR machine-learning research (24-month historical lookback). It does NOT constitute a clinical diagnosis "
-    "or guarantee of disease onset. Discuss these metabolic indicators with your primary care physician."
-)
 
-@router.get("/diabetes-risk/{patient_id}", response_model=FutureRiskResponse)
+@router.get("/future-risk/{patient_id}", response_model=ComprehensiveFutureRiskResponse)
+def get_comprehensive_future_disease_risk(
+    patient_id: str,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    """
+    Comprehensive Multi-System Future Disease Risk Prediction.
+    Evaluates cardiovascular, vascular, metabolic, renal, and pulmonary domains
+    without defaulting to diabetes or fabricating missing biomarker records.
+    """
+    # Enforce patient-level authorization
+    if current_user.role == "patient" and current_user.patient_id != patient_id:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN, 
+            detail="Unauthorized access to patient risk profile."
+        )
+
+    patient = db.scalar(select(Patient).where(Patient.patient_id == patient_id))
+    if not patient:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, 
+            detail=f"Patient record '{patient_id}' not found."
+        )
+
+    try:
+        response = ClinicalFutureRiskService.evaluate_patient_future_risk(db, patient_id)
+        return response
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to compute clinical risk evaluation: {str(e)}"
+        )
+
+
+@router.get("/diabetes-risk/{patient_id}", response_model=LegacyFutureRiskResponse)
 def evaluate_12mo_diabetes_risk(
     patient_id: str,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
-    # Enforce patient-level authorization
+    """
+    Legacy-compatible endpoint for 12-month diabetes evaluation.
+    Powered by the genuine ClinicalFutureRiskService.
+    If the patient lacks glycemic data, transparently reports INSUFFICIENT_HISTORICAL_DATA
+    rather than guessing.
+    """
     if current_user.role == "patient" and current_user.patient_id != patient_id:
-        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Unauthorized access to patient risk profile.")
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN, 
+            detail="Unauthorized access to patient risk profile."
+        )
 
     patient = db.scalar(select(Patient).where(Patient.patient_id == patient_id))
     if not patient:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Patient record not found.")
-
-    # 1. Rule out pre-existing Type 2 Diabetes
-    existing_t2d = db.scalar(
-        select(Condition)
-        .where((Condition.patient_id == patient_id) & (Condition.diagnosis_code == "E11.9"))
-    )
-    if existing_t2d:
-        return FutureRiskResponse(
-            patient_id=patient_id,
-            status="PRE_EXISTING_CONDITION",
-            estimated_risk_score=1.0,
-            risk_category="Diagnosed",
-            contributing_factors=[{
-                "factor": "Pre-existing Condition",
-                "detail": f"Documented onset date: {existing_t2d.onset_date}"
-            }],
-            historical_metrics_analyzed={"diagnosis": "Type 2 diabetes mellitus without complications"},
-            clinical_disclaimer=RESEARCH_DISCLAIMER
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, 
+            detail="Patient record not found."
         )
 
-    # 2. Extract 24-month lookback observations
-    obs_list = db.scalars(
-        select(Observation)
-        .where(Observation.patient_id == patient_id)
-        .order_by(Observation.date.desc())
-    ).all()
+    full_evaluation = ClinicalFutureRiskService.evaluate_patient_future_risk(db, patient_id)
 
-    glucose_vals = [o.value_numeric for o in obs_list if o.test_code == "1558-6" and o.value_numeric is not None]
-    hba1c_vals = [o.value_numeric for o in obs_list if o.test_code == "4548-4" and o.value_numeric is not None]
-    sys_bp_vals = [o.value_numeric for o in obs_list if o.test_code == "8480-6" and o.value_numeric is not None]
+    # Locate the specific Type 2 Diabetes evaluation
+    dm_eval = next(
+        (e for e in full_evaluation.condition_evaluations if e.icd10_code == "E11.9"),
+        None
+    )
 
-    if not glucose_vals and not hba1c_vals:
-        return FutureRiskResponse(
+    if not dm_eval or dm_eval.status == "INSUFFICIENT_BIOMARKERS":
+        return LegacyFutureRiskResponse(
             patient_id=patient_id,
+            target_condition="Incident Type 2 Diabetes Mellitus",
+            prediction_horizon="12 Months",
+            lookback_window="24 Months",
             status="INSUFFICIENT_HISTORICAL_DATA",
             estimated_risk_score=None,
             risk_category="Indeterminate",
-            contributing_factors=[{
-                "factor": "Missing Baseline Labs",
-                "detail": "No historical fasting blood glucose or HbA1c observations recorded in the past 24 months."
-            }],
-            historical_metrics_analyzed={"recorded_observations_count": len(obs_list)},
+            contributing_factors=[
+                {
+                    "factor": "Missing Baseline Glycemic Labs",
+                    "detail": "No historical fasting blood glucose or HbA1c observations recorded in EHR."
+                }
+            ],
+            historical_metrics_analyzed=full_evaluation.historical_metrics_analyzed,
             clinical_disclaimer=RESEARCH_DISCLAIMER
         )
 
-    # 3. Compute prospective risk score based on metabolic features
-    latest_glucose = glucose_vals[0] if glucose_vals else 90.0
-    latest_hba1c = hba1c_vals[0] if hba1c_vals else 5.2
-    latest_sys = sys_bp_vals[0] if sys_bp_vals else 120.0
+    if dm_eval.status == "PRE_EXISTING_CONDITION":
+        return LegacyFutureRiskResponse(
+            patient_id=patient_id,
+            target_condition="Incident Type 2 Diabetes Mellitus",
+            prediction_horizon="12 Months",
+            lookback_window="24 Months",
+            status="PRE_EXISTING_CONDITION",
+            estimated_risk_score=1.0,
+            risk_category="Diagnosed",
+            contributing_factors=[
+                {"factor": f.factor, "detail": f.detail or f.metric or ""}
+                for f in dm_eval.contributing_factors
+            ],
+            historical_metrics_analyzed=full_evaluation.historical_metrics_analyzed,
+            clinical_disclaimer=RESEARCH_DISCLAIMER
+        )
 
-    # Risk logit heuristic aligned with clinical diabetes risk scores (ADA risk factors)
-    logit = -3.8
-    logit += 0.03 * (patient.age - 30)
-    if patient.is_smoker:
-        logit += 0.35
-    if latest_glucose >= 100:
-        logit += 1.2 * ((latest_glucose - 100) / 25)
-    if latest_hba1c >= 5.7:
-        logit += 1.5 * ((latest_hba1c - 5.7) / 0.8)
-    if latest_sys >= 130:
-        logit += 0.4
-
-    risk_prob = float(1.0 / (1.0 + np.exp(-logit)))
-    risk_prob = max(0.01, min(0.95, round(risk_prob, 4)))
-
-    category = "Low" if risk_prob < 0.20 else ("Moderate" if risk_prob < 0.50 else "Elevated")
-
-    factors = []
-    if latest_hba1c >= 5.7:
-        factors.append({
-            "factor": "Glycemic Indicator",
-            "metric": f"Recent HbA1c: {latest_hba1c}%",
-            "impact": "Pre-diabetic range" if latest_hba1c < 6.5 else "Elevated range"
-        })
-    if latest_glucose >= 100:
-        factors.append({
-            "factor": "Fasting Plasma Glucose",
-            "metric": f"Recent Glucose: {latest_glucose} mg/dL",
-            "impact": "Impaired fasting glucose"
-        })
-    if patient.age >= 45:
-        factors.append({
-            "factor": "Age Category",
-            "metric": f"Age: {patient.age} years",
-            "impact": "Demographic risk factor"
-        })
-
-    return FutureRiskResponse(
+    return LegacyFutureRiskResponse(
         patient_id=patient_id,
+        target_condition="Incident Type 2 Diabetes Mellitus",
+        prediction_horizon="12 Months",
+        lookback_window="24 Months",
         status="EVALUATED",
-        estimated_risk_score=risk_prob,
-        risk_category=category,
-        contributing_factors=factors,
-        historical_metrics_analyzed={
-            "latest_glucose_mg_dl": latest_glucose,
-            "latest_hba1c_pct": latest_hba1c,
-            "latest_systolic_bp": latest_sys,
-            "age": patient.age,
-            "is_smoker": patient.is_smoker
-        },
+        estimated_risk_score=dm_eval.risk_score,
+        risk_category=dm_eval.risk_tier,
+        contributing_factors=[
+            {"factor": f.factor, "metric": f.metric, "impact": f.impact, "detail": f.detail}
+            for f in dm_eval.contributing_factors
+        ],
+        historical_metrics_analyzed=full_evaluation.historical_metrics_analyzed,
         clinical_disclaimer=RESEARCH_DISCLAIMER
     )
-

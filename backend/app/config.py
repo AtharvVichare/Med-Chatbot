@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import Field
 from pathlib import Path
@@ -33,5 +34,18 @@ class Settings(BaseSettings):
     )
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+    PASSWORD_RESET_EXPIRE_MINUTES: int = 15
+
+    # CORS Allowed Origins (Comma-separated string in .env, e.g. "http://localhost:5173,https://myportal.com")
+    ALLOWED_ORIGINS: str = Field(
+        default="*",
+        description="Allowed CORS origins"
+    )
+
+    # Google OAuth Configuration
+    GOOGLE_CLIENT_ID: Optional[str] = Field(
+        default=None,
+        description="Google OAuth 2.0 Web Client ID"
+    )
 
 settings = Settings()

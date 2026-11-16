@@ -12,7 +12,14 @@ import {
   X,
   FileCheck,
   TrendingUp,
-  BarChart3
+  BarChart3,
+  ExternalLink,
+  Eye,
+  Download,
+  Calendar,
+  Ticket,
+  Building2,
+  Printer
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
@@ -22,20 +29,24 @@ import type {
   Medication, 
   Allergy, 
   PatientDocument, 
-  TimelineResponse 
+  TimelineResponse,
+  AppointmentBooking
 } from '../types';
+import { AppointmentTicketModal } from '../components/AppointmentTicketModal';
 
 export const MyHealthRecordPage: React.FC = () => {
   const { user } = useAuth();
-  const patientId = user?.patient_id || 'PAT-00001';
+  const patientId = user?.patient_id || 'PAT-AARAV-001';
 
-  const [activeTab, setActiveTab] = useState<'profile' | 'conditions' | 'medications' | 'allergies' | 'reports' | 'timeline' | 'trends'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'conditions' | 'medications' | 'allergies' | 'reports' | 'timeline' | 'trends' | 'appointments'>('profile');
   const [patient, setPatient] = useState<Patient | null>(null);
   const [conditions, setConditions] = useState<Condition[]>([]);
   const [medications, setMedications] = useState<Medication[]>([]);
   const [allergies, setAllergies] = useState<Allergy[]>([]);
   const [documents, setDocuments] = useState<PatientDocument[]>([]);
   const [timeline, setTimeline] = useState<TimelineResponse | null>(null);
+  const [appointments, setAppointments] = useState<AppointmentBooking[]>([]);
+  const [activeTicket, setActiveTicket] = useState<AppointmentBooking | null>(null);
   const [loading, setLoading] = useState(true);
 
   // Longitudinal Trends State
@@ -44,6 +55,7 @@ export const MyHealthRecordPage: React.FC = () => {
   const [trendsLoading, setTrendsLoading] = useState(false);
 
   // Modals state
+  const [previewDoc, setPreviewDoc] = useState<PatientDocument | null>(null);
   const [showAddConditionModal, setShowAddConditionModal] = useState(false);
   const [newConditionName, setNewConditionName] = useState('');
   const [newConditionCode, setNewConditionCode] = useState('R69');
@@ -66,17 +78,30 @@ export const MyHealthRecordPage: React.FC = () => {
   const [docType, setDocType] = useState('lab_report');
   const [uploadLoading, setUploadLoading] = useState(false);
   const [uploadSuccessMsg, setUploadSuccessMsg] = useState<string | null>(null);
+  const [downloadingPdf, setDownloadingPdf] = useState(false);
+
+  const handleDownloadPdf = async () => {
+    setDownloadingPdf(true);
+    try {
+      await api.downloadEhrPdf(patientId);
+    } catch (err: any) {
+      alert(err.message || 'Failed to download longitudinal EHR PDF');
+    } finally {
+      setDownloadingPdf(false);
+    }
+  };
 
   const fetchRecordData = async () => {
     setLoading(true);
     try {
-      const [pat, conds, meds, allgs, docs, time] = await Promise.allSettled([
+      const [pat, conds, meds, allgs, docs, time, appts] = await Promise.allSettled([
         api.getPatient(patientId),
         api.getPatientConditions(patientId),
         api.getPatientMedications(patientId),
         api.getPatientAllergies(patientId),
         api.getPatientDocuments(patientId),
-        api.getPatientTimeline(patientId)
+        api.getPatientTimeline(patientId),
+        api.listAppointments({ patient_id: patientId })
       ]);
 
       if (pat.status === 'fulfilled') setPatient(pat.value);
@@ -85,10 +110,21 @@ export const MyHealthRecordPage: React.FC = () => {
       if (allgs.status === 'fulfilled') setAllergies(allgs.value);
       if (docs.status === 'fulfilled') setDocuments(docs.value);
       if (time.status === 'fulfilled') setTimeline(time.value);
+      if (appts.status === 'fulfilled') setAppointments(appts.value);
     } catch (e) {
       console.error('Error fetching health record:', e);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleCancelAppointment = async (bookingId: string) => {
+    if (!window.confirm('Are you sure you want to cancel this scheduled consultation?')) return;
+    try {
+      await api.cancelAppointment(bookingId);
+      fetchRecordData();
+    } catch (err: any) {
+      alert(`Failed to cancel: ${err.message}`);
     }
   };
 
@@ -237,6 +273,15 @@ export const MyHealthRecordPage: React.FC = () => {
         </div>
         <div className="flex items-center gap-2">
           <button
+            onClick={handleDownloadPdf}
+            disabled={downloadingPdf}
+            className="inline-flex items-center gap-2 px-3.5 py-2 bg-slate-900 hover:bg-slate-800 disabled:opacity-50 text-white text-xs font-semibold rounded-xl shadow-sm transition"
+            title="Download full longitudinal health record as an organized clinical PDF report"
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>{downloadingPdf ? 'Exporting PDF...' : 'Download Complete EHR (PDF)'}</span>
+          </button>
+          <button
             onClick={() => setShowUploadModal(true)}
             className="inline-flex items-center gap-2 px-3.5 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-semibold rounded-xl shadow-sm transition"
           >
@@ -256,6 +301,7 @@ export const MyHealthRecordPage: React.FC = () => {
           { id: 'reports', label: `Diagnostic Reports (${documents.length})`, icon: FileText },
           { id: 'timeline', label: 'Unified Timeline', icon: Clock },
           { id: 'trends', label: 'Longitudinal Trends & Charts', icon: TrendingUp },
+          { id: 'appointments', label: `Appointments & History (${appointments.length})`, icon: Calendar },
         ].map(tab => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -299,37 +345,37 @@ export const MyHealthRecordPage: React.FC = () => {
             <div>
               <span className="text-xs text-slate-400 uppercase font-bold tracking-wider">Full Legal Name</span>
               <p className="mt-1 font-semibold text-slate-900">
-                {patient ? `${patient.first_name} ${patient.last_name}` : 'Isha Nair'}
+                {patient ? `${patient.first_name} ${patient.last_name}` : (user?.full_name || 'Aarav Mehta')}
               </p>
             </div>
             <div>
               <span className="text-xs text-slate-400 uppercase font-bold tracking-wider">Date of Birth & Age</span>
               <p className="mt-1 font-semibold text-slate-900">
-                {patient?.date_of_birth ? `${patient.date_of_birth}` : '1985-04-12'}
+                {patient?.date_of_birth ? `${patient.date_of_birth}` : '1988-05-14'}
               </p>
             </div>
             <div>
               <span className="text-xs text-slate-400 uppercase font-bold tracking-wider">Biological Sex</span>
               <p className="mt-1 font-semibold text-slate-900 capitalize">
-                {patient?.gender || 'Female'}
+                {patient?.gender || 'Male'}
               </p>
             </div>
             <div>
               <span className="text-xs text-slate-400 uppercase font-bold tracking-wider">Blood Type</span>
               <p className="mt-1 font-semibold text-slate-900">
-                {patient?.blood_type || 'B+'}
+                {patient?.blood_type || 'O+'}
               </p>
             </div>
             <div>
               <span className="text-xs text-slate-400 uppercase font-bold tracking-wider">Residential District</span>
               <p className="mt-1 font-semibold text-slate-900">
-                {patient?.district || 'Mumbai Suburban'}, Maharashtra
+                {patient?.district ? `${patient.district}, Maharashtra` : 'Mumbai, Maharashtra'}
               </p>
             </div>
             <div>
               <span className="text-xs text-slate-400 uppercase font-bold tracking-wider">Primary Phone</span>
               <p className="mt-1 font-semibold text-slate-900">
-                {patient?.phone_number || '+91 98201 44521'}
+                {patient?.phone_number || '+91 98201 11223'}
               </p>
             </div>
           </div>
@@ -551,16 +597,37 @@ export const MyHealthRecordPage: React.FC = () => {
                       </div>
                     )}
 
-                    {d.confirmation_status === 'pending_review' && (
-                      <div className="flex justify-end pt-1">
+                    {/* Actions & Preview Buttons */}
+                    <div className="flex items-center justify-between pt-2 border-t border-slate-200/60">
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => setPreviewDoc(d)}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-semibold transition"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>View Scan / Document</span>
+                        </button>
+                        <a
+                          href={api.getDocumentFileUrl(d.document_id)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs transition"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>Open in New Tab</span>
+                        </a>
+                      </div>
+
+                      {d.confirmation_status === 'pending_review' && (
                         <button
                           onClick={() => handleConfirmDocument(d.document_id)}
                           className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-lg shadow-sm transition"
                         >
                           Confirm & Save Values to Health Record
                         </button>
-                      </div>
-                    )}
+                      )}
+                    </div>
                   </div>
                 );
               })
@@ -775,6 +842,120 @@ export const MyHealthRecordPage: React.FC = () => {
                   </tbody>
                 </table>
               </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Tab 8: Appointments & Consultation History */}
+      {activeTab === 'appointments' && (
+        <div className="bg-white rounded-xl border border-slate-200/80 p-6 shadow-sm space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between pb-4 border-b border-slate-100 gap-3">
+            <div>
+              <h2 className="font-bold text-slate-900 text-sm flex items-center gap-2">
+                <Ticket className="w-4 h-4 text-teal-600" />
+                <span>Consultation Bookings & OPD History</span>
+              </h2>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Verified hospital consultations booked through the AI Assistant or scheduling portal with real-time status.
+              </p>
+            </div>
+            <span className="text-xs font-bold text-teal-800 bg-teal-50 px-3 py-1 rounded-full border border-teal-200 self-start sm:self-auto">
+              {appointments.length} Total Bookings
+            </span>
+          </div>
+
+          {appointments.length === 0 ? (
+            <div className="text-center py-12 text-slate-400 text-xs">
+              <Calendar className="w-10 h-10 mx-auto text-slate-300 mb-3" />
+              <p className="font-medium">No appointment bookings on record.</p>
+              <p className="text-[11px] text-slate-400 mt-1">
+                You can book an OPD consultation anytime via your <strong>AI Health Assistant</strong>.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {appointments.map((a) => {
+                const token = a.token_number || `TKT-${a.booking_date.replace(/-/g, '')}-${a.booking_id.slice(-4)}`;
+                const chamber = a.chamber_room || 'Chamber 104, OPD Block B';
+                const hosp = a.hospital_name || 'Seth GS Medical College & KEM Hospital';
+                const fee = a.fee || a.consultation_fee || 800;
+                const isConfirmed = a.status === 'confirmed';
+
+                return (
+                  <div 
+                    key={a.booking_id} 
+                    className="p-4 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-sm transition space-y-3"
+                  >
+                    <div className="flex items-start justify-between gap-2 border-b border-slate-200/70 pb-3">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono font-bold text-teal-900 bg-teal-50 px-2.5 py-0.5 rounded-md border border-teal-200 text-xs">
+                            {token}
+                          </span>
+                          <span className="text-[10px] font-mono text-slate-400">Ref: {a.booking_id}</span>
+                        </div>
+                        <h4 className="font-bold text-slate-900 text-sm mt-1">{a.doctor_name || 'Specialist Doctor'}</h4>
+                        <div className="text-[11px] text-slate-500 font-medium">{a.qualification || 'MBBS, MD'} &bull; {a.department}</div>
+                      </div>
+
+                      <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider shrink-0 ${
+                        a.status === 'confirmed' ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' :
+                        a.status === 'checked_in' ? 'bg-blue-100 text-blue-800 border border-blue-200' :
+                        a.status === 'completed' ? 'bg-slate-100 text-slate-700' :
+                        'bg-rose-100 text-rose-800'
+                      }`}>
+                        {a.status.replace('_', ' ')}
+                      </span>
+                    </div>
+
+                    <div className="space-y-1.5 text-xs text-slate-600">
+                      <div className="flex items-center gap-1.5 font-medium text-slate-800">
+                        <Building2 className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                        <span className="truncate">{hosp}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-[11px]">
+                        <span className="text-slate-500 font-mono">OPD Chamber: <strong className="text-slate-700">{chamber}</strong></span>
+                        <span className="font-semibold text-slate-900">Fee: ₹{fee}</span>
+                      </div>
+                      <div className="flex items-center gap-3 text-[11px] bg-white p-2 rounded-lg border border-slate-200">
+                        <span className="flex items-center gap-1 font-semibold text-slate-900">
+                          <Calendar className="w-3.5 h-3.5 text-teal-600" />
+                          {a.booking_date}
+                        </span>
+                        <span>&bull;</span>
+                        <span className="font-bold text-teal-800">
+                          {a.time_slot}
+                        </span>
+                      </div>
+                      {a.chief_complaint && (
+                        <div className="text-[11px] text-slate-500 italic truncate pt-1">
+                          "{a.chief_complaint}"
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex items-center justify-between pt-2 border-t border-slate-200/70">
+                      <button
+                        onClick={() => setActiveTicket(a)}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-teal-600 hover:bg-teal-700 text-white rounded-xl text-xs font-semibold transition shadow-2xs"
+                      >
+                        <Printer className="w-3.5 h-3.5" />
+                        <span>View / Print Slip</span>
+                      </button>
+
+                      {isConfirmed && (
+                        <button
+                          onClick={() => handleCancelAppointment(a.booking_id)}
+                          className="px-3 py-1.5 bg-white hover:bg-rose-50 text-rose-600 border border-rose-200 rounded-xl text-xs font-semibold transition"
+                        >
+                          Cancel Booking
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
@@ -1048,6 +1229,82 @@ export const MyHealthRecordPage: React.FC = () => {
             </form>
           </div>
         </div>
+      )}
+
+      {/* Document & Scan Modal Previewer */}
+      {previewDoc && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4">
+          <div className="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden border border-slate-200">
+            {/* Modal Header */}
+            <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+              <div className="flex items-center gap-2">
+                <FileText className="w-5 h-5 text-teal-600" />
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900">{previewDoc.file_name}</h3>
+                  <p className="text-[11px] text-slate-500 uppercase tracking-wider">
+                    {previewDoc.document_type.replace('_', ' ')} · {(previewDoc.file_size_bytes / 1024).toFixed(1)} KB
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href={api.getDocumentFileUrl(previewDoc.document_id)}
+                  download={previewDoc.file_name}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold shadow-xs"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Download</span>
+                </a>
+                <button
+                  type="button"
+                  onClick={() => setPreviewDoc(null)}
+                  className="p-1.5 rounded-lg hover:bg-slate-200 text-slate-500 hover:text-slate-700"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Body / Viewer */}
+            <div className="flex-1 overflow-auto p-4 bg-slate-100 flex items-center justify-center min-h-[400px]">
+              {['png', 'jpg', 'jpeg', 'webp', 'bmp'].includes(previewDoc.file_type.toLowerCase()) ? (
+                <div className="max-w-full max-h-[70vh] flex items-center justify-center">
+                  <img
+                    src={api.getDocumentFileUrl(previewDoc.document_id)}
+                    alt={previewDoc.file_name}
+                    className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-md border border-slate-300 bg-black/90"
+                  />
+                </div>
+              ) : previewDoc.file_type.toLowerCase() === 'pdf' ? (
+                <iframe
+                  src={api.getDocumentFileUrl(previewDoc.document_id)}
+                  title={previewDoc.file_name}
+                  className="w-full h-[70vh] rounded-lg border border-slate-300 bg-white shadow-sm"
+                />
+              ) : (
+                <div className="p-8 text-center text-slate-500 space-y-3">
+                  <p className="text-sm">Preview for this file format is not supported directly in the browser.</p>
+                  <a
+                    href={api.getDocumentFileUrl(previewDoc.document_id)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-teal-600 text-white rounded-lg text-xs font-semibold shadow-sm"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    <span>Open / Download File</span>
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Appointment Ticket Modal */}
+      {activeTicket && (
+        <AppointmentTicketModal
+          ticket={activeTicket}
+          onClose={() => setActiveTicket(null)}
+        />
       )}
     </div>
   );

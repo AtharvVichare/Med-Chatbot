@@ -15,7 +15,7 @@ import type { DailyHealthLog } from '../types';
 
 export const DailyTrackingPage: React.FC = () => {
   const { user } = useAuth();
-  const patientId = user?.patient_id || 'PAT-00001';
+  const patientId = user?.patient_id || 'PAT-AARAV-001';
 
   const [logs, setLogs] = useState<DailyHealthLog[]>([]);
   const [loading, setLoading] = useState(true);

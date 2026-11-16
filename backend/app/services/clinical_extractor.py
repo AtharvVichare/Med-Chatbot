@@ -57,47 +57,49 @@ class ClinicalExtractorService:
     def extract_from_chat(
         text: str,
         patient_id: str,
-        db: Session
+        db: Session,
+        auto_commit: bool = False
     ) -> List[Dict[str, Any]]:
         """
         Extracts clinical events from a chat message.
-        If confidence >= CONFIDENCE_THRESHOLD, appends directly to the database.
-        Returns a list of appended event summaries.
+        In Human-In-The-Loop mode (auto_commit=False, default):
+        Stages proposed actions with confidence scores and payloads rather than
+        silently modifying permanent health records without patient confirmation.
         """
         if not text or not patient_id:
             return []
 
-        appended_events: List[Dict[str, Any]] = []
+        proposed_events: List[Dict[str, Any]] = []
         cleaned_text = text.strip()
 
         # 1. Blood Pressure Extraction
-        bp_events = ClinicalExtractorService._extract_blood_pressure(cleaned_text, patient_id, db)
-        appended_events.extend(bp_events)
+        bp_events = ClinicalExtractorService._extract_blood_pressure(cleaned_text, patient_id, db, auto_commit=auto_commit)
+        proposed_events.extend(bp_events)
 
         # 2. Blood Glucose Extraction
-        glucose_events = ClinicalExtractorService._extract_blood_glucose(cleaned_text, patient_id, db)
-        appended_events.extend(glucose_events)
+        glucose_events = ClinicalExtractorService._extract_blood_glucose(cleaned_text, patient_id, db, auto_commit=auto_commit)
+        proposed_events.extend(glucose_events)
 
         # 3. Pulse / Heart Rate
-        pulse_events = ClinicalExtractorService._extract_pulse(cleaned_text, patient_id, db)
-        appended_events.extend(pulse_events)
+        pulse_events = ClinicalExtractorService._extract_pulse(cleaned_text, patient_id, db, auto_commit=auto_commit)
+        proposed_events.extend(pulse_events)
 
         # 4. SpO2 (Oxygen Saturation)
-        spo2_events = ClinicalExtractorService._extract_spo2(cleaned_text, patient_id, db)
-        appended_events.extend(spo2_events)
+        spo2_events = ClinicalExtractorService._extract_spo2(cleaned_text, patient_id, db, auto_commit=auto_commit)
+        proposed_events.extend(spo2_events)
 
         # 5. Body Weight
-        weight_events = ClinicalExtractorService._extract_weight(cleaned_text, patient_id, db)
-        appended_events.extend(weight_events)
+        weight_events = ClinicalExtractorService._extract_weight(cleaned_text, patient_id, db, auto_commit=auto_commit)
+        proposed_events.extend(weight_events)
 
         # 6. Medication Mentions
-        med_events = ClinicalExtractorService._extract_medications(cleaned_text, patient_id, db)
-        appended_events.extend(med_events)
+        med_events = ClinicalExtractorService._extract_medications(cleaned_text, patient_id, db, auto_commit=auto_commit)
+        proposed_events.extend(med_events)
 
-        return appended_events
+        return proposed_events
 
     @staticmethod
-    def _extract_blood_pressure(text: str, patient_id: str, db: Session) -> List[Dict[str, Any]]:
+    def _extract_blood_pressure(text: str, patient_id: str, db: Session, auto_commit: bool = False) -> List[Dict[str, Any]]:
         events = []
         # Match "bp 120/80", "blood pressure was 130/85", "125/82 mmHg"
         pattern = r'(?:bp|blood\s*pressure)?[\s:]*([0-9]{2,3})\s*[\/\-]\s*([0-9]{2,3})\s*(?:mm\s*hg)?'
@@ -111,24 +113,32 @@ class ClinicalExtractorService:
                     confidence = 0.95 if re.search(r'(?:bp|blood\s*pressure|mm\s*hg)', text, re.IGNORECASE) else 0.80
                     
                     if confidence >= CONFIDENCE_THRESHOLD:
-                        log_entry = DailyHealthLog(
-                            id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
-                            patient_id=patient_id,
-                            log_date=date.today(),
-                            systolic_bp=sys_val,
-                            diastolic_bp=dia_val,
-                            source="chat_extraction_auto_append",
-                            notes=f"Auto-appended from patient chat. Confidence: {confidence:.2f}. Timestamp: {datetime.now(timezone.utc).isoformat()}"
-                        )
-                        db.add(log_entry)
-                        db.commit()
+                        if auto_commit:
+                            log_entry = DailyHealthLog(
+                                id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
+                                patient_id=patient_id,
+                                log_date=date.today(),
+                                systolic_bp=sys_val,
+                                diastolic_bp=dia_val,
+                                source="chat_extraction_auto_append",
+                                notes=f"Auto-appended from patient chat. Confidence: {confidence:.2f}. Timestamp: {datetime.now(timezone.utc).isoformat()}"
+                            )
+                            db.add(log_entry)
+                            db.commit()
 
                         events.append({
                             "type": "blood_pressure",
+                            "action": "measurement",
+                            "action_type": "measurement",
                             "confidence": confidence,
                             "summary": f"Blood Pressure {sys_val:.0f}/{dia_val:.0f} mmHg",
                             "date": str(date.today()),
-                            "status": "appended"
+                            "status": "appended" if auto_commit else "pending_confirmation",
+                            "data": {
+                                "systolic_bp": sys_val,
+                                "diastolic_bp": dia_val,
+                                "metric": "blood_pressure"
+                            }
                         })
                         break # Avoid duplicate appends from same utterance
             except Exception as e:
@@ -136,7 +146,7 @@ class ClinicalExtractorService:
         return events
 
     @staticmethod
-    def _extract_blood_glucose(text: str, patient_id: str, db: Session) -> List[Dict[str, Any]]:
+    def _extract_blood_glucose(text: str, patient_id: str, db: Session, auto_commit: bool = False) -> List[Dict[str, Any]]:
         events = []
         # Match "sugar 110", "glucose is 140 mg/dl", "fasting 95", "fasting sugar was 104"
         pattern = r'(?:fasting\s*sugar|fasting\s*glucose|post\s*meal|sugar|glucose|rbs|fbs)[\w\s:]*?([0-9]{2,3})\s*(?:mg\s*\/?\s*dl)?'
@@ -150,32 +160,40 @@ class ClinicalExtractorService:
                     confidence = 0.92 if re.search(r'mg\s*\/?\s*dl', text, re.IGNORECASE) else 0.82
 
                     if confidence >= CONFIDENCE_THRESHOLD:
-                        log_entry = DailyHealthLog(
-                            id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
-                            patient_id=patient_id,
-                            log_date=date.today(),
-                            fasting_glucose=val if is_fasting or not is_post_meal else None,
-                            post_meal_glucose=val if is_post_meal else None,
-                            source="chat_extraction_auto_append",
-                            notes=f"Auto-appended glucose from patient chat. Confidence: {confidence:.2f}."
-                        )
-                        db.add(log_entry)
-                        db.commit()
+                        if auto_commit:
+                            log_entry = DailyHealthLog(
+                                id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
+                                patient_id=patient_id,
+                                log_date=date.today(),
+                                fasting_glucose=val if is_fasting or not is_post_meal else None,
+                                post_meal_glucose=val if is_post_meal else None,
+                                source="chat_extraction_auto_append",
+                                notes=f"Auto-appended glucose from patient chat. Confidence: {confidence:.2f}."
+                            )
+                            db.add(log_entry)
+                            db.commit()
 
                         meal_type = "Fasting" if is_fasting else ("Post-meal" if is_post_meal else "Blood")
                         events.append({
                             "type": "glucose",
+                            "action": "measurement",
+                            "action_type": "measurement",
                             "confidence": confidence,
                             "summary": f"{meal_type} Glucose {val:.0f} mg/dL",
                             "date": str(date.today()),
-                            "status": "appended"
+                            "status": "appended" if auto_commit else "pending_confirmation",
+                            "data": {
+                                "fasting_glucose": val if is_fasting or not is_post_meal else None,
+                                "post_meal_glucose": val if is_post_meal else None,
+                                "metric": "glucose"
+                            }
                         })
             except Exception as e:
                 logger.warning(f"Error parsing blood glucose: {e}")
         return events
 
     @staticmethod
-    def _extract_pulse(text: str, patient_id: str, db: Session) -> List[Dict[str, Any]]:
+    def _extract_pulse(text: str, patient_id: str, db: Session, auto_commit: bool = False) -> List[Dict[str, Any]]:
         events = []
         pattern = r'(?:pulse|heart\s*rate|hr)[\s:]*([0-9]{2,3})\s*(?:bpm)?'
         m = re.search(pattern, text, re.IGNORECASE)
@@ -185,30 +203,37 @@ class ClinicalExtractorService:
                 if 40 <= val <= 200:
                     confidence = 0.90
                     if confidence >= CONFIDENCE_THRESHOLD:
-                        log_entry = DailyHealthLog(
-                            id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
-                            patient_id=patient_id,
-                            log_date=date.today(),
-                            pulse=val,
-                            source="chat_extraction_auto_append",
-                            notes=f"Auto-appended pulse from patient chat. Confidence: {confidence:.2f}."
-                        )
-                        db.add(log_entry)
-                        db.commit()
+                        if auto_commit:
+                            log_entry = DailyHealthLog(
+                                id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
+                                patient_id=patient_id,
+                                log_date=date.today(),
+                                pulse=val,
+                                source="chat_extraction_auto_append",
+                                notes=f"Auto-appended pulse from patient chat. Confidence: {confidence:.2f}."
+                            )
+                            db.add(log_entry)
+                            db.commit()
 
                         events.append({
                             "type": "pulse",
+                            "action": "measurement",
+                            "action_type": "measurement",
                             "confidence": confidence,
                             "summary": f"Pulse {val:.0f} bpm",
                             "date": str(date.today()),
-                            "status": "appended"
+                            "status": "appended" if auto_commit else "pending_confirmation",
+                            "data": {
+                                "pulse": val,
+                                "metric": "pulse"
+                            }
                         })
             except Exception as e:
                 logger.warning(f"Error parsing pulse: {e}")
         return events
 
     @staticmethod
-    def _extract_spo2(text: str, patient_id: str, db: Session) -> List[Dict[str, Any]]:
+    def _extract_spo2(text: str, patient_id: str, db: Session, auto_commit: bool = False) -> List[Dict[str, Any]]:
         events = []
         pattern = r'(?:spo2|oxygen|o2\s*saturation)[\s:]*([0-9]{2,3})\s*(?:%|percent)?'
         m = re.search(pattern, text, re.IGNORECASE)
@@ -218,30 +243,37 @@ class ClinicalExtractorService:
                 if 60 <= val <= 100:
                     confidence = 0.92
                     if confidence >= CONFIDENCE_THRESHOLD:
-                        log_entry = DailyHealthLog(
-                            id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
-                            patient_id=patient_id,
-                            log_date=date.today(),
-                            spo2=val,
-                            source="chat_extraction_auto_append",
-                            notes=f"Auto-appended SpO2 from patient chat. Confidence: {confidence:.2f}."
-                        )
-                        db.add(log_entry)
-                        db.commit()
+                        if auto_commit:
+                            log_entry = DailyHealthLog(
+                                id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
+                                patient_id=patient_id,
+                                log_date=date.today(),
+                                spo2=val,
+                                source="chat_extraction_auto_append",
+                                notes=f"Auto-appended SpO2 from patient chat. Confidence: {confidence:.2f}."
+                            )
+                            db.add(log_entry)
+                            db.commit()
 
                         events.append({
                             "type": "spo2",
+                            "action": "measurement",
+                            "action_type": "measurement",
                             "confidence": confidence,
                             "summary": f"Oxygen Saturation (SpO2) {val:.0f}%",
                             "date": str(date.today()),
-                            "status": "appended"
+                            "status": "appended" if auto_commit else "pending_confirmation",
+                            "data": {
+                                "spo2": val,
+                                "metric": "spo2"
+                            }
                         })
             except Exception as e:
                 logger.warning(f"Error parsing SpO2: {e}")
         return events
 
     @staticmethod
-    def _extract_weight(text: str, patient_id: str, db: Session) -> List[Dict[str, Any]]:
+    def _extract_weight(text: str, patient_id: str, db: Session, auto_commit: bool = False) -> List[Dict[str, Any]]:
         events = []
         pattern = r'(?:weight|weigh|wt)[\s:]*([0-9]{2,3}(?:\.[0-9]+)?)\s*(?:kg|kgs|kilos)?'
         m = re.search(pattern, text, re.IGNORECASE)
@@ -251,30 +283,37 @@ class ClinicalExtractorService:
                 if 30 <= val <= 250:
                     confidence = 0.88
                     if confidence >= CONFIDENCE_THRESHOLD:
-                        log_entry = DailyHealthLog(
-                            id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
-                            patient_id=patient_id,
-                            log_date=date.today(),
-                            weight_kg=val,
-                            source="chat_extraction_auto_append",
-                            notes=f"Auto-appended weight from patient chat. Confidence: {confidence:.2f}."
-                        )
-                        db.add(log_entry)
-                        db.commit()
+                        if auto_commit:
+                            log_entry = DailyHealthLog(
+                                id=f"LOG-{uuid.uuid4().hex[:8].upper()}",
+                                patient_id=patient_id,
+                                log_date=date.today(),
+                                weight_kg=val,
+                                source="chat_extraction_auto_append",
+                                notes=f"Auto-appended weight from patient chat. Confidence: {confidence:.2f}."
+                            )
+                            db.add(log_entry)
+                            db.commit()
 
                         events.append({
                             "type": "weight",
+                            "action": "measurement",
+                            "action_type": "measurement",
                             "confidence": confidence,
                             "summary": f"Weight {val:.1f} kg",
                             "date": str(date.today()),
-                            "status": "appended"
+                            "status": "appended" if auto_commit else "pending_confirmation",
+                            "data": {
+                                "weight_kg": val,
+                                "metric": "weight"
+                            }
                         })
             except Exception as e:
                 logger.warning(f"Error parsing weight: {e}")
         return events
 
     @staticmethod
-    def _extract_medications(text: str, patient_id: str, db: Session) -> List[Dict[str, Any]]:
+    def _extract_medications(text: str, patient_id: str, db: Session, auto_commit: bool = False) -> List[Dict[str, Any]]:
         events = []
         lower = text.lower()
         # Look for phrases indicating starting or taking medication
@@ -290,53 +329,60 @@ class ClinicalExtractorService:
                 confidence = 0.88 if intake_context else 0.76
 
                 if confidence >= CONFIDENCE_THRESHOLD:
-                    # Get or create an encounter anchor for prescription
-                    enc_id = f"ENC-MED-{patient_id[:8]}-{date.today().strftime('%Y%m%d')}"
-                    existing_enc = db.scalar(select(Encounter).where(Encounter.encounter_id == enc_id))
-                    if not existing_enc:
-                        existing_enc = Encounter(
-                            encounter_id=enc_id,
-                            patient_id=patient_id,
-                            encounter_date=date.today(),
-                            facility="Patient Reported Intake / Telehealth",
-                            district="Primary Care",
-                            encounter_type="Medication Reconciliation",
-                            attending_provider="Self-Reported & Verified",
-                            is_synthetic=False
-                        )
-                        db.add(existing_enc)
-                        db.flush()
+                    if auto_commit:
+                        # Get or create an encounter anchor for prescription
+                        enc_id = f"ENC-MED-{patient_id[:8]}-{date.today().strftime('%Y%m%d')}"
+                        existing_enc = db.scalar(select(Encounter).where(Encounter.encounter_id == enc_id))
+                        if not existing_enc:
+                            existing_enc = Encounter(
+                                encounter_id=enc_id,
+                                patient_id=patient_id,
+                                encounter_date=date.today(),
+                                facility="Patient Reported Intake / Telehealth",
+                                district="Primary Care",
+                                encounter_type="Medication Reconciliation",
+                                attending_provider="Self-Reported & Verified",
+                                is_synthetic=False
+                            )
+                            db.add(existing_enc)
+                            db.flush()
 
-                    # Avoid duplicate active medication with exact name
-                    existing_med = db.scalar(
-                        select(Medication).where(
-                            (Medication.patient_id == patient_id) &
-                            (Medication.medication_name == official_name) &
-                            (Medication.status == "active")
+                        # Avoid duplicate active medication with exact name
+                        existing_med = db.scalar(
+                            select(Medication).where(
+                                (Medication.patient_id == patient_id) &
+                                (Medication.medication_name == official_name) &
+                                (Medication.status == "active")
+                            )
                         )
-                    )
 
-                    if not existing_med:
-                        med_entry = Medication(
-                            medication_id=f"MED-{uuid.uuid4().hex[:8].upper()}",
-                            encounter_id=enc_id,
-                            patient_id=patient_id,
-                            medication_code=f"RX-{med_key.upper()[:6]}",
-                            medication_name=official_name,
-                            dosage=dosage,
-                            start_date=date.today(),
-                            status="active",
-                            is_synthetic=False
-                        )
-                        db.add(med_entry)
-                        db.commit()
+                        if not existing_med:
+                            med_entry = Medication(
+                                medication_id=f"MED-{uuid.uuid4().hex[:8].upper()}",
+                                encounter_id=enc_id,
+                                patient_id=patient_id,
+                                medication_code=f"RX-{med_key.upper()[:6]}",
+                                medication_name=official_name,
+                                dosage=dosage,
+                                start_date=date.today(),
+                                status="active",
+                                is_synthetic=False
+                            )
+                            db.add(med_entry)
+                            db.commit()
 
-                        events.append({
-                            "type": "medication",
-                            "confidence": confidence,
-                            "summary": f"{official_name} ({dosage})",
-                            "date": str(date.today()),
-                            "status": "appended"
-                        })
+                    events.append({
+                        "type": "medication",
+                        "action": "medication",
+                        "action_type": "medication",
+                        "confidence": confidence,
+                        "summary": f"{official_name} ({dosage})",
+                        "date": str(date.today()),
+                        "status": "appended" if auto_commit else "pending_confirmation",
+                        "data": {
+                            "medication_name": official_name,
+                            "dosage": dosage
+                        }
+                    })
                     break # Take primary matched medication
         return events

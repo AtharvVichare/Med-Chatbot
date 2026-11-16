@@ -15,7 +15,10 @@ import {
   ShieldAlert,
   ChevronRight,
   User as UserIcon,
-  HeartPulse
+  HeartPulse,
+  Building2,
+  Stethoscope,
+  Receipt
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -30,17 +33,23 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   const navigationItems = [
-    { id: 'home', label: 'Home Dashboard', icon: Home, roles: ['patient', 'doctor', 'admin', 'public_health_analyst'] },
-    { id: 'health_record', label: 'My Health Record', icon: FileText, roles: ['patient', 'doctor', 'admin'] },
-    { id: 'assistant', label: 'AI Health Assistant', icon: Bot, roles: ['patient', 'doctor', 'admin'] },
-    { id: 'family_history', label: 'Family Health History', icon: Users, roles: ['patient', 'doctor', 'admin'] },
+    { id: 'home', label: 'Home Dashboard', icon: Home, roles: ['patient', 'doctor', 'nurse', 'hospital_admin', 'admin', 'public_health_analyst'] },
+    // HMS 4 Integrated Dashboards & Stations
+    { id: 'management', label: 'Management & BI', icon: Building2, roles: ['hospital_admin', 'admin'] },
+    { id: 'doctor_portal', label: 'Doctor Station', icon: Stethoscope, roles: ['doctor', 'hospital_admin', 'admin'] },
+    { id: 'nurse_portal', label: 'Nurse Station', icon: HeartPulse, roles: ['nurse', 'hospital_admin', 'admin'] },
+    { id: 'billing', label: 'Billing & Invoices', icon: Receipt, roles: ['patient', 'hospital_admin', 'admin'] },
+    // Patient EHR & Health Record
+    { id: 'health_record', label: 'My Health Record', icon: FileText, roles: ['patient', 'doctor', 'nurse', 'hospital_admin', 'admin'] },
+    { id: 'assistant', label: 'AI Health Assistant', icon: Bot, roles: ['patient', 'doctor', 'nurse', 'hospital_admin', 'admin'] },
+    { id: 'family_history', label: 'Family Accounts & Care', icon: Users, roles: ['patient', 'doctor', 'admin'] },
     { id: 'daily_tracking', label: 'Daily Health Tracking', icon: HeartPulse, roles: ['patient', 'doctor', 'admin'] },
     { id: 'future_insights', label: 'Future Health Insights', icon: Sparkles, roles: ['patient', 'doctor', 'admin'] },
     { id: 'nearby_care', label: 'Find Nearby Care', icon: MapPin, roles: ['patient', 'doctor', 'admin'] },
-    { id: 'settings', label: 'Settings & Profile', icon: Settings, roles: ['patient', 'doctor', 'admin', 'public_health_analyst'] },
+    { id: 'settings', label: 'Settings & Profile', icon: Settings, roles: ['patient', 'doctor', 'nurse', 'hospital_admin', 'admin', 'public_health_analyst'] },
     // Provider views for clinicians/analysts
-    { id: 'patients', label: 'Clinical Directory', icon: FolderHeart, roles: ['doctor', 'admin'] },
-    { id: 'analytics', label: 'Public Health Analytics', icon: BarChart3, roles: ['admin', 'public_health_analyst', 'doctor'] },
+    { id: 'patients', label: 'Clinical Directory', icon: FolderHeart, roles: ['doctor', 'hospital_admin', 'admin'] },
+    { id: 'analytics', label: 'Public Health Analytics', icon: BarChart3, roles: ['admin', 'public_health_analyst', 'doctor', 'hospital_admin'] },
   ];
 
   const filteredNav = navigationItems.filter(item => 

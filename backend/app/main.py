@@ -14,19 +14,33 @@ from backend.app.api.v1.disease_prediction import router as disease_router
 from backend.app.api.v1.documents import router as documents_router
 from backend.app.api.v1.assistant import router as assistant_router
 from backend.app.api.v1.future_insights import router as insights_router
+from backend.app.api.v1.beds import router as beds_router
+from backend.app.api.v1.inventory import router as inventory_router
+from backend.app.api.v1.directory import router as directory_router
+from backend.app.api.v1.doctor_verification import router as doctor_verification_router
+from backend.app.api.v1.billing import router as billing_router
+from backend.app.api.v1.agents import router as agents_router
+from backend.app.api.v1.conversational_bi import router as conversational_bi_router
+from backend.app.api.v1.family import router as family_router
+from backend.app.api.v1.clinical_workspace import router as doctor_workspace_router
+from backend.app.api.v1.nursing_workspace import router as nurse_workspace_router
 
 setup_logging()
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
-    description="Aarogya-Drishti 2.0 Modular FastAPI Longitudinal EHR Backend"
+    description="Aarogya-Drishti 2.0 AI-Native Hospital Management System & Longitudinal EHR"
 )
 
-# CORS Middleware
+# CORS Middleware - configurable origins with safe defaults
+allowed_origins_list = [origin.strip() for origin in settings.ALLOWED_ORIGINS.split(",") if origin.strip()]
+if not allowed_origins_list:
+    allowed_origins_list = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins_list,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -84,4 +98,14 @@ app.include_router(disease_router, prefix=settings.API_V1_STR)
 app.include_router(documents_router, prefix=settings.API_V1_STR)
 app.include_router(assistant_router, prefix=settings.API_V1_STR)
 app.include_router(insights_router, prefix=settings.API_V1_STR)
+app.include_router(beds_router, prefix=settings.API_V1_STR)
+app.include_router(inventory_router, prefix=settings.API_V1_STR)
+app.include_router(directory_router, prefix=settings.API_V1_STR)
+app.include_router(doctor_verification_router, prefix=settings.API_V1_STR)
+app.include_router(billing_router, prefix=settings.API_V1_STR)
+app.include_router(agents_router, prefix=settings.API_V1_STR)
+app.include_router(conversational_bi_router, prefix=settings.API_V1_STR)
+app.include_router(family_router, prefix=settings.API_V1_STR)
+app.include_router(doctor_workspace_router, prefix=settings.API_V1_STR)
+app.include_router(nurse_workspace_router, prefix=settings.API_V1_STR)
 

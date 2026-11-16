@@ -12,7 +12,7 @@ HOSPITAL_DATABASE = {
     "kem_hospital_mumbai": {
         "institution_id": "HOSP-KEM-MUMBAI",
         "name": "King Edward Memorial (KEM) Hospital and Seth G.S. Medical College",
-        "aliases": ["kem", "kem hospital", "kem mumbai", "king edward memorial", "king edward"],
+        "aliases": ["kem", "kem hospital", "kem mumbai", "king edward memorial", "king edward", "seth gs"],
         "city": "Mumbai",
         "state": "Maharashtra",
         "district": "Mumbai",
@@ -57,6 +57,222 @@ HOSPITAL_DATABASE = {
             "Specialty super-specialty clinics (Cardiology, Neurology, Nephrology) generally require an initial screening referral from General Medicine OPD.",
             "Emergency and trauma admissions do not require pre-booking and operate round-the-clock."
         ]
+    },
+    "lilavati_hospital_mumbai": {
+        "institution_id": "HOSP-LILAVATI-MUMBAI",
+        "name": "Lilavati Hospital & Research Centre",
+        "aliases": ["lilavati", "lilavati hospital", "lilavati bandra"],
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "district": "Mumbai Suburban",
+        "address": "A-791, Bandra Reclamation, Bandra West, Mumbai, Maharashtra 400050",
+        "category": "Premier Multi-Specialty Tertiary Care Hospital",
+        "official_website": "https://www.lilavatihospital.com",
+        "emergency_phone": "022-26751000 / 022-26568000",
+        "opd_contact": "022-26751000",
+        "emergency_services": "24x7 Emergency, Trauma, Cardiac & Stroke Care",
+        "appointment_modes": {
+            "online_ors": {
+                "supported": True,
+                "portal_name": "Lilavati Online Consultant Booking Portal",
+                "portal_url": "https://www.lilavatihospital.com",
+                "instructions": [
+                    "Visit lilavatihospital.com and click 'Find a Doctor' or 'Book Appointment'.",
+                    "Select specialty (Cardiology, Neurology, Orthopedics, Pediatrics, etc.).",
+                    "Select preferred consultant and pick an available consultation slot."
+                ]
+            },
+            "digital_fast_track_abdm": {
+                "supported": True,
+                "system_name": "Aarogya HMS Smart Booking",
+                "instructions": [
+                    "Direct booking confirmation via the Aarogya-Drishti AI Assistant with token issuance."
+                ]
+            },
+            "walk_in_registration": {
+                "supported": True,
+                "description": "OPD Registration Desk, Ground Floor Lobby",
+                "timing": "Monday to Saturday, 8:00 AM – 6:00 PM",
+                "location": "Bandra Reclamation OPD Wing",
+                "requirements": "Photo ID, previous medical records, insurance card if applicable."
+            }
+        },
+        "important_notes": [
+            "NABH accredited center of excellence in Cardiology, Orthopedics, and Neurology.",
+            "Advanced diagnostic imaging (3T MRI, 128-slice CT) available round-the-clock."
+        ]
+    },
+    "breach_candy_hospital_mumbai": {
+        "institution_id": "HOSP-BREACH-CANDY",
+        "name": "Breach Candy Hospital Trust",
+        "aliases": ["breach candy", "breach candy hospital", "breach candy trust"],
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "district": "Mumbai",
+        "address": "60 A, Bhulabhai Desai Marg, Cumballa Hill, Mumbai, Maharashtra 400026",
+        "category": "Landmark Super-Specialty Tertiary Hospital",
+        "official_website": "https://www.breachcandyhospital.org",
+        "emergency_phone": "022-23667788",
+        "opd_contact": "022-23667999",
+        "emergency_services": "24x7 Acute Care, Cath Lab & Intensive Care",
+        "appointment_modes": {
+            "online_ors": {
+                "supported": True,
+                "portal_name": "Breach Candy Online OPD Scheduling",
+                "portal_url": "https://www.breachcandyhospital.org",
+                "instructions": [
+                    "Access breachcandyhospital.org -> OPD Appointments.",
+                    "Choose consultant doctor, review consultation fee and timing, and confirm booking."
+                ]
+            },
+            "digital_fast_track_abdm": {
+                "supported": True,
+                "system_name": "Aarogya Inter-Hospital Network Token",
+                "instructions": [
+                    "Instant digital token generated via Aarogya assistant."
+                ]
+            },
+            "walk_in_registration": {
+                "supported": True,
+                "description": "Main Registration Counter, South Wing",
+                "timing": "Monday to Saturday, 8:30 AM – 5:30 PM",
+                "location": "Bhulabhai Desai Marg Main Complex",
+                "requirements": "Valid identity proof and referral letter if applicable."
+            }
+        },
+        "important_notes": [
+            "Renowned interventional cardiology and specialized maternal-fetal medicine departments.",
+            "International patient desk available."
+        ]
+    },
+    "hinduja_hospital_mumbai": {
+        "institution_id": "HOSP-HINDUJA-MUMBAI",
+        "name": "P.D. Hinduja National Hospital & Medical Research Centre",
+        "aliases": ["hinduja", "hinduja hospital", "pd hinduja"],
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "district": "Mumbai",
+        "address": "Veer Savarkar Marg, Mahim West, Mumbai, Maharashtra 400016",
+        "category": "JCI & NABH Accredited Multi-Specialty Research Hospital",
+        "official_website": "https://www.hindujahospital.com",
+        "emergency_phone": "022-24452222 / 022-24449199",
+        "opd_contact": "022-24451515",
+        "emergency_services": "24x7 Level 1 Trauma & Comprehensive Emergency Unit",
+        "appointment_modes": {
+            "online_ors": {
+                "supported": True,
+                "portal_name": "Hinduja Patient Care Portal & App",
+                "portal_url": "https://www.hindujahospital.com",
+                "instructions": [
+                    "Log in via website or Hinduja Hospital mobile app.",
+                    "Select department, view doctor credentials, and book consultation."
+                ]
+            },
+            "digital_fast_track_abdm": {
+                "supported": True,
+                "system_name": "ABDM Scan and Share Enabled",
+                "instructions": [
+                    "Instant check-in via ABHA ID QR scanning."
+                ]
+            },
+            "walk_in_registration": {
+                "supported": True,
+                "description": "OPD Registration Desks, OPD Building",
+                "timing": "Monday to Saturday, 8:00 AM – 6:00 PM",
+                "location": "Hinduja Clinic Block, Mahim",
+                "requirements": "Government ID, patient card number for returning patients."
+            }
+        },
+        "important_notes": [
+            "Pioneering center for Pulmonology (MDR-TB Center), Neurology, and Nephrology.",
+            "Complete on-site CAP-accredited diagnostic laboratory."
+        ]
+    },
+    "apollo_hospital_navi_mumbai": {
+        "institution_id": "HOSP-APOLLO-NAVI-MUMBAI",
+        "name": "Apollo Hospitals, Navi Mumbai",
+        "aliases": ["apollo", "apollo navi mumbai", "apollo hospital"],
+        "city": "Navi Mumbai",
+        "state": "Maharashtra",
+        "district": "Thane",
+        "address": "Plot No. 13, Parsik Hill Road, Sector 23, CBD Belapur, Navi Mumbai, Maharashtra 400614",
+        "category": "JCI-Accredited 500-Bed Quaternary Care Hospital",
+        "official_website": "https://www.apollohospitals.com",
+        "emergency_phone": "1066 / 022-62806280",
+        "opd_contact": "022-62806280",
+        "emergency_services": "24x7 Emergency & Heart Stroke Helpline 1066",
+        "appointment_modes": {
+            "online_ors": {
+                "supported": True,
+                "portal_name": "Apollo 24|7 & Hospital Desk",
+                "portal_url": "https://www.apollohospitals.com",
+                "instructions": [
+                    "Access Apollo 24|7 app or website.",
+                    "Choose Navi Mumbai center, pick doctor and confirm booking."
+                ]
+            },
+            "digital_fast_track_abdm": {
+                "supported": True,
+                "system_name": "Aarogya Fast-Track Registration",
+                "instructions": [
+                    "Direct consultation slot reservation with token issuance."
+                ]
+            },
+            "walk_in_registration": {
+                "supported": True,
+                "description": "Central Registration Hall, Ground Floor",
+                "timing": "Monday to Sunday, 8:00 AM – 8:00 PM",
+                "location": "Parsik Hill Road, CBD Belapur",
+                "requirements": "Aadhaar Card, insurance policy details if cashless TPA."
+            }
+        },
+        "important_notes": [
+            "State-of-the-art robotic surgery, bone marrow transplant, and quaternary intensive care.",
+            "Comprehensive 24x7 trauma care facility."
+        ]
+    },
+    "tata_memorial_hospital_mumbai": {
+        "institution_id": "HOSP-TMC-MUMBAI",
+        "name": "Tata Memorial Hospital & Advanced Centre for Treatment, Research and Education in Cancer (ACTREC)",
+        "aliases": ["tata memorial", "tmc", "tata hospital", "actrec", "tata cancer"],
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "district": "Mumbai",
+        "address": "Dr. E Borges Road, Parel, Mumbai, Maharashtra 400012",
+        "category": "Apex National Comprehensive Cancer Center (DAE, Govt of India)",
+        "official_website": "https://tmc.gov.in",
+        "emergency_phone": "022-24177000",
+        "opd_contact": "022-24177000 / 022-24146750",
+        "emergency_services": "24x7 Oncology Emergency and Acute Palliative Care",
+        "appointment_modes": {
+            "online_ors": {
+                "supported": True,
+                "portal_name": "TMC Web Portal New Patient Registration",
+                "portal_url": "https://tmc.gov.in",
+                "instructions": [
+                    "Visit tmc.gov.in -> Online Registration for New Patients.",
+                    "Upload pathology/biopsy reports, enter patient details, and receive Smart Card registration date."
+                ]
+            },
+            "digital_fast_track_abdm": {
+                "supported": True,
+                "system_name": "ABDM Fast-Track OPD & Digital EHR",
+                "instructions": [
+                    "Scan QR code with ABHA app at Golden Jubilee Block counters."
+                ]
+            },
+            "walk_in_registration": {
+                "supported": True,
+                "description": "New Registration Counters, Golden Jubilee Block",
+                "timing": "Monday to Friday, 8:00 AM – 2:00 PM; Saturday 8:00 AM – 12:00 PM",
+                "location": "Dr. E Borges Road, Parel",
+                "requirements": "Histopathology biopsy reports, imaging scans (CD/Films), Government photo ID."
+            }
+        },
+        "important_notes": [
+            "National apex center for comprehensive cancer prevention, diagnosis, treatment, and research.",
+            "Subsidized and government-supported oncology care schemes (Ayushman Bharat / MJPJAY accepted)."
+        ]
     }
 }
 
@@ -86,21 +302,16 @@ class HospitalDiscoveryService:
             f"- **Central Hospital Helpdesk / Contact:** `{hospital['opd_contact']}`",
             f"- **Emergency Care:** {hospital['emergency_services']} (Helpline: `{hospital['emergency_phone']}`)\n",
             "#### How to Register and Book an OPD Consultation:\n",
-            "**1. Official Online Booking (ORS Portal):**",
-            f"KEM Hospital participates in the Government of India's **Online Registration System (ORS)**:",
-            f"- Official Portal: [{ors['portal_url']}]({ors['portal_url']}) (or access via the **UMANG** mobile app).",
-            "  - Log in using your mobile number & OTP or ABHA ID.",
-            "  - Select **State: Maharashtra** -> **Hospital: KEM Hospital, Mumbai**.",
-            "  - Select your desired specialty department and available date.",
-            "  - Complete patient verification to receive an official booking SMS and appointment reference number.\n",
-            "**2. Fast-Track Digital Token (ABDM Scan & Share):**",
-            f"- You can generate an instant token at hospital counters using the **ABHA** app by scanning the hospital QR code.\n",
-            "**3. Walk-In Physical Registration:**",
+            f"**1. Official Online Booking ({ors['portal_name']}):**",
+            f"- Official Portal: [{ors['portal_url']}]({ors['portal_url']})",
+            *[f"  - {inst}" for inst in ors.get("instructions", [])],
+            f"\n**2. Fast-Track Digital Token ({abdm['system_name']}):**",
+            *[f"- {inst}" for inst in abdm.get("instructions", [])],
+            f"\n**3. Walk-In Physical Registration:**",
             f"- **Counters:** {walkin['location']}",
             f"- **Timings:** {walkin['timing']}",
             f"- **Requirements:** {walkin['requirements']}\n",
             "#### Important Patient Notice:",
-            f"> [!NOTE]\n> *{hospital['important_notes'][0]} {hospital['important_notes'][1]}*"
+            f"> [!NOTE]\n> *{hospital['important_notes'][0]}*"
         ]
         return "\n".join(md)
-

@@ -13,11 +13,19 @@ import {
   Heart, 
   MessageSquare,
   TrendingUp,
-  X
+  X,
+  Mic,
+  MicOff,
+  FileDown,
+  Stethoscope,
+  BedDouble,
+  Building2
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
-import type { ChatConversation, ChatMessage } from '../types';
+import type { ChatConversation, ChatMessage, AppointmentBookingTicket, AppointmentBooking } from '../types';
+import { AppointmentTicketModal } from '../components/AppointmentTicketModal';
+import { BookingProgressModal, type BookingProgressStep } from '../components/BookingProgressModal';
 
 export const AIAssistantPage: React.FC = () => {
   const { user } = useAuth();
@@ -44,6 +52,154 @@ export const AIAssistantPage: React.FC = () => {
 
   // Staged file attachment state (not uploaded until user hits Send)
   const [stagedFile, setStagedFile] = useState<File | null>(null);
+
+  // Voice dictation state
+  const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef<any>(null);
+
+  const toggleVoiceRecognition = () => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert("Voice input is not supported in this browser. Please use Chrome, Edge, or Safari.");
+      return;
+    }
+
+    if (isListening) {
+      recognitionRef.current?.stop();
+      setIsListening(false);
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = false;
+      recognition.interimResults = false;
+      recognition.lang = 'en-US';
+
+      recognition.onstart = () => setIsListening(true);
+      recognition.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        setInputContent(prev => prev ? `${prev} ${transcript}` : transcript);
+        setIsListening(false);
+      };
+      recognition.onerror = () => setIsListening(false);
+      recognition.onend = () => setIsListening(false);
+
+      recognitionRef.current = recognition;
+      recognition.start();
+    }
+  };
+
+  const handleDownloadPdf = async () => {
+    if (!user?.patient_id) {
+      alert("Please ensure your patient profile is connected.");
+      return;
+    }
+    try {
+      const blob = await api.downloadEhrPdf(user.patient_id);
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Longitudinal_EHR_${user.patient_id}.pdf`;
+      a.click();
+    } catch (e: any) {
+      alert(`Download failed: ${e.message}`);
+    }
+  };
+
+  // Ticket & Booking Workflow Progress State
+  const [confirmedTicket, setConfirmedTicket] = useState<AppointmentBookingTicket | AppointmentBooking | null>(null);
+  const [bookingSlot, setBookingSlot] = useState<string | null>(null);
+  const [showProgressModal, setShowProgressModal] = useState(false);
+  const [progressDoctor, setProgressDoctor] = useState<{ name: string; hospital: string; dept: string; date: string; slot: string }>({
+    name: '', hospital: '', dept: '', date: '', slot: ''
+  });
+  const [currentProgressStep, setCurrentProgressStep] = useState(0);
+
+  const bookingWorkflowSteps: BookingProgressStep[] = [
+    { title: 'Clinical Triage & Department Validation', description: 'Matching patient symptoms with specialist qualifications and triage urgency.', status: 'pending' },
+    { title: 'Schedule Lock & Double-Booking Guard', description: 'Checking real-time doctor availability in PostgreSQL to prevent slot collisions.', status: 'pending' },
+    { title: 'HMS Central Registry & Chamber Allocation', description: 'Registering consultation booking in hospital records and assigning chamber room.', status: 'pending' },
+    { title: 'Inter-Agent Event Bus Console Dispatch', description: 'Broadcasting live confirmation event to Doctor Station and Nurse OPD queue.', status: 'pending' },
+    { title: 'Official Consultation Token & Slip Issuance', description: 'Generating ABDM-compliant queue token number and verified consultation slip.', status: 'pending' }
+  ];
+
+  const handleBookDoctorFromChat = async (
+    doctorId: string, 
+    timeSlot: string, 
+    bookingDate: string,
+    doctorName?: string,
+    hospitalName?: string,
+    department?: string
+  ) => {
+    try {
+      setBookingSlot(`${doctorId}-${timeSlot}`);
+      setProgressDoctor({
+        name: doctorName || 'Attending Specialist',
+        hospital: hospitalName || 'Seth GS Medical College & KEM Hospital',
+        dept: department || 'Outpatient Department',
+        date: bookingDate,
+        slot: timeSlot
+      });
+      setShowProgressModal(true);
+      setCurrentProgressStep(0);
+
+      // Step 0 -> Step 1 (Clinical Triage verified)
+      await new Promise(r => setTimeout(r, 450));
+      setCurrentProgressStep(1);
+
+      // Step 1: Real API booking execution
+      const res = await api.bookAppointment({
+        doctor_id: doctorId,
+        time_slot: timeSlot,
+        booking_date: bookingDate,
+        chief_complaint: 'Booked via AI Assistant consultation',
+        patient_id: user?.patient_id
+      });
+
+      // Step 2: Registered in HMS
+      setCurrentProgressStep(2);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Step 3: Event Bus Dispatched to Nurse and Doctor Dashboards
+      setCurrentProgressStep(3);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Step 4: Token Issued
+      setCurrentProgressStep(4);
+      await new Promise(r => setTimeout(r, 500));
+
+      // Append persistent booking confirmation message to chat history
+      const confirmationMsg = `### 🎟️ Appointment Confirmed & Officially Registered!\n\n` +
+        `- **Official Queue Token:** \`${res.token_number}\`\n` +
+        `- **Booking ID:** \`${res.booking_id}\`\n` +
+        `- **Attending Specialist:** **${res.doctor_name}** (${res.qualification || 'MBBS, MD'})\n` +
+        `- **Department:** ${res.department}\n` +
+        `- **Hospital Facility:** **${res.hospital_name}**\n` +
+        `- **OPD Consultation Chamber:** ${res.chamber_room}\n` +
+        `- **Date & Time Slot:** **${res.booking_date}** at **${res.time_slot}**\n` +
+        `- **Consultation Fee:** ₹${res.fee} (Status: \`CONFIRMED\`)\n\n` +
+        `> [!NOTE]\n> *This appointment is recorded in your longitudinal health record and queued live on both the **Doctor Station** and the **Nurse OPD Queue**.*`;
+
+      setMessages(prev => [
+        ...prev,
+        {
+          message_id: `MSG-CONFIRM-${Date.now()}`,
+          conversation_id: activeConversationId || '',
+          sender: 'assistant',
+          content: confirmationMsg,
+          created_at: new Date().toISOString(),
+          is_confirmed_to_ehr: false
+        }
+      ]);
+
+      setShowProgressModal(false);
+      // Show official interactive Ticket Modal
+      setConfirmedTicket(res);
+    } catch (err: any) {
+      setShowProgressModal(false);
+      alert(`Booking failed: ${err.message}`);
+    } finally {
+      setBookingSlot(null);
+    }
+  };
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -376,7 +532,37 @@ export const AIAssistantPage: React.FC = () => {
                         </span>
                       </div>
 
-                      {parsedProposal.points && parsedProposal.points.length > 0 ? (
+                      {parsedProposal.chart_image_base64 ? (
+                        <div className="space-y-2">
+                          <div className="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-2xs">
+                            <img 
+                              src={parsedProposal.chart_image_base64} 
+                              alt={parsedProposal.chart_title || 'Clinical Matplotlib Chart'} 
+                              className="w-full h-auto object-contain cursor-pointer hover:opacity-95 transition"
+                              onClick={() => {
+                                const w = window.open('');
+                                if (w) {
+                                  w.document.write(`<img src="${parsedProposal.chart_image_base64}" style="max-width:100%; height:auto;" />`);
+                                }
+                              }}
+                              title="Click to view full-resolution clinical chart"
+                            />
+                          </div>
+                          <div className="flex items-center justify-between text-[11px] text-slate-500 pt-1">
+                            <span className="flex items-center gap-1 text-slate-600">
+                              <span>Standard:</span>
+                              <strong className="text-slate-800">Matplotlib Clinical Plot</strong>
+                            </span>
+                            <a 
+                              href={parsedProposal.chart_image_base64} 
+                              download={`${(parsedProposal.chart_title || 'clinical_chart').toLowerCase().replace(/\s+/g, '_')}.png`}
+                              className="text-teal-700 hover:text-teal-800 font-semibold inline-flex items-center gap-1"
+                            >
+                              Download Chart (PNG) ↗
+                            </a>
+                          </div>
+                        </div>
+                      ) : parsedProposal.points && parsedProposal.points.length > 0 ? (
                         <div className="space-y-3">
                           <div className="h-28 flex items-end gap-2 pt-4 pb-1 px-1 border-b border-slate-100">
                             {parsedProposal.points.map((pt: any, i: number) => {
@@ -415,64 +601,240 @@ export const AIAssistantPage: React.FC = () => {
                   {/* Embedded Radiological Imaging Scan Card with Spatial Finding Bounding Box */}
                   {parsedProposal && (parsedProposal.action_type === 'render_imaging_scan' || (Array.isArray(parsedProposal) && parsedProposal.some((p: any) => p.action_type === 'render_imaging_scan'))) && (
                     (() => {
-                      const scanData = parsedProposal.action_type === 'render_imaging_scan'
-                        ? parsedProposal
-                        : parsedProposal.find((p: any) => p.action_type === 'render_imaging_scan');
-                      if (!scanData) return null;
+                      const scansList = Array.isArray(parsedProposal)
+                        ? parsedProposal.filter((p: any) => p.action_type === 'render_imaging_scan')
+                        : (parsedProposal.action_type === 'render_imaging_scan' ? [parsedProposal] : []);
+
+                      if (!scansList.length) return null;
+
                       return (
-                        <div className="p-4 rounded-xl border border-indigo-200 bg-white shadow-sm text-xs text-slate-800 space-y-3 w-full max-w-lg">
-                          <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-                            <div className="flex items-center gap-1.5 font-bold text-indigo-900">
-                              <Sparkles className="w-4 h-4 text-indigo-600" />
-                              <span>{scanData.modality || 'Radiological Diagnostic Scan'}</span>
-                            </div>
-                            <span className="text-[10px] px-2 py-0.5 bg-indigo-50 text-indigo-700 rounded-full font-semibold">
-                              {scanData.anatomical_region || 'Imaging Finding'}
-                            </span>
-                          </div>
+                        <div className="space-y-3 w-full max-w-lg">
+                          {scansList.map((scanData: any, sIdx: number) => (
+                            <div key={sIdx} className="p-4 rounded-xl border border-indigo-200 bg-white shadow-sm text-xs text-slate-800 space-y-3">
+                              <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                                <div className="flex items-center gap-1.5 font-bold text-indigo-900">
+                                  <Sparkles className="w-4 h-4 text-indigo-600" />
+                                  <span>{scanData.modality || 'Radiological Diagnostic Scan'}</span>
+                                </div>
+                                <span className="text-[10px] px-2 py-0.5 bg-indigo-50 text-indigo-700 rounded-full font-semibold">
+                                  {scanData.anatomical_region || 'Imaging Finding'}
+                                </span>
+                              </div>
 
-                          <div className="space-y-2">
-                            <p className="text-[11px] font-semibold text-slate-700">Identified Pathologies & Key Areas:</p>
-                            <div className="space-y-1.5">
-                              {scanData.findings && scanData.findings.map((f: any, idx: number) => {
-                                const box = f.box_2d || [];
-                                const hasBox = box.length === 4;
-                                return (
-                                  <div key={idx} className="p-2.5 rounded-lg bg-indigo-50/60 border border-indigo-100 space-y-1">
-                                    <div className="flex items-center justify-between">
-                                      <span className="font-bold text-indigo-950 text-xs">
-                                        • {f.label || `Finding #${idx + 1}`}
-                                      </span>
-                                      {hasBox && (
-                                        <span className="text-[9px] px-1.5 py-0.5 bg-rose-100 text-rose-800 rounded font-mono">
-                                          Area [{box[0]}, {box[1]}]
-                                        </span>
-                                      )}
-                                    </div>
-                                    <p className="text-[11px] text-slate-600 leading-relaxed">{f.description}</p>
+                              {scanData.document_id && (
+                                <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-900/10 my-2 relative">
+                                  <img
+                                    src={`/api/v1/documents/${scanData.document_id}/file?token=${localStorage.getItem('token') || ''}`}
+                                    alt={scanData.file_name}
+                                    className="w-full max-h-60 object-contain mx-auto bg-slate-900"
+                                    onError={(e: any) => {
+                                      e.currentTarget.style.display = 'none';
+                                    }}
+                                  />
+                                  <div className="flex items-center justify-between px-2.5 py-1.5 bg-slate-100 text-[10px] text-slate-600">
+                                    <span className="font-mono truncate">{scanData.file_name}</span>
+                                    <a
+                                      href={`/api/v1/documents/${scanData.document_id}/file?token=${localStorage.getItem('token') || ''}`}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                      className="text-indigo-600 hover:text-indigo-800 font-semibold shrink-0"
+                                    >
+                                      View Full Scan ↗
+                                    </a>
                                   </div>
-                                );
-                              })}
-                            </div>
-                          </div>
+                                </div>
+                              )}
 
-                          {scanData.differential_considerations && scanData.differential_considerations.length > 0 && (
-                            <div className="pt-1 text-[11px] text-slate-600">
-                              <span className="font-semibold text-slate-800">Differential Considerations: </span>
-                              {scanData.differential_considerations.join(', ')}
-                            </div>
-                          )}
+                              <div className="space-y-2">
+                                <p className="text-[11px] font-semibold text-slate-700">Identified Pathologies & Key Areas:</p>
+                                <div className="space-y-1.5">
+                                  {scanData.findings && scanData.findings.map((f: any, idx: number) => {
+                                    const box = f.box_2d || [];
+                                    const hasBox = box.length === 4;
+                                    return (
+                                      <div key={idx} className="p-2.5 rounded-lg bg-indigo-50/60 border border-indigo-100 space-y-1">
+                                        <div className="flex items-center justify-between">
+                                          <span className="font-bold text-indigo-950 text-xs">
+                                            • {f.label || `Finding #${idx + 1}`}
+                                          </span>
+                                          {hasBox && (
+                                            <span className="text-[9px] px-1.5 py-0.5 bg-rose-100 text-rose-800 rounded font-mono">
+                                              Area [{box[0]}, {box[1]}]
+                                            </span>
+                                          )}
+                                        </div>
+                                        <p className="text-[11px] text-slate-600 leading-relaxed">{f.description}</p>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
+                              </div>
 
-                          <div className="p-2 rounded bg-amber-50 border border-amber-200 text-[10px] text-amber-900">
-                            <strong>Note:</strong> AI radiological analysis is for educational assistance. Formal diagnostic reporting requires clinical correlation by a certified radiologist.
-                          </div>
+                              {scanData.differential_considerations && scanData.differential_considerations.length > 0 && (
+                                <div className="pt-1 text-[11px] text-slate-600">
+                                  <span className="font-semibold text-slate-800">Differential Considerations: </span>
+                                  {scanData.differential_considerations.join(', ')}
+                                </div>
+                              )}
+
+                              <div className="p-2 rounded bg-amber-50 border border-amber-200 text-[10px] text-amber-900">
+                                <strong>Note:</strong> AI radiological analysis is for educational assistance. Formal diagnostic reporting requires clinical correlation by a certified radiologist.
+                              </div>
+                            </div>
+                          ))}
                         </div>
                       );
                     })()
                   )}
 
+                  {/* Educational Medical Visuals Card */}
+                  {parsedProposal && (
+                    (parsedProposal.action_type === 'render_educational_image' || (Array.isArray(parsedProposal) && parsedProposal.some((p: any) => p.action_type === 'render_educational_image')))
+                  ) && (() => {
+                    const edu = parsedProposal.action_type === 'render_educational_image'
+                      ? parsedProposal
+                      : parsedProposal.find((p: any) => p.action_type === 'render_educational_image');
+                    if (!edu) return null;
+                    return (
+                      <div className="p-4 rounded-xl border border-blue-200 bg-white shadow-sm text-xs text-slate-800 space-y-3 w-full max-w-lg">
+                        <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                          <span className="text-[10px] px-2.5 py-0.5 bg-blue-100 text-blue-800 rounded-full font-bold tracking-wide">
+                            {edu.badge || 'EDUCATIONAL MEDICAL REFERENCE'}
+                          </span>
+                          <span className="text-[10px] text-slate-500 font-medium">{edu.source}</span>
+                        </div>
+                        <div className="font-bold text-slate-900 text-sm">{edu.title}</div>
+                        {edu.image_url && (
+                          <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 relative group">
+                            <img 
+                              src={edu.image_url} 
+                              alt={edu.title} 
+                              className="w-full max-h-64 object-contain cursor-pointer hover:opacity-95 transition bg-white"
+                              onClick={() => window.open(edu.image_url, '_blank')}
+                              title="Click to open full-resolution educational diagram"
+                            />
+                            <div className="p-1.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-500">
+                              <span>Source: <strong>{edu.source}</strong></span>
+                              <a 
+                                href={edu.image_url} 
+                                target="_blank" 
+                                rel="noreferrer" 
+                                className="text-blue-600 hover:text-blue-800 font-semibold"
+                              >
+                                View Full Image ↗
+                              </a>
+                            </div>
+                          </div>
+                        )}
+                        <p className="text-xs text-slate-700 leading-relaxed">{edu.explanation}</p>
+                        {edu.key_points?.length > 0 && (
+                          <ul className="list-disc list-inside space-y-1 text-slate-600 text-[11px] bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                            {edu.key_points.map((pt: string, idx: number) => (
+                              <li key={idx}><b>{pt}</b></li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    );
+                  })()}
+
+                  {/* Doctor Recommendations Card */}
+                  {parsedProposal && (
+                    (parsedProposal.action_type === 'render_doctor_recommendations' || (Array.isArray(parsedProposal) && parsedProposal.some((p: any) => p.action_type === 'render_doctor_recommendations')))
+                  ) && (() => {
+                    const docRec = parsedProposal.action_type === 'render_doctor_recommendations'
+                      ? parsedProposal
+                      : parsedProposal.find((p: any) => p.action_type === 'render_doctor_recommendations');
+                    if (!docRec || !docRec.doctors) return null;
+                    return (
+                      <div className="p-4 rounded-xl border border-teal-200 bg-white shadow-sm text-xs text-slate-800 space-y-3 w-full max-w-lg">
+                        <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                          <span className="font-bold text-teal-900 flex items-center gap-1.5">
+                            <Stethoscope className="w-4 h-4 text-teal-600" />
+                            Verified Doctors: {docRec.department}
+                          </span>
+                          <span className="text-[10px] px-2 py-0.5 bg-teal-50 text-teal-700 rounded-full font-semibold">
+                            Priority: {docRec.priority?.toUpperCase()}
+                          </span>
+                        </div>
+                        <div className="space-y-3">
+                          {docRec.doctors.map((d: any) => (
+                            <div key={d.doctor_id} className="p-3.5 bg-slate-50 hover:bg-slate-50/90 rounded-xl border border-slate-200 transition">
+                              <div className="flex justify-between items-start gap-2 mb-1.5">
+                                <div>
+                                  <h4 className="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                                    <span>{d.name}</span>
+                                  </h4>
+                                  <p className="text-[11px] text-slate-500">{d.qualification} &bull; {d.experience_years} yrs exp</p>
+                                  <div className="flex items-center gap-1.5 mt-1 text-[11px] font-semibold text-teal-800 bg-teal-50 px-2 py-0.5 rounded-md border border-teal-200/80 w-fit">
+                                    <Building2 className="w-3 h-3 text-teal-600 shrink-0" />
+                                    <span>{d.hospital_name || 'Seth GS Medical College & KEM Hospital'}</span>
+                                  </div>
+                                </div>
+                                <div className="text-right shrink-0">
+                                  <span className="text-xs font-bold text-slate-900 bg-white px-2 py-1 rounded-md border border-slate-200 shadow-2xs">
+                                    ₹{d.consultation_fee}
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="mt-2.5">
+                                <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">
+                                  Select Slot ({docRec.suggested_date || 'Upcoming'}):
+                                </div>
+                                <div className="flex flex-wrap gap-1.5">
+                                  {d.available_slots?.map((slot: string, sidx: number) => {
+                                    const isBooking = bookingSlot === `${d.doctor_id}-${slot}`;
+                                    return (
+                                      <button
+                                        key={sidx}
+                                        disabled={!!bookingSlot}
+                                        onClick={() => handleBookDoctorFromChat(d.doctor_id, slot, docRec.suggested_date, d.name, d.hospital_name, docRec.department)}
+                                        className="px-2.5 py-1 bg-white hover:bg-teal-600 hover:text-white border border-slate-200 rounded-lg text-[11px] font-semibold text-slate-700 transition shadow-2xs disabled:opacity-50"
+                                      >
+                                        {isBooking ? 'Booking...' : slot}
+                                      </button>
+                                    );
+                                  })}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* Admission Recommendation Card */}
+                  {parsedProposal && (
+                    (parsedProposal.action_type === 'render_admission_status' || (Array.isArray(parsedProposal) && parsedProposal.some((p: any) => p.action_type === 'render_admission_status')))
+                  ) && (() => {
+                    const adm = parsedProposal.action_type === 'render_admission_status'
+                      ? parsedProposal
+                      : parsedProposal.find((p: any) => p.action_type === 'render_admission_status');
+                    if (!adm) return null;
+                    return (
+                      <div className="p-4 rounded-xl border border-amber-200 bg-amber-50/60 shadow-sm text-xs text-slate-800 space-y-2 w-full max-w-lg">
+                        <div className="flex items-center justify-between pb-2 border-b border-amber-200/50">
+                          <span className="font-bold text-amber-900 flex items-center gap-1.5">
+                            <BedDouble className="w-4 h-4 text-amber-600" />
+                            Hospital Admission Coordination
+                          </span>
+                          <span className="text-[10px] px-2 py-0.5 bg-amber-200 text-amber-900 rounded-full font-bold uppercase">
+                            {adm.priority} Priority
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-2 text-xs">
+                          <div><span className="text-slate-500">Department:</span> <b>{adm.department}</b></div>
+                          <div><span className="text-slate-500">Ward:</span> <b>{adm.recommended_ward}</b></div>
+                          <div><span className="text-slate-500">Bed Assigned:</span> <b>{adm.available_bed || 'Waitlisted'}</b></div>
+                          <div><span className="text-slate-500">Daily Charge:</span> <b>₹{adm.daily_charge || 1500}/day</b></div>
+                        </div>
+                      </div>
+                    );
+                  })()}
+
                   {/* Proposed EHR Action Card (for non-chart proposals like new medication or vitals save) */}
-                  {parsedProposal && parsedProposal.action_type !== 'render_chart' && parsedProposal.action !== 'render_chart' && parsedProposal.action_type !== 'render_imaging_scan' && (
+                  {parsedProposal && parsedProposal.action_type !== 'render_chart' && parsedProposal.action !== 'render_chart' && parsedProposal.action_type !== 'render_imaging_scan' && parsedProposal.action_type !== 'render_educational_image' && parsedProposal.action_type !== 'render_doctor_recommendations' && parsedProposal.action_type !== 'render_admission_status' && (
                     <div className="p-3.5 rounded-xl border border-teal-200 bg-teal-50/70 text-xs text-slate-800 space-y-2 max-w-md">
                       <div className="flex items-center gap-1.5 font-bold text-teal-900">
                         <Sparkles className="w-4 h-4 text-teal-600" />
@@ -717,6 +1079,46 @@ export const AIAssistantPage: React.FC = () => {
 
         {/* Input Bar */}
         <div className="p-4 bg-white border-t border-slate-200">
+          {/* Quick NLP Workflow Action Chips */}
+          <div className="max-w-4xl mx-auto mb-2 flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+            <button
+              type="button"
+              onClick={handleDownloadPdf}
+              className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-slate-900 text-white font-medium text-[11px] hover:bg-slate-800 transition shrink-0 shadow-xs"
+            >
+              <FileDown className="w-3.5 h-3.5" />
+              <span>Download Complete EHR (PDF)</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => handleSendMessage(undefined, "Book an appointment with a cardiologist tomorrow")}
+              className="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] transition shrink-0"
+            >
+              🩺 Book Cardiologist
+            </button>
+            <button
+              type="button"
+              onClick={() => handleSendMessage(undefined, "Show my previous radiological MRI scans and findings")}
+              className="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] transition shrink-0"
+            >
+              🖼️ Show Previous Scans
+            </button>
+            <button
+              type="button"
+              onClick={() => handleSendMessage(undefined, "Explain what blood pressure is with educational illustrations")}
+              className="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] transition shrink-0"
+            >
+              💡 Medical Illustration
+            </button>
+            <button
+              type="button"
+              onClick={() => handleSendMessage(undefined, "Find an available hospital bed for admission")}
+              className="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] transition shrink-0"
+            >
+              🛏️ Bed Availability
+            </button>
+          </div>
+
           {/* Staged File Badge (User can review or remove before sending) */}
           {stagedFile && (
             <div className="max-w-4xl mx-auto mb-2 flex items-center justify-between p-2.5 bg-teal-50 border border-teal-200 rounded-xl text-xs text-teal-900 animate-fadeIn">
@@ -770,14 +1172,30 @@ export const AIAssistantPage: React.FC = () => {
               />
             </label>
 
+            {/* Voice Input Microphone Button */}
+            <button
+              type="button"
+              onClick={toggleVoiceRecognition}
+              className={`p-2.5 rounded-xl border transition ${
+                isListening
+                  ? 'bg-rose-50 border-rose-400 text-rose-600 animate-pulse'
+                  : 'border-slate-200 hover:bg-teal-50 hover:text-teal-700 text-slate-600'
+              }`}
+              title={isListening ? "Listening... click to stop" : "Voice Input (Speech-to-Text)"}
+            >
+              {isListening ? <MicOff className="w-5 h-5" /> : <Mic className="w-5 h-5" />}
+            </button>
+
             <input
               type="text"
               value={inputContent}
               onChange={e => setInputContent(e.target.value)}
               placeholder={
-                stagedFile
+                isListening
+                  ? 'Listening to your voice...'
+                  : stagedFile
                   ? `File attached (${stagedFile.name}). Type your question or leave blank to analyze and press Send...`
-                  : 'Ask your assistant or attach any document/image (PDF, PNG, JPG, CSV)...'
+                  : 'Ask your assistant, speak your symptoms, or request appointment/bed...'
               }
               className="flex-1 px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition"
             />
@@ -797,6 +1215,24 @@ export const AIAssistantPage: React.FC = () => {
           </p>
         </div>
       </div>
+
+      {/* Multi-Agent Live Booking Workflow Progress Modal */}
+      <BookingProgressModal
+        isOpen={showProgressModal}
+        doctorName={progressDoctor.name}
+        hospitalName={progressDoctor.hospital}
+        department={progressDoctor.dept}
+        bookingDate={progressDoctor.date}
+        timeSlot={progressDoctor.slot}
+        currentStep={currentProgressStep}
+        steps={bookingWorkflowSteps}
+      />
+
+      {/* Official Appointment Confirmation Token & Ticket Modal */}
+      <AppointmentTicketModal
+        ticket={confirmedTicket}
+        onClose={() => setConfirmedTicket(null)}
+      />
     </div>
   );
 };

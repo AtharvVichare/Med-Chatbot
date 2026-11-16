@@ -106,22 +106,40 @@ def verify_patient_access(
             detail="Public health analysts are prohibited from accessing identifiable patient records."
         )
 
-    # 2. Patient restriction
+    # 2. Patient restriction & Family Permission Enforcement
     if current_user.role == "patient":
         if current_user.patient_id != patient_id:
+            # Check for verified Family Link with approved consent
+            from backend.app.db.models import FamilyLink
+            family_link = db.query(FamilyLink).filter(
+                (
+                    (FamilyLink.requester_patient_id == current_user.patient_id) &
+                    (FamilyLink.target_patient_id == patient_id)
+                ) |
+                (
+                    (FamilyLink.target_patient_id == current_user.patient_id) &
+                    (FamilyLink.requester_patient_id == patient_id)
+                ),
+                FamilyLink.status == "approved"
+            ).first()
+
+            if family_link:
+                log_audit_event(db, current_user, "FAMILY_LINK_AUTHORIZED_ACCESS", patient_id, f"Relation: {family_link.relationship_type}")
+                return current_user
+
             log_audit_event(db, current_user, "ACCESS_DENIED_CROSS_PATIENT", patient_id)
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
-                detail=f"Forbidden: You are only authorized to view your own patient record ({current_user.patient_id})."
+                detail=f"Forbidden: You are not authorized to view patient record {patient_id}. No verified family access grant found."
             )
 
-    # 3. Doctor restriction (explicit assignment required)
-    elif current_user.role == "doctor":
-        if patient_id not in current_user.assigned_patients:
+    # 3. Doctor & Nurse restriction (explicit assignment required if restricted)
+    elif current_user.role in {"doctor", "nurse"}:
+        if current_user.assigned_patients and patient_id not in current_user.assigned_patients:
             log_audit_event(db, current_user, "ACCESS_DENIED_UNASSIGNED_PATIENT", patient_id)
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
-                detail=f"Forbidden: Dr. {current_user.full_name} is not assigned to patient {patient_id}."
+                detail=f"Forbidden: {current_user.full_name} is not assigned to patient {patient_id}."
             )
 
     # 4. Authorized Access

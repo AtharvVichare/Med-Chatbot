@@ -55,6 +55,25 @@ class Patient(Base):
     )
 
 
+class BedRegistry(Base):
+    __tablename__ = "bed_registry"
+
+    bed_id = Column(String(64), primary_key=True)
+    bed_number = Column(String(32), unique=True, nullable=False, index=True)
+    ward = Column(String(64), nullable=False, index=True)
+    bed_type = Column(String(64), nullable=False)
+    is_occupied = Column(Boolean, default=False, nullable=False)
+    current_patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="SET NULL"), nullable=True, index=True)
+    assigned_encounter_id = Column(String(64), nullable=True)
+    daily_charge = Column(Float, nullable=False, default=1500.0)
+    status = Column(String(32), nullable=False, default="available")  # available, occupied, maintenance, cleaning, reserved
+    notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+    patient = relationship("Patient", foreign_keys=[current_patient_id])
+
+
 class Encounter(Base):
     __tablename__ = "encounters"
 
@@ -65,11 +84,14 @@ class Encounter(Base):
     district = Column(String(100), nullable=False)
     encounter_type = Column(String(64), nullable=False)
     attending_provider = Column(String(150), nullable=True)
+    assigned_bed = Column(String(64), ForeignKey("bed_registry.bed_id", ondelete="SET NULL"), nullable=True, index=True)
+    encounter_status = Column(String(32), nullable=True, default=None)  # scheduled, in_progress, admitted, discharged, cancelled
     is_synthetic = Column(Boolean, nullable=False, default=True)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
     # Relationships
     patient = relationship("Patient", back_populates="encounters")
+    bed = relationship("BedRegistry", foreign_keys=[assigned_bed])
     observations = relationship("Observation", back_populates="encounter", cascade="all, delete-orphan")
     medications = relationship("Medication", back_populates="encounter", cascade="all, delete-orphan")
 
@@ -329,5 +351,349 @@ class ChatMessage(Base):
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
     conversation = relationship("ChatConversation", back_populates="messages")
+
+
+# ==========================================
+# Hospital Management & AI-Native Architecture Models
+# ==========================================
+
+class ProcurementInventory(Base):
+    __tablename__ = "procurement_inventory"
+
+    item_id = Column(String(64), primary_key=True)
+    name = Column(String(200), nullable=False, index=True)
+    category = Column(String(64), nullable=False, index=True)  # medicine, consumable, equipment, surgical
+    current_stock = Column(Integer, nullable=False, default=0)
+    unit = Column(String(32), nullable=False, default="units")  # vials, boxes, strips, units, bottles
+    reorder_threshold = Column(Integer, nullable=False, default=20)
+    reorder_quantity = Column(Integer, nullable=False, default=100)
+    unit_price = Column(Float, nullable=False, default=0.0)
+    supplier_name = Column(String(150), nullable=False)
+    supplier_contact = Column(String(100), nullable=True)
+    expiry_date = Column(Date, nullable=True, index=True)
+    batch_number = Column(String(64), nullable=True)
+    status = Column(String(32), nullable=False, default="in_stock")  # in_stock, low_stock, critical, expired
+    last_restocked_date = Column(Date, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+    purchase_orders = relationship("ProcurementPurchaseOrder", back_populates="item", cascade="all, delete-orphan")
+
+
+class ProcurementPurchaseOrder(Base):
+    __tablename__ = "procurement_purchase_orders"
+
+    po_id = Column(String(64), primary_key=True)
+    item_id = Column(String(64), ForeignKey("procurement_inventory.item_id", ondelete="CASCADE"), nullable=False, index=True)
+    quantity = Column(Integer, nullable=False)
+    estimated_cost = Column(Float, nullable=False)
+    supplier_name = Column(String(150), nullable=False)
+    generated_by = Column(String(64), default="procurement_agent", nullable=False)
+    status = Column(String(32), default="draft_pending_authorization", nullable=False, index=True)  # draft_pending_authorization, approved, ordered, received, rejected
+    approval_notes = Column(Text, nullable=True)
+    approved_by = Column(String(64), nullable=True)
+    order_date = Column(DateTime, default=datetime.utcnow, nullable=False)
+    delivered_date = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    item = relationship("ProcurementInventory", back_populates="purchase_orders")
+
+
+class PendingEHRUpdate(Base):
+    __tablename__ = "pending_ehr_updates"
+
+    update_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    encounter_id = Column(String(64), nullable=True)
+    update_type = Column(String(64), nullable=False)  # condition, medication, observation, allergy, clinical_note
+    source = Column(String(64), nullable=False, default="patient_chat")  # patient_chat, voice_input, uploaded_document, doctor_portal
+    source_reference_id = Column(String(64), nullable=True)
+    proposed_data = Column(Text, nullable=False)  # JSON representation of clinical fields
+    status = Column(String(32), nullable=False, default="pending_verification", index=True)  # pending_verification, approved, rejected, edited_and_approved
+    assigned_doctor_id = Column(String(64), nullable=True, index=True)
+    reviewed_by = Column(String(64), nullable=True)
+    review_notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    reviewed_at = Column(DateTime, nullable=True)
+
+    patient = relationship("Patient")
+
+
+class DoctorProfile(Base):
+    __tablename__ = "doctor_profiles"
+
+    doctor_id = Column(String(64), primary_key=True)
+    user_id = Column(String(64), nullable=True, index=True)
+    name = Column(String(150), nullable=False)
+    department = Column(String(100), nullable=False, index=True)
+    specialty = Column(String(100), nullable=False, index=True)
+    qualification = Column(String(150), nullable=False)
+    experience_years = Column(Integer, nullable=False, default=5)
+    consultation_fee = Column(Float, nullable=False, default=800.0)
+    hospital_name = Column(String(150), nullable=True, default="Seth GS Medical College & KEM Hospital")
+    is_available = Column(Boolean, default=True, nullable=False)
+    schedule_json = Column(Text, nullable=True)  # JSON formatted available consultation slots
+    profile_image_url = Column(String(255), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    appointments = relationship("AppointmentBooking", back_populates="doctor")
+
+
+class AppointmentBooking(Base):
+    __tablename__ = "appointment_bookings"
+
+    booking_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    doctor_id = Column(String(64), ForeignKey("doctor_profiles.doctor_id", ondelete="CASCADE"), nullable=False, index=True)
+    department = Column(String(100), nullable=False)
+    hospital_name = Column(String(150), nullable=True, default="Seth GS Medical College & KEM Hospital")
+    booking_date = Column(Date, nullable=False, index=True)
+    time_slot = Column(String(32), nullable=False)
+    status = Column(String(32), default="confirmed", nullable=False, index=True)  # confirmed, completed, cancelled, no_show
+    chief_complaint = Column(Text, nullable=True)
+    booked_via = Column(String(64), default="intake_agent", nullable=False)  # intake_agent, portal, scheduling_agent
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    patient = relationship("Patient")
+    doctor = relationship("DoctorProfile", back_populates="appointments")
+
+    __table_args__ = (
+        UniqueConstraint("doctor_id", "booking_date", "time_slot", name="uq_doctor_date_slot"),
+    )
+
+
+class AdmissionRequest(Base):
+    __tablename__ = "admission_requests"
+
+    request_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    doctor_id = Column(String(64), nullable=True)
+    department = Column(String(100), nullable=False)
+    recommended_ward = Column(String(64), nullable=False)
+    assigned_bed_id = Column(String(64), ForeignKey("bed_registry.bed_id", ondelete="SET NULL"), nullable=True)
+    priority = Column(String(32), default="routine", nullable=False)  # routine, urgent, emergency
+    status = Column(String(32), default="pending", nullable=False, index=True)  # pending, assigned, admitted, discharged, cancelled
+    admission_notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    discharged_at = Column(DateTime, nullable=True)
+
+    patient = relationship("Patient")
+    bed = relationship("BedRegistry")
+
+
+class BillingInvoice(Base):
+    __tablename__ = "billing_invoices"
+
+    invoice_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    encounter_id = Column(String(64), nullable=True, index=True)
+    admission_id = Column(String(64), nullable=True)
+    invoice_date = Column(Date, nullable=False, default=date.today)
+    total_amount = Column(Float, nullable=False, default=0.0)
+    insurance_covered = Column(Float, nullable=False, default=0.0)
+    patient_payable = Column(Float, nullable=False, default=0.0)
+    payment_status = Column(String(32), nullable=False, default="draft")  # draft, pending, paid, partially_paid, cancelled
+    items_json = Column(Text, nullable=False, default="[]")  # Line items: bed, consultations, tests, procedures, drugs
+    icd10_codes_json = Column(Text, nullable=False, default="[]")  # Assisted ICD-10 codes
+    coded_by = Column(String(64), default="billing_rcm_agent", nullable=False)
+    approved_by = Column(String(64), nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    patient = relationship("Patient")
+
+
+class AgentEventLog(Base):
+    __tablename__ = "agent_events"
+
+    event_id = Column(String(64), primary_key=True)
+    timestamp = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)
+    source_agent = Column(String(64), nullable=False, index=True)  # intake, scheduling, lab_pharmacy, procurement, billing_rcm, bi
+    target_agent = Column(String(64), nullable=True, index=True)
+    event_type = Column(String(64), nullable=False, index=True)
+    payload_json = Column(Text, nullable=False)
+    status = Column(String(32), nullable=False, default="completed")  # emitted, in_progress, completed, failed, escalated
+    requires_human_approval = Column(Boolean, default=False, nullable=False)
+    approval_status = Column(String(32), nullable=True)  # pending, approved, rejected
+    resolution_notes = Column(Text, nullable=True)
+
+
+# ============================================================================
+# EXTENDED HMS MODELS: FAMILY ACCOUNTS, CLINICAL WORKSPACE & NURSING WORKSPACE
+# ============================================================================
+
+class FamilyLink(Base):
+    """
+    Patient-to-Patient Family Account Linking & Consent-Based Access Control.
+    Enforces that name discovery alone never grants access; explicit target approval is required.
+    """
+    __tablename__ = "family_links"
+
+    link_id = Column(String(64), primary_key=True)
+    requester_patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    target_patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    relationship_type = Column(String(64), nullable=False)  # spouse, parent, child, sibling, guardian, other
+    status = Column(String(32), default="pending", nullable=False, index=True)  # pending, approved, rejected, revoked
+    permissions_json = Column(Text, default="[]", nullable=False)  # JSON list of permissions: view_basic_health, view_medical_history, view_reports, manage_appointments, receive_reminders, assist_admissions, access_documents
+    requested_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    responded_at = Column(DateTime, nullable=True)
+    notes = Column(Text, nullable=True)
+
+    requester = relationship("Patient", foreign_keys=[requester_patient_id])
+    target = relationship("Patient", foreign_keys=[target_patient_id])
+
+    __table_args__ = (
+        UniqueConstraint("requester_patient_id", "target_patient_id", name="uq_patient_family_link"),
+    )
+
+
+class ClinicalNote(Base):
+    """
+    Physician Documentation: Consultation notes, SOAP notes, progress notes,
+    discharge summaries, treatment plans, and clinical referrals.
+    """
+    __tablename__ = "clinical_notes"
+
+    note_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    encounter_id = Column(String(64), ForeignKey("encounters.encounter_id", ondelete="SET NULL"), nullable=True, index=True)
+    doctor_id = Column(String(64), nullable=False, index=True)
+    doctor_name = Column(String(150), nullable=False)
+    note_type = Column(String(64), default="progress_note", nullable=False, index=True)  # consultation, progress_note, soap_note, discharge_summary, treatment_plan, referral
+    title = Column(String(200), nullable=False)
+    subjective = Column(Text, nullable=True)
+    objective = Column(Text, nullable=True)
+    assessment = Column(Text, nullable=True)
+    plan = Column(Text, nullable=True)
+    content = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
+
+    patient = relationship("Patient")
+    encounter = relationship("Encounter")
+
+
+class ClinicalOrder(Base):
+    """
+    Physician Diagnostic & Procedure Orders: Laboratory investigations,
+    imaging studies (X-Ray, MRI, CT), and nursing interventions.
+    """
+    __tablename__ = "clinical_orders"
+
+    order_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    encounter_id = Column(String(64), ForeignKey("encounters.encounter_id", ondelete="SET NULL"), nullable=True, index=True)
+    doctor_id = Column(String(64), nullable=False, index=True)
+    doctor_name = Column(String(150), nullable=False)
+    order_type = Column(String(64), nullable=False, index=True)  # lab, imaging, procedure, nursing_intervention
+    order_name = Column(String(200), nullable=False)
+    clinical_indication = Column(Text, nullable=True)
+    priority = Column(String(32), default="routine", nullable=False)  # routine, urgent, stat
+    status = Column(String(32), default="ordered", nullable=False, index=True)  # ordered, sample_collected, in_progress, completed, cancelled
+    result_summary = Column(Text, nullable=True)
+    ordered_at = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)
+    completed_at = Column(DateTime, nullable=True)
+
+    patient = relationship("Patient")
+    encounter = relationship("Encounter")
+
+
+class NursingTask(Base):
+    """
+    Nurse Task Management: Medication rounds, vitals recording, lab sample collection,
+    procedure prep, wound care, doctor instructions, and admission/discharge workflows.
+    """
+    __tablename__ = "nursing_tasks"
+
+    task_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    encounter_id = Column(String(64), ForeignKey("encounters.encounter_id", ondelete="SET NULL"), nullable=True)
+    ward = Column(String(64), nullable=False, index=True)
+    bed_number = Column(String(32), nullable=True)
+    task_type = Column(String(64), nullable=False, index=True)  # medication, vitals, lab_collection, wound_care, procedure_prep, doctor_order, admission_discharge
+    title = Column(String(200), nullable=False)
+    description = Column(Text, nullable=True)
+    priority = Column(String(32), default="routine", nullable=False)  # routine, urgent, stat
+    scheduled_time = Column(DateTime, nullable=False, index=True)
+    status = Column(String(32), default="pending", nullable=False, index=True)  # pending, in_progress, completed, overdue, cancelled
+    assigned_nurse_id = Column(String(64), nullable=True, index=True)
+    assigned_nurse_name = Column(String(150), nullable=True)
+    completed_at = Column(DateTime, nullable=True)
+    completed_by = Column(String(150), nullable=True)
+    completion_notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    patient = relationship("Patient")
+
+
+class MedicationAdministration(Base):
+    """
+    Medication Administration Record (MAR): Track prescribed medicine, scheduled timing,
+    actual administration status (administered, delayed, refused, missed with reason), and nurse verification.
+    """
+    __tablename__ = "medication_administrations"
+
+    mar_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    medication_id = Column(String(64), ForeignKey("medications.medication_id", ondelete="SET NULL"), nullable=True)
+    medication_name = Column(String(200), nullable=False)
+    dosage = Column(String(100), nullable=False)
+    route = Column(String(64), nullable=False, default="oral")  # oral, iv, im, sc, topical, inhalation
+    scheduled_time = Column(DateTime, nullable=False, index=True)
+    administered_time = Column(DateTime, nullable=True)
+    administered_by = Column(String(150), nullable=True)  # Nurse name/ID
+    status = Column(String(32), default="scheduled", nullable=False, index=True)  # scheduled, administered, delayed, refused, missed
+    reason = Column(Text, nullable=True)  # Reason for delay, refusal, or omission
+    notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    patient = relationship("Patient")
+    medication = relationship("Medication")
+
+
+class ShiftHandover(Base):
+    """
+    Clinical Communication & Shift Handover: Structured SBAR format
+    (Situation, Background, Assessment, Recommendation) with critical alerts and task handoffs.
+    """
+    __tablename__ = "shift_handovers"
+
+    handover_id = Column(String(64), primary_key=True)
+    ward = Column(String(64), nullable=False, index=True)
+    shift_type = Column(String(32), nullable=False)  # morning, evening, night
+    outgoing_nurse_id = Column(String(64), nullable=False)
+    outgoing_nurse_name = Column(String(150), nullable=False)
+    incoming_nurse_id = Column(String(64), nullable=True)
+    incoming_nurse_name = Column(String(150), nullable=True)
+    handover_date = Column(Date, nullable=False, default=date.today)
+    situation = Column(Text, nullable=False)
+    background = Column(Text, nullable=False)
+    assessment = Column(Text, nullable=False)
+    recommendation = Column(Text, nullable=False)
+    critical_alerts_json = Column(Text, default="[]", nullable=False)
+    total_patients = Column(Integer, default=0, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class CareTeamAssignment(Base):
+    """
+    Care Team Assignments: Doctor-patient and nurse-patient clinical coverage.
+    """
+    __tablename__ = "care_team_assignments"
+
+    assignment_id = Column(String(64), primary_key=True)
+    patient_id = Column(String(64), ForeignKey("patients.patient_id", ondelete="CASCADE"), nullable=False, index=True)
+    staff_user_id = Column(String(64), nullable=False, index=True)
+    staff_name = Column(String(150), nullable=False)
+    staff_role = Column(String(32), nullable=False)  # doctor, nurse
+    department = Column(String(100), nullable=False)
+    is_primary = Column(Boolean, default=True, nullable=False)
+    assigned_date = Column(Date, nullable=False, default=date.today)
+    status = Column(String(32), default="active", nullable=False)  # active, completed, transferred
+    notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    patient = relationship("Patient")
+
+
 
 

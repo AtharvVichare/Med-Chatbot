@@ -1,6 +1,6 @@
 from datetime import date, datetime, timezone
 from typing import Optional, List, Dict, Any
-from pydantic import BaseModel, ConfigDict, Field, field_serializer
+from pydantic import BaseModel, ConfigDict, Field, field_serializer, model_validator
 
 class PatientBase(BaseModel):
     patient_id: str
@@ -18,6 +18,24 @@ class PatientBase(BaseModel):
     is_smoker: bool = False
     is_synthetic: bool = True
     data_source: str = "SYNTHETIC_SIMULATION"
+    gender: Optional[str] = None
+    date_of_birth: Optional[date] = None
+
+    @model_validator(mode="after")
+    def sync_patient_aliases(self):
+        if not self.gender and self.sex:
+            self.gender = self.sex
+        if not self.sex and self.gender:
+            self.sex = self.gender
+        if not self.date_of_birth and self.birth_date:
+            self.date_of_birth = self.birth_date
+        if not self.birth_date and self.date_of_birth:
+            self.birth_date = self.date_of_birth
+        if not self.phone_number and self.contact_no:
+            self.phone_number = self.contact_no
+        if not self.contact_no and self.phone_number:
+            self.contact_no = self.phone_number
+        return self
 
 class PatientCreate(PatientBase):
     pass
@@ -295,6 +313,10 @@ class PatientSelfUpdate(BaseModel):
     district: Optional[str] = None
     state: Optional[str] = None
     is_smoker: Optional[bool] = None
+    sex: Optional[str] = None
+    gender: Optional[str] = None
+    birth_date: Optional[date] = None
+    date_of_birth: Optional[date] = None
 
 class ConditionCreatePatient(BaseModel):
     diagnosis_name: Optional[str] = None
@@ -313,4 +335,209 @@ class MedicationCreatePatient(BaseModel):
     start_date: date = Field(default_factory=date.today)
     status: str = "active"
     notes: Optional[str] = None
+
+
+# ============================================================================
+# EXTENDED HMS SCHEMAS: FAMILY LINKS, CLINICAL WORKSPACE & NURSING WORKSPACE
+# ============================================================================
+
+class FamilyLinkRequestCreate(BaseModel):
+    target_patient_id: str
+    relationship_type: str  # spouse, parent, child, sibling, guardian, other
+    permissions: List[str] = [
+        "view_basic_health",
+        "view_medical_history",
+        "view_reports",
+        "manage_appointments",
+        "receive_reminders",
+        "assist_admissions",
+        "access_documents"
+    ]
+    notes: Optional[str] = None
+
+class FamilyLinkRespondRequest(BaseModel):
+    action: str  # approve, reject
+    permissions: Optional[List[str]] = None
+    notes: Optional[str] = None
+
+class FamilyLinkPermissionsUpdate(BaseModel):
+    permissions: List[str]
+
+class FamilyLinkRead(BaseModel):
+    link_id: str
+    requester_patient_id: str
+    target_patient_id: str
+    requester_name: Optional[str] = None
+    target_name: Optional[str] = None
+    relationship_type: str
+    status: str
+    permissions: List[str] = []
+    requested_at: str
+    responded_at: Optional[str] = None
+    notes: Optional[str] = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+class ClinicalNoteCreate(BaseModel):
+    patient_id: str
+    encounter_id: Optional[str] = None
+    note_type: str = "progress_note"  # consultation, progress_note, soap_note, discharge_summary, treatment_plan, referral
+    title: str
+    subjective: Optional[str] = None
+    objective: Optional[str] = None
+    assessment: Optional[str] = None
+    plan: Optional[str] = None
+    content: str
+
+class ClinicalNoteRead(BaseModel):
+    note_id: str
+    patient_id: str
+    patient_name: Optional[str] = None
+    encounter_id: Optional[str] = None
+    doctor_id: str
+    doctor_name: str
+    note_type: str
+    title: str
+    subjective: Optional[str] = None
+    objective: Optional[str] = None
+    assessment: Optional[str] = None
+    plan: Optional[str] = None
+    content: str
+    created_at: str
+    updated_at: str
+
+    model_config = ConfigDict(from_attributes=True)
+
+class ClinicalOrderCreate(BaseModel):
+    patient_id: str
+    encounter_id: Optional[str] = None
+    order_type: str  # lab, imaging, procedure, nursing_intervention
+    order_name: str
+    clinical_indication: Optional[str] = None
+    priority: str = "routine"  # routine, urgent, stat
+
+class ClinicalOrderRead(BaseModel):
+    order_id: str
+    patient_id: str
+    patient_name: Optional[str] = None
+    encounter_id: Optional[str] = None
+    doctor_id: str
+    doctor_name: str
+    order_type: str
+    order_name: str
+    clinical_indication: Optional[str] = None
+    priority: str
+    status: str
+    result_summary: Optional[str] = None
+    ordered_at: str
+    completed_at: Optional[str] = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+class NursingTaskCreate(BaseModel):
+    patient_id: str
+    encounter_id: Optional[str] = None
+    ward: str
+    bed_number: Optional[str] = None
+    task_type: str  # medication, vitals, lab_collection, wound_care, procedure_prep, doctor_order, admission_discharge
+    title: str
+    description: Optional[str] = None
+    priority: str = "routine"  # routine, urgent, stat
+    scheduled_time: datetime
+    assigned_nurse_id: Optional[str] = None
+    assigned_nurse_name: Optional[str] = None
+
+class NursingTaskUpdate(BaseModel):
+    status: Optional[str] = None  # in_progress, completed, overdue, cancelled
+    completion_notes: Optional[str] = None
+    assigned_nurse_id: Optional[str] = None
+    assigned_nurse_name: Optional[str] = None
+
+class NursingTaskRead(BaseModel):
+    task_id: str
+    patient_id: str
+    patient_name: Optional[str] = None
+    encounter_id: Optional[str] = None
+    ward: str
+    bed_number: Optional[str] = None
+    task_type: str
+    title: str
+    description: Optional[str] = None
+    priority: str
+    scheduled_time: str
+    status: str
+    assigned_nurse_id: Optional[str] = None
+    assigned_nurse_name: Optional[str] = None
+    completed_at: Optional[str] = None
+    completed_by: Optional[str] = None
+    completion_notes: Optional[str] = None
+    created_at: str
+
+    model_config = ConfigDict(from_attributes=True)
+
+class MedicationAdministrationCreate(BaseModel):
+    patient_id: str
+    medication_id: Optional[str] = None
+    medication_name: str
+    dosage: str
+    route: str = "oral"
+    scheduled_time: datetime
+    notes: Optional[str] = None
+
+class MedicationAdministrationRecordAction(BaseModel):
+    status: str  # administered, delayed, refused, missed
+    reason: Optional[str] = None
+    notes: Optional[str] = None
+
+class MedicationAdministrationRead(BaseModel):
+    mar_id: str
+    patient_id: str
+    patient_name: Optional[str] = None
+    medication_id: Optional[str] = None
+    medication_name: str
+    dosage: str
+    route: str
+    scheduled_time: str
+    administered_time: Optional[str] = None
+    administered_by: Optional[str] = None
+    status: str
+    reason: Optional[str] = None
+    notes: Optional[str] = None
+    created_at: str
+
+    model_config = ConfigDict(from_attributes=True)
+
+class ShiftHandoverCreate(BaseModel):
+    ward: str
+    shift_type: str  # morning, evening, night
+    outgoing_nurse_name: str
+    incoming_nurse_id: Optional[str] = None
+    incoming_nurse_name: Optional[str] = None
+    handover_date: date = Field(default_factory=date.today)
+    situation: str
+    background: str
+    assessment: str
+    recommendation: str
+    critical_alerts: List[str] = []
+    total_patients: int = 0
+
+class ShiftHandoverRead(BaseModel):
+    handover_id: str
+    ward: str
+    shift_type: str
+    outgoing_nurse_id: str
+    outgoing_nurse_name: str
+    incoming_nurse_id: Optional[str] = None
+    incoming_nurse_name: Optional[str] = None
+    handover_date: str
+    situation: str
+    background: str
+    assessment: str
+    recommendation: str
+    critical_alerts: List[str] = []
+    total_patients: int
+    created_at: str
+
+    model_config = ConfigDict(from_attributes=True)
+
 
